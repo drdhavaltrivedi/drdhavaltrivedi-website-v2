@@ -1,13 +1,26 @@
 {
   "version": 2,
   "framework": null,
+  "cleanUrls": true,
   "rewrites": [
+    { "source": "/ai-machine-learning", "destination": "/ai-machine-learning.html" },
     { "source": "/vedic-astrology", "destination": "/vedic-astrology.html" },
     { "source": "/vastu-shastra", "destination": "/vastu-shastra.html" },
     { "source": "/numerology", "destination": "/numerology.html" },
     { "source": "/palmistry", "destination": "/palmistry.html" },
     { "source": "/guitar-music-vocals", "destination": "/guitar-music-vocals.html" },
+    { "source": "/poetry-kavita", "destination": "/poetry-kavita.html" },
+    { "source": "/tools", "destination": "/tools.html" },
+    { "source": "/research-consulting", "destination": "/research-consulting.html" },
     { "source": "/blog", "destination": "/blog/index.html" },
+    
+    { "source": "/blog/driver-conductor-numerology-guide", "destination": "/blog/driver-conductor-numerology-guide.html" },
+    { "source": "/blog/ai-meets-antiquity-vedic-wisdom", "destination": "/blog/ai-meets-antiquity-vedic-wisdom.html" },
+    { "source": "/blog/algorithm-of-success-ai-automation", "destination": "/blog/algorithm-of-success-ai-automation.html" },
+    { "source": "/blog/vastu-for-digital-home-workspace", "destination": "/blog/vastu-for-digital-home-workspace.html" },
+    { "source": "/blog/beyond-the-lifeline-palmistry-career", "destination": "/blog/beyond-the-lifeline-palmistry-career.html" },
+    { "source": "/blog/mathematics-of-music-numerology", "destination": "/blog/mathematics-of-music-numerology.html" },
+    
     { "source": "/blog/vedic-astrology-consultation-what-to-expect", "destination": "/blog/vedic-astrology-consultation-what-to-expect.html" },
     { "source": "/blog/numerology-life-path-simple-guide", "destination": "/blog/numerology-life-path-simple-guide.html" },
     { "source": "/blog/free-online-palm-reading-tool", "destination": "/blog/free-online-palm-reading-tool.html" }
