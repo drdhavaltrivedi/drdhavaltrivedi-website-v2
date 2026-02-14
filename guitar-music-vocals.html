@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guitar Tools: Scale Finder, Chord Reference, Practice Log | Dr. Dhaval Trivedi</title>
+<meta name="description" content="Free guitar tools: scale finder by root and scale type, chord reference with diagram links, and a simple practice log. For music and shayari follow @shayartrivedi; for consultations see Vedic, Numerology, Palmistry. www.drdhaval.in.">
+<meta name="keywords" content="guitar scale finder, chord reference, practice log, guitar tools, Dr. Dhaval Trivedi, guitarist, shayartrivedi, www.drdhaval.in">
+<link rel="canonical" href="https://www.drdhaval.in/guitar-music-vocals">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.drdhaval.in/guitar-music-vocals">
+<meta property="og:title" content="Guitar, Music & Vocals | Dr. Dhaval Trivedi | Performer">
+<meta property="og:description" content="Guitarist, vocalist, composer. Dr. Dhaval Trivedi. drdhaval.in">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Guitar & Music | Dr. Dhaval Trivedi | drdhaval.in">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Space+Mono:wght@0,400;0,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #1a1420;
+  --bg-card: #251e2a;
+  --ink: #f0eae6;
+  --accent: #d4a574;
+  --stage: #8b6b7a;
+  --muted: #a8989e;
+  --border: rgba(212, 165, 116, 0.3);
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
+
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 4rem; border-bottom: 1px solid var(--border); background: rgba(26,20,32, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.nav-brand:hover { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+.nav-links a { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+
+.breadcrumb { padding: 1.5rem 4rem; font-family: 'Space Mono', monospace; font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb span { color: var(--accent); margin: 0 0.5rem; }
+
+.page-hero { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem; position: relative; overflow: hidden; }
+.wave-deco { position: absolute; bottom: 0; left: 0; right: 0; height: 120px; opacity: 0.12; }
+.wave-deco svg { width: 100%; height: 100%; }
+.page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5.5vw, 4rem); font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; position: relative; }
+.page-hero .badge { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; position: relative; }
+.page-hero .tagline { font-size: clamp(1rem, 1.8vw, 1.25rem); color: var(--muted); max-width: 42ch; line-height: 1.7; position: relative; }
+
+.section { padding: 5rem 4rem; max-width: 1100px; margin: 0 auto; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: var(--ink); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+.section-title .num { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--accent); margin-right: 1rem; }
+.body-text { font-size: 1.15rem; line-height: 1.9; color: var(--muted); }
+.body-text strong { color: var(--ink); }
+
+.roles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0; }
+.role-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem; text-align: center; transition: border-color 0.3s, transform 0.3s; }
+.role-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+.role-card .icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+.role-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--accent); margin-bottom: 0.5rem; }
+.role-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+.social-cta { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin: 3rem 0; }
+.social-cta a { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 0.9rem 2rem; text-decoration: none; transition: all 0.3s; }
+.social-cta a:hover { background: var(--accent); color: var(--bg); }
+
+.cta-block { background: var(--bg-card); border: 1px solid var(--border); padding: 4rem; text-align: center; margin: 4rem 0; }
+.cta-block h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--ink); margin-bottom: 1rem; }
+.cta-block p { color: var(--muted); margin-bottom: 1.5rem; max-width: 45ch; margin-left: auto; margin-right: auto; }
+.cta-link { display: inline-block; font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 0.8rem 2rem; text-decoration: none; transition: all 0.3s; }
+.cta-link:hover { background: var(--accent); color: var(--bg); }
+
+.explore-other { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.explore-label { font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+.explore-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; }
+.explore-links a { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.explore-links a:hover { color: var(--accent); }
+.explore-links a.current { color: var(--accent); pointer-events: none; }
+
+.tools-intro { margin-bottom: 2.5rem; font-size: 1.05rem; line-height: 1.8; color: var(--muted); }
+.tools-intro a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.tools-intro a:hover { color: var(--ink); }
+.tool-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem; border-radius: 4px; }
+.tool-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 0.5rem; }
+.tool-card .tool-desc { font-size: 0.95rem; color: var(--muted); margin-bottom: 1.25rem; line-height: 1.6; }
+.tool-form label { display: block; font-family: 'Space Mono', monospace; font-size: 0.52rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+.tool-form input, .tool-form select { width: 100%; max-width: 280px; padding: 0.6rem 0.75rem; background: var(--bg); border: 1px solid var(--border); color: var(--ink); font-family: 'Cormorant Garamond', serif; font-size: 1rem; margin-bottom: 1rem; }
+.tool-form input:focus, .tool-form select:focus { outline: none; border-color: var(--accent); }
+.tool-form button { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; background: var(--accent); color: var(--bg); border: none; padding: 0.65rem 1.5rem; cursor: pointer; transition: opacity 0.3s; margin-right: 0.5rem; margin-bottom: 0.5rem; }
+.tool-form button:hover { opacity: 0.9; }
+.tool-result { margin-top: 1.25rem; padding: 1.25rem; background: var(--bg); border-left: 3px solid var(--accent); display: none; }
+.tool-result.visible { display: block; }
+.tool-result .result-title { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+.tool-result .result-value { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--ink); margin-bottom: 0.5rem; }
+.tool-result .result-text { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+.tool-anchor { scroll-margin-top: 6rem; }
+.tool-usage { font-family: 'Space Mono', monospace; font-size: 0.48rem; letter-spacing: 0.1em; color: var(--muted); margin-top: 0.75rem; }
+.tools-cluster { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.tools-cluster p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.75rem; }
+.tools-cluster a { color: var(--accent); text-decoration: none; }
+.tools-cluster a:hover { text-decoration: underline; }
+.tools-cluster .cluster-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin-top: 0.5rem; }
+.chord-link { display: inline-block; margin-top: 0.5rem; color: var(--accent); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.1em; }
+.chord-link:hover { text-decoration: underline; }
+
+footer { padding: 2rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+footer a { color: var(--muted); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.52rem; letter-spacing: 0.15em; }
+footer a:hover { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .nav, .breadcrumb, .section { padding-left: 2rem; padding-right: 2rem; }
+  .roles-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) { .nav-links { display: none; } }
+
+/* Reveal Animation */
+.reveal-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4,0,0.2,1); }
+.reveal-up.visible { opacity: 1; transform: translateY(0); }
+
+/* Info Card Hover Enhancement */
+.info-card { transition: all 0.4s cubic-bezier(0.4,0,0.2,1); border-radius: 6px; }
+.info-card:hover { transform: translateY(-6px); box-shadow: 0 15px 35px rgba(0,0,0,0.3); border-color: var(--accent); }
+.info-card .icon { transition: transform 0.4s; }
+.info-card:hover .icon { transform: scale(1.2); }
+
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Person","name":"Dr. Dhaval Trivedi","jobTitle":"Guitarist, Vocal Performer, Composer","url":"https://www.drdhaval.in/","description":"Guitar, music and vocals performer. Original compositions, poetry. @shayartrivedi. www.drdhaval.in"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.drdhaval.in/"},{"@type":"ListItem","position":2,"name":"Expertise","item":"https://www.drdhaval.in/#expertise"},{"@type":"ListItem","position":3,"name":"Guitar Music Vocals","item":"https://www.drdhaval.in/guitar-music-vocals"}]}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Guitar and Music Tools by Dr. Dhaval Trivedi","description":"Scale finder by root and scale type, chord reference with diagram link, practice log (localStorage). Music and shayari at @shayartrivedi. www.drdhaval.in.","url":"https://www.drdhaval.in/guitar-music-vocals#tools","numberOfItems":3,"itemListElement":[{"@type":"SoftwareApplication","position":1,"name":"Guitar Scale Finder","applicationCategory":"UtilitiesApplication","description":"Root note and scale type (major, minor, raga) to list of notes.","url":"https://www.drdhaval.in/guitar-music-vocals#scale-finder"},{"@type":"SoftwareApplication","position":2,"name":"Chord Reference","applicationCategory":"UtilitiesApplication","description":"Chord name to diagram or chart link.","url":"https://www.drdhaval.in/guitar-music-vocals#chord-reference"},{"@type":"SoftwareApplication","position":3,"name":"Practice Log","applicationCategory":"UtilitiesApplication","description":"Log practice and see streak (localStorage).","url":"https://www.drdhaval.in/guitar-music-vocals#practice-log"}]}
+</script>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/logo.png">
+<link rel="manifest" href="/manifest.json">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand"><img src="/logo.png" alt="Dr. Dhaval Trivedi Logo" style="height: 32px; vertical-align: middle; margin-right: 0.8rem; filter: brightness(0.9);">Dr. Dhaval Trivedi</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#expertise">Expertise</a></li>
+    <li><a href="/ai-machine-learning">AI & Tech</a></li>
+    <li><a href="/vedic-astrology">Vedic Astrology</a></li>
+    <li><a href="/vastu-shastra">Vastu Shastra</a></li>
+    <li><a href="/numerology">Numerology</a></li>
+    <li><a href="/palmistry">Palmistry</a></li>
+    <li><a href="/guitar-music-vocals">Music &amp; Vocals</a></li>
+    <li><a href="/#tools">Tools</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span>›</span> <a href="/#expertise">Expertise</a> <span>›</span> <span aria-current="page">Guitar, Music &amp; Vocals</span></nav>
+
+<header class="page-hero">
+  <div class="wave-deco">
+    <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path class="wave-path" d="M0 60 Q300 10 600 60 T1200 60 V120 H0 Z" fill="var(--accent)" opacity="0.1"/>
+      <path class="wave-path" d="M0 70 Q300 20 600 70 T1200 70 V120 H0 Z" fill="var(--accent)" opacity="0.2"/>
+      <path class="wave-path" d="M0 50 Q300 0 600 50 T1200 50 V120 H0 Z" fill="var(--accent)" opacity="0.05"/>
+    </svg>
+    <div class="music-notes">
+       <span>♪</span><span>♫</span><span>♩</span><span>♬</span>
+    </div>
+  </div>
+  <style>
+    .wave-deco { position: absolute; bottom: 0; left: 0; right: 0; height: 150px; overflow: hidden; pointer-events: none; }
+    .wave-path { animation: waveFlow 4s ease-in-out infinite alternate; }
+    .wave-path:nth-child(2) { animation-duration: 6s; animation-direction: alternate-reverse; }
+    .wave-path:nth-child(3) { animation-duration: 5s; }
+    @keyframes waveFlow { from { d: path("M0 60 Q300 10 600 60 T1200 60 V120 H0 Z"); } to { d: path("M0 60 Q300 110 600 60 T1200 60 V120 H0 Z"); } }
+    
+    .music-notes { position: absolute; bottom: 20px; width: 100%; height: 100%; pointer-events: none; }
+    .music-notes span { position: absolute; font-size: 2rem; color: var(--accent); opacity: 0; animation: floatNote 4s linear infinite; }
+    .music-notes span:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .music-notes span:nth-child(2) { left: 40%; animation-delay: 2s; font-size: 1.5rem; }
+    .music-notes span:nth-child(3) { left: 70%; animation-delay: 1s; }
+    .music-notes span:nth-child(4) { left: 90%; animation-delay: 3s; font-size: 2.5rem; }
+    @keyframes floatNote { 0% { bottom: 0; opacity: 0; transform: translateX(0); } 50% { opacity: 0.4; } 100% { bottom: 100px; opacity: 0; transform: translateX(20px); } }
+  </style>
+  <p class="badge">Performer</p>
+  <h1>Guitar, Music &amp; Vocals</h1>
+  <p class="tagline">Musician, guitarist, and singer who finds in music the same fractal beauty as in mathematics: structure, improvisation, and the harmony of the ineffable.</p>
+</header>
+
+<section class="section">
+  <h2 class="section-title"><span class="num">01</span> What I Do</h2>
+  <p class="body-text">As a <strong>Performer</strong>, I play guitar, sing, and create music that sits at the crossroads of structure and feeling. The same mind that builds algorithms finds in ragas and chords a different kind of logic: one that speaks to the heart. From original compositions to covers and collaborations, music is both discipline and release.</p>
+
+  <div class="roles-grid">
+    <div class="role-card">
+      <span class="icon">🎸</span>
+      <h3>Guitar</h3>
+      <p>Acoustic and electric: rhythm, lead, and fingerstyle across genres.</p>
+    </div>
+    <div class="role-card">
+      <span class="icon">🎤</span>
+      <h3>Vocals</h3>
+      <p>Singing in Hindi and English: geet, ballads, and originals.</p>
+    </div>
+    <div class="role-card">
+      <span class="icon">✍️</span>
+      <h3>Composition</h3>
+      <p>Original songs and instrumentals that blend tradition and contemporary sound.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="num">02</span> Find My Music &amp; Poetry</h2>
+  <p class="body-text">Music and poetry live together on my Instagram. Follow for new posts, short performances, and verses.</p>
+  <div class="social-cta">
+    <a href="https://www.instagram.com/shayartrivedi/" target="_blank" rel="noopener">@shayartrivedi on Instagram</a>
+  </div>
+
+  <section id="tools" class="section tool-anchor">
+    <h2 class="section-title"><span class="num">03</span> Guitar &amp; Music Tools</h2>
+    <p class="tools-intro">Use the scale finder and chord reference below. For music and shayari, follow <a href="https://www.instagram.com/shayartrivedi/" target="_blank" rel="noopener">@shayartrivedi</a> on Instagram. For consultations (Vedic, Numerology, Palmistry), visit <a href="https://www.drdhaval.in" target="_blank" rel="noopener">www.drdhaval.in</a>.</p>
+
+    <div class="tool-card" id="scale-finder">
+      <h3>Scale Finder</h3>
+      <p class="tool-desc">Pick a root note and scale type (e.g. major, natural minor, or a raga). You will get the list of notes in that scale.</p>
+      <form class="tool-form" id="form-scale" aria-label="Scale finder">
+        <label for="scale-root">Root note</label>
+        <select id="scale-root" name="root">
+          <option value="C">C</option><option value="C#">C#</option><option value="Db">Db</option><option value="D">D</option><option value="D#">D#</option><option value="Eb">Eb</option><option value="E">E</option><option value="F">F</option><option value="F#">F#</option><option value="Gb">Gb</option><option value="G">G</option><option value="G#">G#</option><option value="Ab">Ab</option><option value="A">A</option><option value="A#">A#</option><option value="Bb">Bb</option><option value="B">B</option>
+        </select>
+        <label for="scale-type">Scale type</label>
+        <select id="scale-type" name="type">
+          <option value="major">Major</option>
+          <option value="natural_minor">Natural minor</option>
+          <option value="harmonic_minor">Harmonic minor</option>
+          <option value="pentatonic_major">Pentatonic major</option>
+          <option value="pentatonic_minor">Pentatonic minor</option>
+          <option value="bhairav">Bhairav (raga)</option>
+          <option value="bhairavi">Bhairavi (raga)</option>
+        </select>
+        <button type="submit">Get scale notes</button>
+      </form>
+      <div class="tool-result" id="result-scale" aria-live="polite">
+        <span class="result-title">Notes in scale</span>
+        <div class="result-value" id="scale-notes"></div>
+        <div class="result-text" id="scale-desc"></div>
+      </div>
+      <p class="tool-usage" id="usage-scale" aria-hidden="true"></p>
+    </div>
+
+    <div class="tool-card" id="chord-reference">
+      <h3>Chord Reference</h3>
+      <p class="tool-desc">Enter a chord name (e.g. C, Am, Fmaj7, G) to see the chord and a link to a diagram or chart.</p>
+      <form class="tool-form" id="form-chord" aria-label="Chord reference">
+        <label for="chord-name">Chord name</label>
+        <input type="text" id="chord-name" name="chord" placeholder="e.g. C, Am, Fmaj7" required>
+        <button type="submit">Look up chord</button>
+      </form>
+      <div class="tool-result" id="result-chord" aria-live="polite">
+        <span class="result-title">Chord</span>
+        <div class="result-value" id="chord-label"></div>
+        <div class="result-text" id="chord-info"></div>
+        <a href="#" id="chord-diagram-link" class="chord-link" target="_blank" rel="noopener">View chord diagram</a>
+      </div>
+      <p class="tool-usage" id="usage-chord" aria-hidden="true"></p>
+    </div>
+
+    <div class="tool-card" id="practice-log">
+      <h3>Practice Log</h3>
+      <p class="tool-desc">Log today's practice to track your streak. Data is stored only in your browser (localStorage).</p>
+      <form class="tool-form" id="form-practice" aria-label="Practice log">
+        <button type="submit">Log today's practice</button>
+      </form>
+      <div class="tool-result" id="result-practice" aria-live="polite">
+        <span class="result-title">Your practice</span>
+        <div class="result-value" id="practice-streak"></div>
+        <div class="result-text" id="practice-note"></div>
+      </div>
+      <p class="tool-usage" id="usage-practice" aria-hidden="true"></p>
+    </div>
+
+    <div class="tools-cluster">
+      <p>Explore more tools and consultations:</p>
+      <div class="cluster-links">
+        <a href="numerology.html#tools">Life path and name number</a>
+        <a href="vastu-shastra.html#tools">Vastu direction guide</a>
+        <a href="vedic-astrology.html#tools">Panchang and Muhurat</a>
+        <a href="palmistry.html#tools">Palmistry line identifier</a>
+        <a href="https://www.drdhaval.in" target="_blank" rel="noopener">Consultations</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-block">
+    <h2>Collaborate or Connect</h2>
+    <p>For performances, collaborations, or to say hello, reach out via the main website.</p>
+    <a href="https://www.drdhaval.in" target="_blank" rel="noopener" class="cta-link">Visit drdhaval.in</a>
+  </div>
+
+  <div class="explore-other">
+    <p class="explore-label">Explore other expertise</p>
+    <div class="explore-links">
+      <a href="/vedic-astrology">Vedic Astrology</a>
+      <a href="/vastu-shastra">Vastu Shastra</a>
+      <a href="/numerology">Numerology</a>
+      <a href="/palmistry">Palmistry</a>
+      <a href="/guitar-music-vocals" class="current">Music &amp; Vocals</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="/">← Back to Home</a>
+  <a href="/#expertise">All expertise</a>
+  <a href="/vedic-astrology">Vedic Astrology →</a>
+  <a href="https://www.drdhaval.in" target="_blank" rel="noopener">drdhaval.in</a>
+</footer>
+
+<script>
+// Intersection Observer for smooth reveals
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  
+  document.querySelectorAll('.info-card, .section-title, .body-text, .cta-block, .dir-cell, .line-card, .planet-dot, .num-box, .faq-item, .seo-block, .tool-card, .role-card').forEach(el => {
+    el.classList.add('reveal-up');
+    observer.observe(el);
+  });
+  
+  // Nav shrink on scroll
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        nav.style.padding = '0.8rem 4rem';
+        nav.style.boxShadow = '0 8px 32px rgba(0,0,0,0.5)';
+      } else {
+        nav.style.padding = '1.5rem 4rem';
+        nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
+      }
+    });
+  }
+})();
+</script>
+
+<script>
+(function () {
+  var STORAGE_KEY = 'guitar_tools_usage';
+  var PRACTICE_KEY = 'guitar_practice_dates';
+  function getUsage() { try { var raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : {}; } catch (e) { return {}; } }
+  function incUsage(toolId) { var u = getUsage(); u[toolId] = (u[toolId] || 0) + 1; try { localStorage.setItem(STORAGE_KEY, JSON.stringify(u)); } catch (e) {} return u[toolId]; }
+  function showUsage(toolId, elId) { var count = getUsage()[toolId]; var el = document.getElementById(elId); if (el && count) { el.textContent = 'Used ' + count + ' time' + (count !== 1 ? 's' : ''); el.setAttribute('aria-hidden', 'false'); } }
+
+  var notes = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+  var noteIndex = { 'C':0,'C#':1,'Db':1,'D':2,'D#':3,'Eb':3,'E':4,'F':5,'F#':6,'Gb':6,'G':7,'G#':8,'Ab':8,'A':9,'A#':10,'Bb':10,'B':11 };
+  var scaleIntervals = {
+    major: [0,2,4,5,7,9,11],
+    natural_minor: [0,2,3,5,7,8,10],
+    harmonic_minor: [0,2,3,5,7,8,11],
+    pentatonic_major: [0,2,4,7,9],
+    pentatonic_minor: [0,3,5,7,10],
+    bhairav: [0,1,4,5,7,8,11],
+    bhairavi: [0,1,3,5,7,8,10]
+  };
+  var scaleNames = { major: 'Major', natural_minor: 'Natural minor', harmonic_minor: 'Harmonic minor', pentatonic_major: 'Pentatonic major', pentatonic_minor: 'Pentatonic minor', bhairav: 'Bhairav (raga)', bhairavi: 'Bhairavi (raga)' };
+
+  document.getElementById('form-scale').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var root = document.getElementById('scale-root').value;
+    var type = document.getElementById('scale-type').value;
+    var idx = noteIndex[root];
+    if (idx === undefined) idx = 0;
+    var intervals = scaleIntervals[type] || scaleIntervals.major;
+    var out = [];
+    for (var i = 0; i < intervals.length; i++) {
+      var n = (idx + intervals[i]) % 12;
+      out.push(notes[n]);
+    }
+    document.getElementById('scale-notes').textContent = out.join('   ');
+    document.getElementById('scale-desc').textContent = root + ' ' + (scaleNames[type] || type) + ' scale. Use these notes for melodies and improvisation.';
+    document.getElementById('result-scale').classList.add('visible');
+    incUsage('scale'); showUsage('scale', 'usage-scale');
+  });
+
+  document.getElementById('form-chord').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('chord-name').value.trim().replace(/\s+/g, ' ');
+    if (!name) return;
+    var safe = encodeURIComponent(name);
+    var url = 'https://www.ultimate-guitar.com/search.php?search_type=title&value=' + safe;
+    document.getElementById('chord-label').textContent = name;
+    document.getElementById('chord-info').textContent = 'Chord: ' + name + '. Use the link below to see fingerings and diagrams.';
+    document.getElementById('chord-diagram-link').href = url;
+    document.getElementById('chord-diagram-link').textContent = 'View chord diagram (Ultimate Guitar)';
+    document.getElementById('result-chord').classList.add('visible');
+    incUsage('chord'); showUsage('chord', 'usage-chord');
+  });
+
+  function getPracticeDates() {
+    try {
+      var raw = localStorage.getItem(PRACTICE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) { return []; }
+  }
+  function addPracticeDate() {
+    var dates = getPracticeDates();
+    var today = new Date().toDateString();
+    if (dates.indexOf(today) >= 0) return dates;
+    dates.push(today);
+    dates.sort();
+    try { localStorage.setItem(PRACTICE_KEY, JSON.stringify(dates)); } catch (e) {}
+    return dates;
+  }
+  function streakFromDates(dates) {
+    if (dates.length === 0) return 0;
+    var today = new Date().toDateString();
+    var set = {};
+    dates.forEach(function (d) { set[d] = true; });
+    var count = 0;
+    var d = new Date();
+    for (var i = 0; i < 366; i++) {
+      var key = d.toDateString();
+      if (set[key]) count++; else if (count > 0) break;
+      d.setDate(d.getDate() - 1);
+    }
+    return count;
+  }
+
+  document.getElementById('form-practice').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var dates = addPracticeDate();
+    var streak = streakFromDates(dates);
+    var last = dates.length ? dates[dates.length - 1] : '';
+    document.getElementById('practice-streak').textContent = streak ? 'Current streak: ' + streak + ' day' + (streak !== 1 ? 's' : '') : 'No streak yet';
+    document.getElementById('practice-note').textContent = last ? 'Last logged: ' + last + '. Data is stored only in your browser.' : 'Practice logged for today.';
+    document.getElementById('result-practice').classList.add('visible');
+    incUsage('practice'); showUsage('practice', 'usage-practice');
+  });
+
+  var practiceDates = getPracticeDates();
+  if (practiceDates.length > 0) {
+    var streak = streakFromDates(practiceDates);
+    var el = document.getElementById('result-practice');
+    if (el) {
+      document.getElementById('practice-streak').textContent = streak ? 'Current streak: ' + streak + ' day' + (streak !== 1 ? 's' : '') : 'No active streak';
+      document.getElementById('practice-note').textContent = 'Last logged: ' + practiceDates[practiceDates.length - 1];
+      el.classList.add('visible');
+    }
+  }
+
+  showUsage('scale', 'usage-scale');
+  showUsage('chord', 'usage-chord');
+  showUsage('practice', 'usage-practice');
+})();
+</script>
+
+</body>
+</html>

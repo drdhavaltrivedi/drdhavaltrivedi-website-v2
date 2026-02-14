@@ -1,0 +1,28 @@
+# Dr. Dhaval Trivedi | AI Expert, Vedic Research & Multi-Domain Consultant
+
+Summary: Official repository of knowledge and tools for Dr. Dhaval Trivedi, specializing in Artificial Intelligence, Machine Learning, Vedic Astrology, Numerology, Palmistry, Vastu Shastra, and Music.
+
+## Core Expertises
+- AI & Machine Learning: [ai-machine-learning.html](https://www.drdhaval.in/ai-machine-learning)
+- Vedic Astrology: [vedic-astrology.html](https://www.drdhaval.in/vedic-astrology)
+- Numerology & Calculators: [numerology.html](https://www.drdhaval.in/numerology)
+- Palmistry AI Tool: [palmistry.html](https://www.drdhaval.in/palmistry)
+- Vastu Shastra: [vastu-shastra.html](https://www.drdhaval.in/vastu-shastra)
+- Music, Guitar & Vocals: [guitar-music-vocals.html](https://www.drdhaval.in/guitar-music-vocals)
+
+## Key Blog Articles (2026)
+- Driver/Conductor Numerology: [blog/driver-conductor-numerology-guide.html](https://www.drdhaval.in/blog/driver-conductor-numerology-guide)
+- AI & Vedic Wisdom: [blog/ai-meets-antiquity-vedic-wisdom.html](https://www.drdhaval.in/blog/ai-meets-antiquity-vedic-wisdom)
+- Business Automation ROI: [blog/algorithm-of-success-ai-automation.html](https://www.drdhaval.in/blog/algorithm-of-success-ai-automation)
+- Digital Vastu for Home Office: [blog/vastu-for-digital-home-workspace.html](https://www.drdhaval.in/blog/vastu-for-digital-home-workspace)
+- Vocational Palmistry Career Map: [blog/beyond-the-lifeline-palmistry-career.html](https://www.drdhaval.in/blog/beyond-the-lifeline-palmistry-career)
+
+## Interactive Tools
+- Life Path & Name Number Calculator
+- AI Palm Reading Platform
+- Vedic Chart & Muhurat Tools
+
+## Contact & Location
+- Primary Location: Ahmedabad, India (Available for Global Consultation)
+- Official Website: [https://www.drdhaval.in](https://www.drdhaval.in)
+- Booking: [https://www.drdhaval.in/#contact](https://www.drdhaval.in/#contact)

@@ -1,0 +1,13 @@
+{
+  "name": "dhaval-trivedi-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "serve .",
+    "start": "serve .",
+    "preview": "serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vastu Tools: Direction Guide, Quick Check, Brahmasthan, Remedies | Dr. Dhaval Trivedi</title>
+<meta name="description" content="Free Vastu tools: direction guide by main door facing, quick Vastu check, Brahmasthan tips, and remedies by issue. Dr. Dhaval Trivedi, Vastu Expert. Use the tools, then book a full site audit at www.drdhaval.in.">
+<meta name="keywords" content="Vastu direction guide, main door direction Vastu, Vastu check, Brahmasthan Vastu, Vastu remedies, Dr. Dhaval Trivedi, Vastu expert, www.drdhaval.in">
+<link rel="canonical" href="https://www.drdhaval.in/vastu-shastra">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.drdhaval.in/vastu-shastra">
+<meta property="og:title" content="Vastu Shastra | Dr. Dhaval Trivedi | Expert">
+<meta property="og:description" content="Vastu Shastra Expert: harmonising spaces for wellbeing. Dr. Dhaval Trivedi. drdhaval.in">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vastu Shastra | Dr. Dhaval Trivedi | drdhaval.in">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Space+Mono:wght@0,400;0,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #1a1612;
+  --bg-card: #252019;
+  --ink: #f0ebe3;
+  --accent: #b8860b;
+  --earth: #8b7355;
+  --muted: #9a8f7e;
+  --border: rgba(184, 134, 11, 0.25);
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
+
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 4rem; border-bottom: 1px solid var(--border); background: rgba(26,22,18, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.nav-brand:hover { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+.nav-links a { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+
+.breadcrumb { padding: 1.5rem 4rem; font-family: 'Space Mono', monospace; font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb span { color: var(--accent); margin: 0 0.5rem; }
+
+.page-hero { min-height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem; position: relative; }
+.vastu-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.15; pointer-events: none; }
+.page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; position: relative; }
+.page-hero .badge { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; position: relative; }
+.page-hero .tagline { font-size: clamp(1rem, 1.8vw, 1.25rem); color: var(--muted); max-width: 42ch; line-height: 1.7; position: relative; }
+
+.section { padding: 5rem 4rem; max-width: 1100px; margin: 0 auto; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: var(--ink); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+.section-title .num { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--accent); margin-right: 1rem; }
+.body-text { font-size: 1.15rem; line-height: 1.9; color: var(--muted); }
+.body-text strong { color: var(--ink); }
+
+.directions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 3rem 0; max-width: 500px; margin-left: auto; margin-right: auto; }
+.dir-cell { background: var(--bg-card); border: 1px solid var(--border); padding: 1.5rem; text-align: center; }
+.dir-cell .letter { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); display: block; margin-bottom: 0.25rem; }
+.dir-cell .name { font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; }
+.dir-cell.n { grid-column: 2; }
+.dir-cell.e { grid-column: 4; grid-row: 2; }
+.dir-cell.s { grid-column: 2; grid-row: 3; }
+.dir-cell.w { grid-column: 1; grid-row: 2; }
+.dir-cell.c { grid-column: 2; grid-row: 2; background: var(--accent); border-color: var(--accent); }
+.dir-cell.c .letter, .dir-cell.c .name { color: var(--bg); }
+
+.infographic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 4rem 0; }
+.info-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem; }
+.info-card .icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+.info-card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--accent); margin-bottom: 0.5rem; }
+.info-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+.cta-block { background: var(--bg-card); border: 1px solid var(--border); padding: 4rem; text-align: center; margin: 4rem 0; }
+.cta-block h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--ink); margin-bottom: 1rem; }
+.cta-block p { color: var(--muted); margin-bottom: 1.5rem; max-width: 45ch; margin-left: auto; margin-right: auto; }
+.cta-link { display: inline-block; font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 0.8rem 2rem; text-decoration: none; transition: all 0.3s; }
+.cta-link:hover { background: var(--accent); color: var(--bg); }
+
+.explore-other { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.explore-label { font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+.explore-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; }
+.explore-links a { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.explore-links a:hover { color: var(--accent); }
+.explore-links a.current { color: var(--accent); pointer-events: none; }
+
+.tools-intro { margin-bottom: 2.5rem; font-size: 1.05rem; line-height: 1.8; color: var(--muted); }
+.tools-intro a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.tools-intro a:hover { color: var(--ink); }
+.tool-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem; border-radius: 4px; }
+.tool-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 0.5rem; }
+.tool-card .tool-desc { font-size: 0.95rem; color: var(--muted); margin-bottom: 1.25rem; line-height: 1.6; }
+.tool-form label { display: block; font-family: 'Space Mono', monospace; font-size: 0.52rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+.tool-form input, .tool-form select { width: 100%; max-width: 280px; padding: 0.6rem 0.75rem; background: var(--bg); border: 1px solid var(--border); color: var(--ink); font-family: 'Cormorant Garamond', serif; font-size: 1rem; margin-bottom: 1rem; }
+.tool-form input:focus, .tool-form select:focus { outline: none; border-color: var(--accent); }
+.tool-form button { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; background: var(--accent); color: var(--bg); border: none; padding: 0.65rem 1.5rem; cursor: pointer; transition: opacity 0.3s; }
+.tool-form button:hover { opacity: 0.9; }
+.tool-result { margin-top: 1.25rem; padding: 1.25rem; background: var(--bg); border-left: 3px solid var(--accent); display: none; }
+.tool-result.visible { display: block; }
+.tool-result .result-title { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+.tool-result .result-value { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--ink); margin-bottom: 0.5rem; }
+.tool-result .result-text { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+.tool-result ul { margin: 0.5rem 0 0 1rem; padding: 0; }
+.tool-anchor { scroll-margin-top: 6rem; }
+.tool-usage { font-family: 'Space Mono', monospace; font-size: 0.48rem; letter-spacing: 0.1em; color: var(--muted); margin-top: 0.75rem; }
+.tools-cluster { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.tools-cluster p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.75rem; }
+.tools-cluster a { color: var(--accent); text-decoration: none; }
+.tools-cluster a:hover { text-decoration: underline; }
+.tools-cluster .cluster-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin-top: 0.5rem; }
+
+footer { padding: 2rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+footer a { color: var(--muted); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.52rem; letter-spacing: 0.15em; }
+footer a:hover { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .nav, .breadcrumb, .section { padding-left: 2rem; padding-right: 2rem; }
+  .infographic { grid-template-columns: 1fr; }
+  .directions-grid { grid-template-columns: repeat(3, 1fr); }
+  .dir-cell.n { grid-column: 2; }
+  .dir-cell.s { grid-column: 2; grid-row: 2; }
+  .dir-cell.e { grid-column: 3; grid-row: 1; }
+  .dir-cell.w { grid-column: 1; grid-row: 1; }
+  .dir-cell.c { grid-column: 2; grid-row: 1; }
+}
+@media (max-width: 640px) { .nav-links { display: none; } }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","name":"Dr. Dhaval Trivedi - Vastu Shastra","description":"Vastu Shastra consultations: residential and commercial space harmony, directional alignment. Expert. www.drdhaval.in","url":"https://www.drdhaval.in/vastu-shastra","provider":{"@type":"Person","name":"Dr. Dhaval Trivedi","jobTitle":"Vastu Shastra Expert","url":"https://www.drdhaval.in/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.drdhaval.in/"},{"@type":"ListItem","position":2,"name":"Expertise","item":"https://www.drdhaval.in/#expertise"},{"@type":"ListItem","position":3,"name":"Vastu Shastra","item":"https://www.drdhaval.in/vastu-shastra"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Vastu Shastra?","acceptedAnswer":{"@type":"Answer","text":"Vastu Shastra is the ancient Indian system of design and layout that aligns buildings and spaces with the five elements and cardinal directions. The idea is to support wellbeing, clarity, and prosperity by working with natural energies rather than against them."}},{"@type":"Question","name":"Can Vastu be applied to an existing home?","acceptedAnswer":{"@type":"Answer","text":"Yes. Not everyone can rebuild. A Vastu expert can suggest changes, remedies, and adjustments that improve flow and balance without full renovation. Small shifts in placement, colour, or use of a room can help."}}]}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Vastu Tools by Dr. Dhaval Trivedi","description":"Free Vastu tools: direction guide by main door, quick Vastu check, Brahmasthan advice, remedies by issue. Use then book a full site audit at www.drdhaval.in.","url":"https://www.drdhaval.in/vastu-shastra#tools","numberOfItems":4,"itemListElement":[{"@type":"SoftwareApplication","position":1,"name":"Vastu Direction Guide","applicationCategory":"UtilitiesApplication","description":"Select main door facing direction for do's and don'ts (door, colours, elements).","url":"https://www.drdhaval.in/vastu-shastra#direction-guide"},{"@type":"SoftwareApplication","position":2,"name":"Quick Vastu Check","applicationCategory":"UtilitiesApplication","description":"Select directions for door, kitchen, bedroom, toilet for a score and top suggestions.","url":"https://www.drdhaval.in/vastu-shastra#quick-vastu-check"},{"@type":"SoftwareApplication","position":3,"name":"Brahmasthan Guide","applicationCategory":"UtilitiesApplication","description":"Keep Brahmasthan open and light; no heavy furniture or toilet at centre.","url":"https://www.drdhaval.in/vastu-shastra#brahmasthan"},{"@type":"SoftwareApplication","position":4,"name":"Vastu Remedy by Issue","applicationCategory":"UtilitiesApplication","description":"Finance, health, or relationship issue plus direction for 2 to 3 simple remedies.","url":"https://www.drdhaval.in/vastu-shastra#remedy-by-issue"}]}
+</script>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/logo.png">
+<link rel="manifest" href="/manifest.json">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand"><img src="/logo.png" alt="Dr. Dhaval Trivedi Logo" style="height: 32px; vertical-align: middle; margin-right: 0.8rem; filter: brightness(0.9);">Dr. Dhaval Trivedi</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#expertise">Expertise</a></li>
+    <li><a href="/ai-machine-learning">AI & Tech</a></li>
+    <li><a href="/vedic-astrology">Vedic Astrology</a></li>
+    <li><a href="/vastu-shastra">Vastu Shastra</a></li>
+    <li><a href="/numerology">Numerology</a></li>
+    <li><a href="/palmistry">Palmistry</a></li>
+    <li><a href="/guitar-music-vocals">Music &amp; Vocals</a></li>
+    <li><a href="/poetry-kavita">Poetry</a></li>
+    <li><a href="/#tools">Tools</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span>›</span> <a href="/#expertise">Expertise</a> <span>›</span> <span aria-current="page">Vastu Shastra</span></nav>
+
+<header class="page-hero">
+  <div class="vastu-anim">
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer Circle -->
+      <circle cx="250" cy="250" r="200" fill="none" stroke="var(--border)" stroke-width="1" opacity="0.5"/>
+      <circle cx="250" cy="250" r="180" fill="none" stroke="var(--border)" stroke-width="1" opacity="0.3" stroke-dasharray="10 5"/>
+      
+      <!-- Rotating Compass -->
+      <g class="compass-spin">
+        <path d="M250 50 L270 250 L250 450 L230 250 Z" fill="none" stroke="var(--accent)" stroke-width="2"/>
+        <path d="M50 250 L250 230 L450 250 L250 270 Z" fill="none" stroke="var(--accent)" stroke-width="2"/>
+        <circle cx="250" cy="250" r="10" fill="var(--accent)"/>
+        <text x="250" y="40" text-anchor="middle" fill="var(--accent)" font-family="Space Mono" font-size="14">N</text>
+        <text x="460" y="255" text-anchor="middle" fill="var(--accent)" font-family="Space Mono" font-size="14">E</text>
+        <text x="250" y="470" text-anchor="middle" fill="var(--accent)" font-family="Space Mono" font-size="14">S</text>
+        <text x="40" y="255" text-anchor="middle" fill="var(--accent)" font-family="Space Mono" font-size="14">W</text>
+      </g>
+      
+      <!-- Energy Lines -->
+      <g class="energy-pulse">
+         <circle cx="250" cy="250" r="50" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.6"/>
+         <circle cx="250" cy="250" r="100" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.4"/>
+      </g>
+    </svg>
+  </div>
+  <style>
+    .vastu-anim { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; opacity: 0.15; pointer-events: none; }
+    .compass-spin { transform-origin: center; animation: spinSlow 60s linear infinite; }
+    .energy-pulse circle { transform-origin: center; animation: pulseWave 4s infinite ease-out; }
+    .energy-pulse circle:nth-child(2) { animation-delay: 2s; }
+    @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes pulseWave { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(2); opacity: 0; } }
+  </style>
+  <p class="badge">Expert</p>
+  <h1>Vastu Shastra</h1>
+  <p class="tagline">Harmonising spaces with directional energy: the ancient Indian science of architecture that aligns environments for wellbeing and prosperity.</p>
+</header>
+
+<section class="section">
+  <h2 class="section-title"><span class="num">01</span> What I Offer</h2>
+  <p class="body-text">As a <strong>Vastu Shastra Expert</strong>, I help align homes, offices, and spaces with the five elements and cardinal directions. The goal is balance: placement, proportion, and flow so that your environment supports health, clarity, and growth rather than working against it.</p>
+
+  <div class="directions-grid">
+    <div class="dir-cell n"><span class="letter">N</span><span class="name">North</span></div>
+    <div class="dir-cell e"><span class="letter">E</span><span class="name">East</span></div>
+    <div class="dir-cell w"><span class="letter">W</span><span class="name">West</span></div>
+    <div class="dir-cell c"><span class="letter">C</span><span class="name">Brahmasthan</span></div>
+    <div class="dir-cell s"><span class="letter">S</span><span class="name">South</span></div>
+  </div>
+
+  <div class="infographic">
+    <div class="info-card">
+      <span class="icon">🏠</span>
+      <h3>Residential Vastu</h3>
+      <p>Layout, entrance, rooms, and remedies for homes and apartments.</p>
+    </div>
+    <div class="info-card">
+      <span class="icon">🏢</span>
+      <h3>Commercial & Office</h3>
+      <p>Workplaces designed for productivity, clarity, and positive energy.</p>
+    </div>
+    <div class="info-card">
+      <span class="icon">🔄</span>
+      <h3>Remedies & Adjustments</h3>
+      <p>Practical changes when full redesign is not possible.</p>
+    </div>
+  </div>
+
+  <section id="tools" class="section tool-anchor">
+    <h2 class="section-title"><span class="num">02</span> Vastu Tools</h2>
+    <p class="tools-intro">Use the direction guide and quick check below. After checking Muhurat for griha pravesh on the <a href="vedic-astrology.html#tools">Vedic Astrology page</a>, you can use this Vastu direction tool. For a full site audit, book a consultation at <a href="https://www.drdhaval.in" target="_blank" rel="noopener">www.drdhaval.in</a>.</p>
+
+    <div class="tool-card" id="direction-guide">
+      <h3>Direction Guide</h3>
+      <p class="tool-desc">Select the facing direction of your main door. You will get short do's and don'ts for that direction (door, colours, elements).</p>
+      <form class="tool-form" id="form-direction" aria-label="Vastu direction guide">
+        <label for="dir-door">Main door facing</label>
+        <select id="dir-door" name="direction" required>
+          <option value="">Choose direction</option>
+          <option value="N">North</option>
+          <option value="S">South</option>
+          <option value="E">East</option>
+          <option value="W">West</option>
+          <option value="NE">North-East</option>
+          <option value="NW">North-West</option>
+          <option value="SE">South-East</option>
+          <option value="SW">South-West</option>
+        </select>
+        <button type="submit">Get direction tips</button>
+      </form>
+      <div class="tool-result" id="result-direction" aria-live="polite">
+        <span class="result-title">Do's and don'ts</span>
+        <div class="result-value" id="dir-heading"></div>
+        <div class="result-text" id="dir-content"></div>
+      </div>
+      <p class="tool-usage" id="usage-direction" aria-hidden="true"></p>
+    </div>
+
+    <div class="tool-card" id="quick-vastu-check">
+      <h3>Quick Vastu Check</h3>
+      <p class="tool-desc">Select the direction of your main door, kitchen, master bedroom, and toilet. You will get a simple score and 3 to 5 top suggestions (e.g. kitchen in SE, avoid toilet in NE).</p>
+      <form class="tool-form" id="form-vastu-check" aria-label="Quick Vastu check">
+        <label for="vc-door">Main door</label>
+        <select id="vc-door" name="door"><option value="N">North</option><option value="S">South</option><option value="E">East</option><option value="W">West</option><option value="NE">NE</option><option value="NW">NW</option><option value="SE">SE</option><option value="SW">SW</option></select>
+        <label for="vc-kitchen">Kitchen</label>
+        <select id="vc-kitchen" name="kitchen"><option value="N">North</option><option value="S">South</option><option value="E">East</option><option value="W">West</option><option value="NE">NE</option><option value="NW">NW</option><option value="SE">SE</option><option value="SW">SW</option></select>
+        <label for="vc-bedroom">Master bedroom</label>
+        <select id="vc-bedroom" name="bedroom"><option value="N">North</option><option value="S">South</option><option value="E">East</option><option value="W">West</option><option value="NE">NE</option><option value="NW">NW</option><option value="SE">SE</option><option value="SW">SW</option></select>
+        <label for="vc-toilet">Toilet</label>
+        <select id="vc-toilet" name="toilet"><option value="N">North</option><option value="S">South</option><option value="E">East</option><option value="W">West</option><option value="NE">NE</option><option value="NW">NW</option><option value="SE">SE</option><option value="SW">SW</option></select>
+        <button type="submit">Get Vastu score</button>
+      </form>
+      <div class="tool-result" id="result-vastu-check" aria-live="polite">
+        <span class="result-title">Your score and suggestions</span>
+        <div class="result-value" id="vc-score"></div>
+        <div class="result-text" id="vc-suggestions"></div>
+      </div>
+      <p class="tool-usage" id="usage-vastu-check" aria-hidden="true"></p>
+    </div>
+
+    <div class="tool-card" id="brahmasthan">
+      <h3>Brahmasthan</h3>
+      <p class="tool-desc">Choose your grid (3x3 or 5x5) and which cell is the centre. You will get advice: keep Brahmasthan open and light; no heavy furniture or toilet here.</p>
+      <form class="tool-form" id="form-brahmasthan" aria-label="Brahmasthan guide">
+        <label for="brahma-grid">Grid</label>
+        <select id="brahma-grid" name="grid">
+          <option value="3">3 x 3</option>
+          <option value="5">5 x 5</option>
+        </select>
+        <label for="brahma-cell">Centre cell (e.g. middle)</label>
+        <select id="brahma-cell" name="cell">
+          <option value="center">Centre (middle of plan)</option>
+        </select>
+        <button type="submit">Get Brahmasthan advice</button>
+      </form>
+      <div class="tool-result" id="result-brahmasthan" aria-live="polite">
+        <span class="result-title">Brahmasthan</span>
+        <div class="result-value" id="brahma-heading"></div>
+        <div class="result-text" id="brahma-content"></div>
+      </div>
+      <p class="tool-usage" id="usage-brahmasthan" aria-hidden="true"></p>
+    </div>
+
+    <div class="tool-card" id="remedy-by-issue">
+      <h3>Remedy by Issue</h3>
+      <p class="tool-desc">Pick an issue (finance, health, or relationship) and the direction of the problem area. You will get 2 to 3 simple remedies (colour, element, placement).</p>
+      <form class="tool-form" id="form-remedy" aria-label="Vastu remedy by issue">
+        <label for="rem-issue">Issue</label>
+        <select id="rem-issue" name="issue" required>
+          <option value="">Choose issue</option>
+          <option value="finance">Finance</option>
+          <option value="health">Health</option>
+          <option value="relationship">Relationship</option>
+        </select>
+        <label for="rem-direction">Direction of problem area</label>
+        <select id="rem-direction" name="direction" required>
+          <option value="">Choose direction</option>
+          <option value="N">North</option>
+          <option value="S">South</option>
+          <option value="E">East</option>
+          <option value="W">West</option>
+          <option value="NE">North-East</option>
+          <option value="NW">North-West</option>
+          <option value="SE">South-East</option>
+          <option value="SW">South-West</option>
+        </select>
+        <button type="submit">Get remedies</button>
+      </form>
+      <div class="tool-result" id="result-remedy" aria-live="polite">
+        <span class="result-title">Remedies</span>
+        <div class="result-value" id="rem-heading"></div>
+        <div class="result-text" id="rem-content"></div>
+      </div>
+      <p class="tool-usage" id="usage-remedy" aria-hidden="true"></p>
+    </div>
+
+    <div class="tools-cluster">
+      <p>Explore more tools and consultations:</p>
+      <div class="cluster-links">
+        <a href="vedic-astrology.html#tools">Panchang and Muhurat</a>
+        <a href="numerology.html#tools">Life path and name number</a>
+        <a href="https://palmistry.appstream.me" target="_blank" rel="noopener">Free palm reading</a>
+        <a href="https://www.drdhaval.in" target="_blank" rel="noopener">Book a consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-block">
+    <h2>Vastu Consultation</h2>
+    <p>For site analysis, layout advice, or remedial suggestions, get in touch via the main website.</p>
+    <a href="https://www.drdhaval.in" target="_blank" rel="noopener" class="cta-link">Visit drdhaval.in</a>
+  </div>
+
+  <div class="explore-other">
+    <p class="explore-label">Explore other expertise</p>
+    <div class="explore-links">
+      <a href="/vedic-astrology">Vedic Astrology</a>
+      <a href="/vastu-shastra" class="current">Vastu Shastra</a>
+      <a href="/numerology">Numerology</a>
+      <a href="/palmistry">Palmistry</a>
+      <a href="/guitar-music-vocals">Music &amp; Vocals</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="/">← Back to Home</a>
+  <a href="/#expertise">All expertise</a>
+  <a href="/numerology">Numerology →</a>
+  <a href="https://www.drdhaval.in" target="_blank" rel="noopener">drdhaval.in</a>
+</footer>
+
+<script>
+(function () {
+  var STORAGE_KEY = 'vastu_tools_usage';
+  function getUsage() { try { var raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : {}; } catch (e) { return {}; } }
+  function incUsage(toolId) { var u = getUsage(); u[toolId] = (u[toolId] || 0) + 1; try { localStorage.setItem(STORAGE_KEY, JSON.stringify(u)); } catch (e) {} return u[toolId]; }
+  function showUsage(toolId, elId) { var count = getUsage()[toolId]; var el = document.getElementById(elId); if (el && count) { el.textContent = 'Used ' + count + ' time' + (count !== 1 ? 's' : ''); el.setAttribute('aria-hidden', 'false'); } }
+
+  var directionGuide = {
+    N: { do: 'North-facing doors welcome positive energy. Use light colours and keep the entrance clutter-free. Good for growth and opportunities.', dont: 'Avoid heavy dark colours at the main door. Do not block the entrance with furniture or plants.' },
+    S: { do: 'South entrance can work with strong lighting and open space. Use warm but balanced colours.', dont: 'Avoid placing the main door in direct southern corner without balance. Keep the path to the door clear.' },
+    E: { do: 'East-facing main door is considered very favourable. Let morning light in. Use greens and light blues.', dont: 'Do not block east with heavy structures. Avoid toilets or storage in the north-east zone.' },
+    W: { do: 'West entrance benefits from good evening light. Use whites and pastels to balance.', dont: 'Avoid excessive metal or sharp elements at the west door. Keep the approach clean.' },
+    NE: { do: 'North-east is the most auspicious zone. Keep it open, clean, and well lit. Use light colours and minimal furniture.', dont: 'Never place toilet, kitchen, or heavy storage in north-east. Do not block this zone.' },
+    NW: { do: 'North-west suits wind and movement. Good for guest room or open space.', dont: 'Avoid placing master bedroom in north-west if you want stability in relationships. No toilet here if possible.' },
+    SE: { do: 'South-east is the fire zone. Ideal for kitchen. Use reds, oranges, or warm tones in this zone.', dont: 'Do not place water elements or toilet in south-east. Keep fire element (kitchen) here if you can.' },
+    SW: { do: 'South-west is the earth zone. Good for master bedroom or heavy furniture. Use earth tones.', dont: 'Avoid too much water or open tanks in south-west. Do not leave this zone empty or weak.' }
+  };
+
+  document.getElementById('form-direction').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var dir = document.getElementById('dir-door').value;
+    var data = directionGuide[dir];
+    if (!data) return;
+    document.getElementById('dir-heading').textContent = 'Main door facing ' + dir;
+    document.getElementById('dir-content').innerHTML = '<strong>Do:</strong> ' + data.do + '<br><strong>Avoid:</strong> ' + data.dont;
+    document.getElementById('result-direction').classList.add('visible');
+    incUsage('direction'); showUsage('direction', 'usage-direction');
+  });
+
+  function vastuScore(door, kitchen, bedroom, toilet) {
+    var score = 10;
+    var tips = [];
+    if (toilet === 'NE') { score -= 3; tips.push('Toilet in North-East is strongly discouraged. Consider remedies or relocation if possible.'); }
+    else if (toilet === 'NW' || toilet === 'SW') { score -= 1; tips.push('Toilet in NW or SW is less ideal than in W or S.'); }
+    if (kitchen !== 'SE' && kitchen !== 'E') { score -= 2; tips.push('Kitchen in South-East or East is preferred for fire and sun energy.'); }
+    if (kitchen === 'NE') { score -= 2; tips.push('Avoid kitchen in North-East.'); }
+    if (bedroom === 'SW' || bedroom === 'W') { score += 0; } else if (bedroom === 'NE') { score -= 2; tips.push('Master bedroom in North-East is not ideal; that zone is better kept open.'); }
+    if (door === 'E' || door === 'NE') { tips.push('Main door in East or North-East is considered favourable.'); }
+    if (tips.length === 0) tips.push('Your layout follows several Vastu guidelines. For a detailed audit, book a consultation.');
+    return { score: Math.max(1, Math.min(10, score)), tips: tips.slice(0, 5) };
+  }
+
+  document.getElementById('form-vastu-check').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var door = document.getElementById('vc-door').value;
+    var kitchen = document.getElementById('vc-kitchen').value;
+    var bedroom = document.getElementById('vc-bedroom').value;
+    var toilet = document.getElementById('vc-toilet').value;
+    var out = vastuScore(door, kitchen, bedroom, toilet);
+    document.getElementById('vc-score').textContent = 'Score: ' + out.score + ' / 10';
+    var ul = '<ul>';
+    out.tips.forEach(function (t) { ul += '<li>' + t + '</li>'; });
+    ul += '</ul>';
+    document.getElementById('vc-suggestions').innerHTML = ul;
+    document.getElementById('result-vastu-check').classList.add('visible');
+    incUsage('vastu-check'); showUsage('vastu-check', 'usage-vastu-check');
+  });
+
+  document.getElementById('form-brahmasthan').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var grid = document.getElementById('brahma-grid').value;
+    document.getElementById('brahma-heading').textContent = 'Brahmasthan (' + grid + 'x' + grid + ')';
+    document.getElementById('brahma-content').innerHTML = 'Keep the Brahmasthan (centre of the plan) open and light. Do not place heavy furniture, toilet, or dense storage here. A skylight or open space above the centre is ideal. For a full site plan review, book a consultation.';
+    document.getElementById('result-brahmasthan').classList.add('visible');
+    incUsage('brahmasthan'); showUsage('brahmasthan', 'usage-brahmasthan');
+  });
+
+  var remedyByIssue = {
+    finance: { N: ['North is the wealth zone. Keep it clean and clutter-free.', 'Use blues or greens in the north area.', 'A small water feature or mirror in north can support abundance.'], NE: ['North-East is highly auspicious. Keep it open and well lit.', 'Avoid toilet or kitchen in North-East.', 'Use light colours and minimal furniture here.'], E: ['East brings growth. Ensure good morning light and open space.', 'Use greens or light yellow in the east zone.', 'Do not block east with heavy storage.'], default: ['Keep North and North-East zones clean and lit for wealth.', 'Avoid toilet or heavy storage in North-East.', 'For a full audit, book a consultation at www.drdhaval.in.'] },
+    health: { E: ['East is linked to vitality. Maximise morning sun and fresh air.', 'Avoid heavy furniture blocking east windows.', 'Keep east side open for positive energy flow.'], NE: ['Keep North-East clean and bright for overall wellbeing.', 'No toilet or garbage in North-East.', 'Light colours and good ventilation help.'], default: ['Ensure Brahmasthan (centre) is not blocked.', 'East and North-East affect health; keep them clean and lit.', 'For personalised remedies, book a session at www.drdhaval.in.'] },
+    relationship: { SW: ['South-West is the relationship corner. Use pairs: two lamps, two cushions.', 'Earth tones strengthen this zone.', 'Master bedroom in South-West is considered favourable.'], NW: ['North-West supports communication. Keep it tidy.', 'Avoid clutter in North-West.', 'Good for guest room or family gathering space.'], default: ['Strengthen South-West with pairs and earth elements.', 'Keep North-West clean for better communication.', 'For detailed guidance, book a consultation at www.drdhaval.in.'] }
+  };
+
+  document.getElementById('form-remedy').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var issue = document.getElementById('rem-issue').value;
+    var dir = document.getElementById('rem-direction').value;
+    var issueLabel = issue === 'finance' ? 'Finance' : issue === 'health' ? 'Health' : 'Relationship';
+    var list = remedyByIssue[issue] && (remedyByIssue[issue][dir] || remedyByIssue[issue].default);
+    if (!list) list = ['For ' + issueLabel.toLowerCase() + ' and direction ' + dir + ', a consultant can suggest specific remedies.', 'Book a session at www.drdhaval.in for a full assessment.'];
+    var html = '<ul>';
+    list.slice(0, 3).forEach(function (t) { html += '<li>' + t + '</li>'; });
+    html += '</ul>';
+    document.getElementById('rem-heading').textContent = issueLabel + ' and ' + dir;
+    document.getElementById('rem-content').innerHTML = html;
+    document.getElementById('result-remedy').classList.add('visible');
+    incUsage('remedy'); showUsage('remedy', 'usage-remedy');
+  });
+
+  showUsage('direction', 'usage-direction');
+  showUsage('vastu-check', 'usage-vastu-check');
+  showUsage('brahmasthan', 'usage-brahmasthan');
+  showUsage('remedy', 'usage-remedy');
+})();
+</script>
+</body>
+</html>

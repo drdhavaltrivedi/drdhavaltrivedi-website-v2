@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poetry & Kavita | Dr. Dhaval Trivedi</title>
+<meta name="description" content="A poet whose verses navigate longing, logic, and the liminal.">
+<link rel="canonical" href="https://www.drdhaval.in/poetry-kavita">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.drdhaval.in/poetry-kavita">
+<meta property="og:title" content="Poetry & Kavita | Dr. Dhaval Trivedi">
+<meta property="og:description" content="A poet whose verses navigate longing, logic, and the liminal.">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Mono:wght@0,400;0,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/logo.png">
+<link rel="manifest" href="/manifest.json">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #080808;
+  --bg-card: rgba(255,255,255,0.03);
+  --ink: #f0f0f0;
+  --accent: #c8a96e;
+  --muted: #888;
+  --border: rgba(255, 255, 255, 0.1);
+}
+body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+.mono { font-family: 'Space Mono', monospace; }
+
+/* Nav */
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 4rem; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.5); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; display: flex; align-items: center; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+
+/* Hero */
+.page-hero { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem; position: relative; overflow: hidden; }
+.page-hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; margin-bottom: 1rem; position: relative; z-index: 2; }
+.page-hero .badge { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; position: relative; z-index: 2; }
+.page-hero .tagline { font-size: clamp(1rem, 1.5vw, 1.2rem); color: var(--muted); max-width: 50ch; line-height: 1.6; position: relative; z-index: 2; }
+
+/* Animation Container */
+.anim-container { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.ink-drop { position: absolute; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; top: 20%; left: 50%; opacity: 0; animation: drop 4s infinite; }
+.ink-spread { position: absolute; width: 100px; height: 100px; background: radial-gradient(circle, var(--accent) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); opacity: 0.2; animation: spread 4s infinite; }
+@keyframes drop { 0% { top: 10%; opacity: 1; } 50% { top: 50%; opacity: 1; } 51% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes spread { 0%, 45% { transform: translate(-50%, -50%) scale(0); opacity: 0; } 50% { opacity: 0.2; } 100% { transform: translate(-50%, -50%) scale(2); opacity: 0; } }
+
+/* Sections */
+.section { padding: 6rem 4rem; max-width: 1200px; margin: 0 auto; }
+.section-title { font-size: 2.5rem; margin-bottom: 2rem; color: var(--accent); }
+.body-text { font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 4rem; max-width: 800px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.card { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem; transition: transform 0.3s, border-color 0.3s; }
+.card:hover { border-color: var(--accent); transform: translateY(-5px); }
+.card .icon { font-size: 2rem; margin-bottom: 1.5rem; display: block; }
+.card h3 { color: var(--ink); margin-bottom: 0.8rem; font-size: 1.2rem; }
+.card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+/* Footer */
+footer { padding: 3rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; color: var(--muted); font-family: 'Space Mono', monospace; font-size: 0.7rem; }
+footer a { color: var(--muted); text-decoration: none; margin-right: 2rem; }
+footer a:hover { color: var(--accent); }
+
+@media (max-width: 768px) {
+  .nav { padding: 1.5rem;  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .nav-links { display: none; }
+  .section { padding: 4rem 1.5rem; }
+}
+
+/* Enhanced Glass Cards & Animations */
+.card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 2.5rem; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-radius: 8px; }
+.card:hover { border-color: var(--accent); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(var(--accent-rgb, 0,240,255), 0.08); }
+.card .icon { font-size: 2.5rem; margin-bottom: 1.5rem; display: block; transition: transform 0.4s; }
+.card:hover .icon { transform: scale(1.2) rotate(-5deg); }
+.card h3 { color: var(--ink); margin-bottom: 0.8rem; font-size: 1.2rem; transition: color 0.3s; }
+.card:hover h3 { color: var(--accent); }
+.card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+/* Reveal Animation */
+.reveal-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4,0,0.2,1); }
+.reveal-up.visible { opacity: 1; transform: translateY(0); }
+
+/* Glass Nav Enhancement */
+.nav { border-bottom: 1px solid rgba(255,255,255,0.06); box-shadow: 0 4px 30px rgba(0,0,0,0.3); transition: all 0.3s ease; }
+
+/* Section Title Glow */
+.section-title { position: relative; }
+.section-title::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: var(--accent); border-radius: 2px; }
+
+/* Page Hero Glass Overlay */
+.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 30%, var(--bg) 100%); z-index: 1; pointer-events: none; }
+
+/* Footer Enhancement */
+footer { background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+
+/* Custom Shayari / Kavita */
+.custom-shayari-wrap { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem; border-radius: 8px; margin-top: 2rem; }
+.custom-shayari-wrap h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--ink); }
+.custom-shayari-wrap .sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem; }
+.custom-form label { display: block; font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+.custom-form input[type="text"] { width: 100%; max-width: 320px; padding: 0.75rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--ink); font-family: inherit; font-size: 1rem; margin-bottom: 1.25rem; border-radius: 4px; }
+.custom-form input:focus { outline: none; border-color: var(--accent); }
+.custom-form select { width: 100%; max-width: 320px; padding: 0.75rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--ink); font-family: inherit; font-size: 1rem; margin-bottom: 1.25rem; border-radius: 4px; cursor: pointer; }
+.custom-form .theme-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem; margin-bottom: 1.25rem; max-width: 520px; }
+.custom-form .theme-btn { padding: 0.6rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--muted); font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.08em; text-align: center; cursor: pointer; border-radius: 4px; transition: all 0.3s; }
+.custom-form .theme-btn:hover { border-color: var(--accent); color: var(--accent); }
+.custom-form .theme-btn.selected { border-color: var(--accent); background: rgba(200,169,110,0.15); color: var(--accent); }
+.custom-form button[type="submit"] { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; background: var(--accent); color: var(--bg); border: none; padding: 0.8rem 2rem; cursor: pointer; border-radius: 4px; transition: opacity 0.3s; }
+.custom-form button[type="submit"]:hover { opacity: 0.9; }
+.shayari-result { margin-top: 2rem; padding: 2rem; background: rgba(0,0,0,0.3); border-left: 4px solid var(--accent); border-radius: 4px; display: none; }
+.shayari-result.visible { display: block; }
+.shayari-result .result-label { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+.shayari-result .result-lines { font-family: 'Playfair Display', serif; font-size: 1.25rem; line-height: 1.9; color: var(--ink); white-space: pre-line; }
+.shayari-result .result-meta { margin-top: 1rem; font-size: 0.85rem; color: var(--muted); }
+
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand"><img src="/logo.png" alt="Dr. Dhaval Trivedi Logo" style="height: 32px; vertical-align: middle; margin-right: 0.8rem; filter: brightness(0.9);">Dr. Dhaval Trivedi</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#expertise">Expertise</a></li>
+    <li><a href="/ai-machine-learning">AI & Tech</a></li>
+    <li><a href="/vedic-astrology">Vedic Astrology</a></li>
+    <li><a href="/vastu-shastra">Vastu</a></li>
+    <li><a href="/numerology">Numerology</a></li>
+    <li><a href="/palmistry">Palmistry</a></li>
+    <li><a href="/guitar-music-vocals">Music</a></li>
+    <li><a href="/poetry-kavita">Poetry</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="page-hero">
+  <div class="anim-container">
+    <div class="ink-drop"></div><div class="ink-spread"></div>
+  </div>
+  <p class="badge">Kavi</p>
+  <h1>Poetry & Kavita</h1>
+  <p class="tagline">A poet whose verses navigate longing, logic, and the liminal: lines that carry the weight and wonder of a digital age in classical form.</p>
+</header>
+
+<section class="section">
+  <h2 class="section-title">The Logic of Emotion</h2>
+  <p class="body-text">Poetry is the compression of emotion into language, much like code is the compression of logic into syntax. My writing explores the human condition—love, loss, ambition, and the digital void. It is a dialogue between the old world and the new, written in the ink of experience.</p>
+  
+  <div class="grid">
+    <div class="card">
+        <span class="icon">✍️</span>
+        <h3>Kavita & Geet</h3>
+        <p>Traditional verses and songs exploring metaphysical and romantic themes.</p>
+    </div>
+    <div class="card">
+        <span class="icon">🎤</span>
+        <h3>Recitations</h3>
+        <p>Spoken word performances that bring the rhythm of language to life.</p>
+    </div>
+    <div class="card">
+        <span class="icon">📜</span>
+        <h3>Modern Verse</h3>
+        <p>Contemporary poetry addressing the complexities of modern life.</p>
+    </div>
+  </div>
+
+  <div id="custom-shayari" class="custom-shayari-wrap reveal-up">
+    <h3>Custom Shayari or Kavita for You</h3>
+    <p class="sub">Enter a name and choose a theme. We will weave a few lines just for that person so it feels personal.</p>
+    <form class="custom-form" id="shayari-form" aria-label="Custom shayari or kavita">
+      <label for="shayari-name">Name (to use in the verse)</label>
+      <input type="text" id="shayari-name" name="name" placeholder="e.g. Priya, Rahul" required minlength="2" maxlength="30" autocomplete="name">
+      <label>Type</label>
+      <select id="shayari-type" name="type" aria-label="Shayari or Kavita">
+        <option value="shayari">Shayari</option>
+        <option value="kavita">Kavita</option>
+      </select>
+      <label>Theme</label>
+      <div class="theme-grid" role="group" aria-label="Choose theme">
+        <button type="button" class="theme-btn" data-theme="beauty">Beauty</button>
+        <button type="button" class="theme-btn" data-theme="behaviour">Behaviour</button>
+        <button type="button" class="theme-btn" data-theme="cute">Cute</button>
+        <button type="button" class="theme-btn" data-theme="love">Love</button>
+        <button type="button" class="theme-btn" data-theme="love-continue">Love Continue</button>
+        <button type="button" class="theme-btn" data-theme="night">Night</button>
+        <button type="button" class="theme-btn" data-theme="morning">Morning</button>
+        <button type="button" class="theme-btn" data-theme="lunch">Lunch</button>
+        <button type="button" class="theme-btn" data-theme="dinner">Dinner</button>
+        <button type="button" class="theme-btn" data-theme="coffee">Coffee</button>
+      </div>
+      <input type="hidden" id="shayari-theme" name="theme" value="love" required>
+      <button type="submit">Generate for me</button>
+    </form>
+    <div class="shayari-result" id="shayari-result" aria-live="polite">
+      <div class="result-label">For you</div>
+      <div class="result-lines" id="shayari-lines"></div>
+      <p class="result-meta" id="shayari-meta"></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="/">← Back to Home</a>
+  <a href="/#expertise">All Expertise</a>
+  <a href="https://www.drdhaval.in" target="_blank" rel="noopener">drdhaval.in</a>
+</footer>
+
+
+<script>
+// Intersection Observer for smooth reveals
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  
+  document.querySelectorAll('.card, .section-title, .body-text, .custom-shayari-wrap').forEach(el => {
+    el.classList.add('reveal-up');
+    observer.observe(el);
+  });
+  
+  // Nav shrink on scroll
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        nav.style.padding = '0.8rem 4rem';
+        nav.style.boxShadow = '0 8px 32px rgba(0,0,0,0.5)';
+      } else {
+        nav.style.padding = '1.5rem 4rem';
+        nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
+      }
+    });
+  }
+})();
+</script>
+
+<script>
+(function () {
+  var themes = {
+    beauty: [
+      '{{name}}, tumhari adaon pe fida hai dil,\nHar nazar tumse mili to lagta hai khwab hai still.',
+      'Tumhari soch bhi rangeen, {{name}},\nJahan bhi ho, wahan khushiyan hain angeen.',
+      '{{name}}, tumhari baaton mein jo noor hai,\nWohi to har dil ka sukoon aur pyar hai.'
+    ],
+    behaviour: [
+      '{{name}} jaisa sulook kahan milega,\nJo tum ho waisa koi na dikhega.',
+      'Tumhare andaz, {{name}}, alag hain sach mein,\nDuniya ko tumse hi seekhna hai yahin.',
+      '{{name}}, tumhari rawaya sabse niraala,\nDil jeetna tumhe aata hai khula.'
+    ],
+    cute: [
+      '{{name}}, tum itne cute ho ke dil kare,\nBas tumhe dekhte rahein, tumhe sune rahein.',
+      'Tumhari muskaan, {{name}}, chhoti si jaan,\nHar pal tumhare saath bitana hai khushiyan.',
+      '{{name}} tum to jaan ho chhoti si,\nHar baat pe hasna, yahi to tumhari adaa hai.'
+    ],
+    love: [
+      '{{name}}, tum mere liye sirf ek naam nahi,\nTum woh raag ho jisse dil ka sangeet chalta hai.',
+      'Tumhare bina adhura lagta hai har din, {{name}},\nTum ho to lagta hai sab kuch hai yahin.',
+      '{{name}}, tumse mohabbat ka ehsaas hai,\nTum ho to har saans mein ek pyar sa hai.'
+    ],
+    'love-continue': [
+      '{{name}}, yeh rishta na ruke kabhi,\nChalte rahein saath, bas yahi duaa hai.',
+      'Tumhare saath chalna, {{name}}, hai manzil,\nYahi pyar aage bhi rahega humdum.',
+      '{{name}}, tum ho to raaste hain aasaan,\nYahi kahaani aage bhi chalegi humsafar.'
+    ],
+    night: [
+      '{{name}}, raat ke andheron mein tumhari yaad,\nTaaron jaisi tum ho, tumhi ho ab saath.',
+      'Raat bhar tumhare khayal, {{name}},\nTum ho to raat bhi din lagti hai pyaari.',
+      '{{name}}, jab raat aaye to tum yaad aao,\nTumhari baat se neend bhi meethi ho jao.'
+    ],
+    morning: [
+      '{{name}}, subah tumhare naam se shuru,\nTumhari muskurahat pe din banata hoon main.',
+      'Tum aao to subah suhani lagti hai, {{name}},\nHar din tumhare saath naya lagta hai.',
+      '{{name}}, tumhare saath ka pehla sawera,\nWohi to din ki sabse achchi kahaani hai.'
+    ],
+    lunch: [
+      '{{name}}, aaj do pal ke liye saath lunch karein?\nBaatein karein, hassein, bas tum aur main.',
+      'Tumhare saath lunch, {{name}}, ho jaye kab,\nDil karta hai roz tumse bana kar khaun.',
+      '{{name}}, ek plate share karein, baatein share karein,\nDopahar tumhare saath guzarna hai pyaara.'
+    ],
+    dinner: [
+      '{{name}}, raat ko dinner pe chaloge tum?\nTum ho to har dish meethi lagti hai.',
+      'Tumhare saath dinner, {{name}}, raat ki roshni,\nBas tum aur main, aur yeh lamhein hamesha.',
+      '{{name}}, ek shaam tumhare naam,\nDinner saath karein, yehi hai armaan.'
+    ],
+    coffee: [
+      '{{name}}, ek cup coffee tumhare saath,\nBaatein choti choti, par dil se nikli.',
+      'Tum aur main aur ek cup, {{name}},\nYahi to chahiye tha, ab mil gaya sukoon.',
+      '{{name}}, coffee pe bulavo kabhi,\nTumhare saath woh pee kar dil khush ho jaye.'
+    ]
+  };
+
+  var themeLabels = {
+    beauty: 'Beauty', behaviour: 'Behaviour', cute: 'Cute', love: 'Love',
+    'love-continue': 'Love continue', night: 'Night', morning: 'Morning',
+    lunch: 'Lunch', dinner: 'Dinner', coffee: 'Coffee'
+  };
+
+  var themeButtons = document.querySelectorAll('.theme-btn');
+  var themeInput = document.getElementById('shayari-theme');
+  themeButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      themeButtons.forEach(function (b) { b.classList.remove('selected'); });
+      btn.classList.add('selected');
+      themeInput.value = btn.getAttribute('data-theme');
+    });
+  });
+  var firstTheme = document.querySelector('.theme-btn[data-theme="love"]');
+  if (firstTheme) firstTheme.classList.add('selected');
+
+  document.getElementById('shayari-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('shayari-name').value.trim();
+    if (!name) return;
+    var type = document.getElementById('shayari-type').value;
+    var theme = themeInput.value || 'love';
+    var list = themes[theme] || themes.love;
+    var text = list[Math.floor(Math.random() * list.length)];
+    text = text.replace(/\{\{name\}\}/g, name);
+    document.getElementById('shayari-lines').textContent = text;
+    document.getElementById('shayari-meta').textContent = 'Theme: ' + (themeLabels[theme] || theme) + ' · ' + (type === 'kavita' ? 'Kavita' : 'Shayari') + ' for ' + name;
+    document.getElementById('shayari-result').classList.add('visible');
+  });
+})();
+</script>
+
+</body>
+</html>

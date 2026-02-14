@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automation Engineering | Dr. Dhaval Trivedi</title>
+<meta name="description" content="End-to-end automation ecosystems: reducing friction, increasing throughput.">
+<link rel="canonical" href="https://www.drdhaval.in/automation-engineering.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.drdhaval.in/automation-engineering.html">
+<meta property="og:title" content="Automation Engineering | Dr. Dhaval Trivedi">
+<meta property="og:description" content="End-to-end automation ecosystems: reducing friction, increasing throughput.">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Mono:wght@0,400;0,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/logo.png">
+<link rel="manifest" href="/manifest.json">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0a0f0d;
+  --bg-card: rgba(255,255,255,0.03);
+  --ink: #f0f0f0;
+  --accent: #00ff9d;
+  --muted: #888;
+  --border: rgba(255, 255, 255, 0.1);
+}
+body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+.mono { font-family: 'Space Mono', monospace; }
+
+/* Nav */
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 4rem; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.5); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; display: flex; align-items: center; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+
+/* Hero */
+.page-hero { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem; position: relative; overflow: hidden; }
+.page-hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; margin-bottom: 1rem; position: relative; z-index: 2; }
+.page-hero .badge { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; position: relative; z-index: 2; }
+.page-hero .tagline { font-size: clamp(1rem, 1.5vw, 1.2rem); color: var(--muted); max-width: 50ch; line-height: 1.6; position: relative; z-index: 2; }
+
+/* Animation Container */
+.anim-container { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+
+            .gear { position: absolute; border: 2px dashed var(--accent); border-radius: 50%; opacity: 0.15; animation: spin 10s linear infinite; }
+            .g1 { width: 100px; height: 100px; top: 20%; left: 10%; }
+            .g2 { width: 150px; height: 150px; top: 60%; right: 10%; animation-direction: reverse; }
+            @keyframes spin { to { transform: rotate(360deg); } }
+            .flow-line { position: absolute; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); width: 200px; animation: flow 3s infinite linear; opacity: 0.3; }
+            @keyframes flow { 0% { transform: translateX(-100%); } 100% { transform: translateX(100vw); } }
+        
+
+/* Sections */
+.section { padding: 6rem 4rem; max-width: 1200px; margin: 0 auto; }
+.section-title { font-size: 2.5rem; margin-bottom: 2rem; color: var(--accent); }
+.body-text { font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 4rem; max-width: 800px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.card { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem; transition: transform 0.3s, border-color 0.3s; }
+.card:hover { border-color: var(--accent); transform: translateY(-5px); }
+.card .icon { font-size: 2rem; margin-bottom: 1.5rem; display: block; }
+.card h3 { color: var(--ink); margin-bottom: 0.8rem; font-size: 1.2rem; }
+.card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+/* Footer */
+footer { padding: 3rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; color: var(--muted); font-family: 'Space Mono', monospace; font-size: 0.7rem; }
+footer a { color: var(--muted); text-decoration: none; margin-right: 2rem; }
+footer a:hover { color: var(--accent); }
+
+@media (max-width: 768px) {
+  .nav { padding: 1.5rem;  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .nav-links { display: none; }
+  .section { padding: 4rem 1.5rem; }
+}
+
+/* Enhanced Glass Cards & Animations */
+.card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 2.5rem; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-radius: 8px; }
+.card:hover { border-color: var(--accent); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(var(--accent-rgb, 0,240,255), 0.08); }
+.card .icon { font-size: 2.5rem; margin-bottom: 1.5rem; display: block; transition: transform 0.4s; }
+.card:hover .icon { transform: scale(1.2) rotate(-5deg); }
+.card h3 { color: var(--ink); margin-bottom: 0.8rem; font-size: 1.2rem; transition: color 0.3s; }
+.card:hover h3 { color: var(--accent); }
+.card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+/* Reveal Animation */
+.reveal-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4,0,0.2,1); }
+.reveal-up.visible { opacity: 1; transform: translateY(0); }
+
+/* Glass Nav Enhancement */
+.nav { border-bottom: 1px solid rgba(255,255,255,0.06); box-shadow: 0 4px 30px rgba(0,0,0,0.3); transition: all 0.3s ease; }
+
+/* Section Title Glow */
+.section-title { position: relative; }
+.section-title::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: var(--accent); border-radius: 2px; }
+
+/* Page Hero Glass Overlay */
+.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 30%, var(--bg) 100%); z-index: 1; pointer-events: none; }
+
+/* Footer Enhancement */
+footer { background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+
+</style>
+</head>
+<body>
+
+
+<nav class="nav">
+  <a href="/" class="nav-brand"><img src="/logo.png" alt="Dr. Dhaval Trivedi Logo" style="height: 32px; vertical-align: middle; margin-right: 0.8rem; filter: brightness(0.9);">Dr. Dhaval Trivedi</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#expertise">Expertise</a></li>
+    <li><a href="/ai-machine-learning">AI & Tech</a></li>
+    <li><a href="/vedic-astrology">Vedic Astrology</a></li>
+    <li><a href="/vastu-shastra">Vastu</a></li>
+    <li><a href="/numerology">Numerology</a></li>
+    <li><a href="/palmistry">Palmistry</a></li>
+    <li><a href="/guitar-music-vocals">Music</a></li>
+    <li><a href="/poetry-kavita">Poetry</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+
+<header class="page-hero">
+  <div class="anim-container">
+    <div class="gear g1"></div><div class="gear g2"></div><div class="flow-line" style="top:50%"></div>
+  </div>
+  <p class="badge">Automation</p>
+  <h1>Automation Engineering</h1>
+  <p class="tagline">End-to-end automation ecosystems: reducing friction, increasing throughput, and letting human intelligence focus on what machines cannot replace.</p>
+</header>
+
+<section class="section">
+  <h2 class="section-title">Systems That Run Themselves</h2>
+  <p class="body-text">Automation is the art of removing friction. I build custom workflows that integrate disparate tools, automate repetitive tasks, and ensure data flows seamlessly across organizations. From simple scripts to complex event-driven architectures, the goal is efficiency and reliability.</p>
+  
+  <div class="grid">
+    
+        <div class="card">
+          <span class="icon">🤖</span>
+          <h3>RPA & Scripts</h3>
+          <p>Python-based bots and scripts to handle data entry, scraping, and reporting.</p>
+        </div>
+        <div class="card">
+          <span class="icon">🔄</span>
+          <h3>Integration</h3>
+          <p>Connecting APIs (Zapier, n8n, Custom Webhooks) to create unified workflows.</p>
+        </div>
+        <div class="card">
+          <span class="icon">📈</span>
+          <h3>Process Optimization</h3>
+          <p>Analyzing bottlenecks and re-engineering business processes for speed.</p>
+        </div>
+  </div>
+</section>
+
+
+<footer>
+  <a href="/">← Back to Home</a>
+  <a href="/#expertise">All Expertise</a>
+  <a href="https://www.drdhaval.in" target="_blank" rel="noopener">drdhaval.in</a>
+</footer>
+
+
+
+<script>
+// Intersection Observer for smooth reveals
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  
+  document.querySelectorAll('.card, .section-title, .body-text').forEach(el => {
+    el.classList.add('reveal-up');
+    observer.observe(el);
+  });
+  
+  // Nav shrink on scroll
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        nav.style.padding = '0.8rem 4rem';
+        nav.style.boxShadow = '0 8px 32px rgba(0,0,0,0.5)';
+      } else {
+        nav.style.padding = '1.5rem 4rem';
+        nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

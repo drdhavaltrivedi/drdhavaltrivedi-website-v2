@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Tools & Calculators | Vedic Astrology, Numerology, Palmistry, Vastu, Guitar | Dr. Dhaval Trivedi</title>
+<meta name="description" content="Free tools by Dr. Dhaval Trivedi: Panchang, Muhurat, Nakshatra finder, Life Path Calculator, Expression Number, Personal Year, Compatibility, Palm Line Identifier, Hand Type, Vastu Direction Guide, Guitar Scale Finder, Chord Reference and more. Try at drdhaval.in.">
+<meta name="keywords" content="free vedic astrology tools, numerology calculator, palmistry tools, vastu direction guide, guitar scale finder, panchang, muhurat, life path number, Dr. Dhaval Trivedi, drdhaval.in">
+<link rel="canonical" href="https://www.drdhaval.in/tools">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.drdhaval.in/tools">
+<meta property="og:title" content="Free Tools & Calculators | Dr. Dhaval Trivedi">
+<meta property="og:description" content="Vedic Astrology, Numerology, Palmistry, Vastu & Guitar tools. Free calculators and guides by Dr. Dhaval Trivedi.">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/logo.png">
+<link rel="manifest" href="/manifest.json">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Tools & Calculators by Dr. Dhaval Trivedi","description":"Vedic Astrology, Numerology, Palmistry, Vastu Shastra, and Guitar tools. Free online calculators by Dr. Dhaval Trivedi at drdhaval.in.","url":"https://www.drdhaval.in/tools","author":{"@type":"Person","name":"Dr. Dhaval Trivedi","url":"https://www.drdhaval.in"}}
+</script>
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #060608;
+  --bg-card: rgba(255,255,255,0.025);
+  --ink: #f4f0e8;
+  --accent: #c8a96e;
+  --accent-cyan: #00f0ff;
+  --accent-green: #4a9e6d;
+  --accent-purple: #a87bd4;
+  --accent-coral: #e07a5f;
+  --muted: #888;
+  --border: rgba(255,255,255,0.08);
+  --gold: #c8a96e;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
+
+/* Noise overlay */
+body::after { content:''; position:fixed; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events:none; z-index:9997; opacity:0.3; }
+
+/* Nav */
+.nav { position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 4rem; border-bottom: 1px solid var(--border); background: rgba(6,6,8,0.5); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); transition: all 0.3s ease; }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); text-decoration: none; white-space: nowrap; display: inline-flex; align-items: center; }
+.nav-brand:hover { color: var(--ink); }
+.nav-links { display: flex; gap: 1.2rem; list-style: none; flex-wrap: wrap; justify-content: flex-end; }
+.nav-links a { font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; white-space: nowrap; }
+.nav-links a:hover { color: var(--ink); }
+
+/* Hero */
+.page-hero { min-height: 55vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6rem 2rem 4rem; position: relative; overflow: hidden; }
+.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 30%, rgba(200,169,110,0.08) 0%, transparent 60%); pointer-events: none; }
+.page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.05; margin-bottom: 1rem; position: relative; }
+.page-hero h1 em { font-style: italic; -webkit-text-stroke: 1px var(--ink); color: transparent; }
+.page-hero .badge { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; position: relative; }
+.page-hero .tagline { font-size: clamp(1rem, 1.5vw, 1.25rem); color: var(--muted); max-width: 60ch; line-height: 1.7; position: relative; }
+.page-hero .hero-stats { display: flex; gap: 3rem; margin-top: 2.5rem; position: relative; }
+.stat { text-align: center; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: var(--ink); line-height: 1; }
+.stat-label { font-family: 'Space Mono', monospace; font-size: 0.48rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; }
+
+/* Floating particles behind hero */
+.hero-particles { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.particle { position: absolute; width: 3px; height: 3px; background: var(--accent); border-radius: 50%; opacity: 0; animation: floatParticle 6s infinite ease-in-out; }
+@keyframes floatParticle {
+  0% { opacity: 0; transform: translateY(0) scale(0.5); }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-120px) scale(1.2); }
+}
+
+/* Tool Categories Grid */
+.tools-section { padding: 4rem 4rem 6rem; max-width: 1400px; margin: 0 auto; }
+.tools-section .section-header { text-align: center; margin-bottom: 4rem; }
+.tools-section .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; margin-bottom: 1rem; }
+.tools-section .section-header p { color: var(--muted); font-size: 1.1rem; max-width: 55ch; margin: 0 auto; line-height: 1.7; }
+
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem; }
+
+/* Tool Category Card */
+.tool-category { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: all 0.5s cubic-bezier(0.4,0,0.2,1); position: relative; }
+.tool-category:hover { transform: translateY(-8px); border-color: var(--accent); box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 40px rgba(200,169,110,0.06); }
+
+.tool-category .card-img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1), filter 0.6s; filter: brightness(0.7) saturate(0.85); }
+.tool-category:hover .card-img { transform: scale(1.05); filter: brightness(0.85) saturate(1); }
+
+.tool-category .card-body { padding: 2rem 2rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.tool-category .card-badge { font-family: 'Space Mono', monospace; font-size: 0.48rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem; }
+.tool-category .card-badge::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
+.tool-category h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.8rem; transition: color 0.3s; }
+.tool-category:hover h3 { color: var(--accent); }
+.tool-category .card-desc { color: var(--muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.2rem; flex: 1; }
+
+.tool-list { list-style: none; padding: 0; margin: 0; }
+.tool-list li { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.08em; color: var(--muted); padding: 0.45rem 0; border-top: 1px solid rgba(255,255,255,0.04); display: flex; align-items: center; gap: 0.6rem; transition: color 0.3s; }
+.tool-list li:first-child { border-top: none; }
+.tool-list li::before { content: '→'; color: var(--accent); font-size: 0.6rem; flex-shrink: 0; }
+.tool-category:hover .tool-list li { color: var(--ink); }
+
+.card-cta { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); transition: gap 0.3s; }
+.card-cta::after { content: '→'; transition: transform 0.3s; }
+.tool-category:hover .card-cta::after { transform: translateX(4px); }
+
+/* Accent color variations per category */
+.tool-category[data-accent="gold"] { --cat-accent: #c8a96e; }
+.tool-category[data-accent="purple"] { --cat-accent: #a87bd4; }
+.tool-category[data-accent="amber"] { --cat-accent: #d4a853; }
+.tool-category[data-accent="green"] { --cat-accent: #4a9e6d; }
+.tool-category[data-accent="coral"] { --cat-accent: #e07a5f; }
+
+.tool-category[data-accent="gold"]:hover { border-color: #c8a96e; box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 40px rgba(200,169,110,0.08); }
+.tool-category[data-accent="purple"]:hover { border-color: #a87bd4; box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 40px rgba(168,123,212,0.08); }
+.tool-category[data-accent="amber"]:hover { border-color: #d4a853; box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 40px rgba(212,168,83,0.08); }
+.tool-category[data-accent="green"]:hover { border-color: #4a9e6d; box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 40px rgba(74,158,109,0.08); }
+.tool-category[data-accent="coral"]:hover { border-color: #e07a5f; box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 40px rgba(224,122,95,0.08); }
+
+/* Featured AI Palm Reading Banner */
+.featured-banner { margin: 0 4rem 4rem; max-width: 1400px; margin-left: auto; margin-right: auto; padding: 0 4rem; }
+.featured-card { display: flex; align-items: center; gap: 3rem; padding: 3rem; background: linear-gradient(135deg, rgba(200,169,110,0.08) 0%, rgba(168,123,212,0.06) 100%); border: 1px solid rgba(200,169,110,0.15); border-radius: 12px; text-decoration: none; color: inherit; transition: all 0.4s; }
+.featured-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.featured-icon { font-size: 4rem; flex-shrink: 0; }
+.featured-content h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.6rem; }
+.featured-content p { color: var(--muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 0.8rem; }
+.featured-cta { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 0.5rem; }
+.featured-cta::after { content: '↗'; }
+
+/* CTA Section */
+.cta-section { padding: 5rem 4rem; text-align: center; border-top: 1px solid var(--border); }
+.cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 1rem; }
+.cta-section p { color: var(--muted); font-size: 1.05rem; max-width: 50ch; margin: 0 auto 2rem; line-height: 1.7; }
+.cta-btn { display: inline-block; font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bg); background: var(--accent); text-decoration: none; padding: 1rem 2.5rem; border-radius: 2px; transition: all 0.3s; }
+.cta-btn:hover { background: var(--ink); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
+
+/* Footer */
+footer { padding: 2.5rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); }
+footer a { color: var(--muted); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.52rem; letter-spacing: 0.15em; transition: color 0.3s; }
+footer a:hover { color: var(--accent); }
+
+/* Reveal Animation */
+.reveal-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4,0,0.2,1); }
+.reveal-up.visible { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .nav { padding: 1rem 2rem; }
+  .tools-section { padding: 3rem 2rem 5rem; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .featured-banner { padding: 0 2rem; }
+  .featured-card { flex-direction: column; gap: 1.5rem; padding: 2rem; text-align: center; }
+  .page-hero .hero-stats { gap: 2rem; }
+  .cta-section { padding: 4rem 2rem; }
+  footer { padding: 2rem; }
+}
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .page-hero { padding: 4rem 1.5rem 3rem; }
+  .page-hero .hero-stats { flex-direction: column; gap: 1.5rem; }
+  .tools-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand"><img src="/logo.png" alt="Dr. Dhaval Trivedi Logo" style="height: 32px; vertical-align: middle; margin-right: 0.8rem; filter: brightness(0.9);">Dr. Dhaval Trivedi</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#expertise">Expertise</a></li>
+    <li><a href="/ai-machine-learning">AI & Tech</a></li>
+    <li><a href="/vedic-astrology">Vedic Astrology</a></li>
+    <li><a href="/vastu-shastra">Vastu</a></li>
+    <li><a href="/numerology">Numerology</a></li>
+    <li><a href="/palmistry">Palmistry</a></li>
+    <li><a href="/guitar-music-vocals">Music</a></li>
+    <li><a href="/poetry-kavita">Poetry</a></li>
+    <li><a href="/tools" style="color: var(--accent);">Tools</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="page-hero">
+  <div class="hero-particles">
+    <div class="particle" style="left:10%;top:60%;animation-delay:0s;"></div>
+    <div class="particle" style="left:25%;top:75%;animation-delay:1.2s;"></div>
+    <div class="particle" style="left:45%;top:80%;animation-delay:0.6s;"></div>
+    <div class="particle" style="left:65%;top:70%;animation-delay:2s;"></div>
+    <div class="particle" style="left:80%;top:65%;animation-delay:0.8s;"></div>
+    <div class="particle" style="left:90%;top:72%;animation-delay:1.5s;"></div>
+    <div class="particle" style="left:15%;top:50%;animation-delay:3s;"></div>
+    <div class="particle" style="left:70%;top:55%;animation-delay:2.5s;"></div>
+  </div>
+  <p class="badge">Free & Open</p>
+  <h1>Tools & <em>Calculators</em></h1>
+  <p class="tagline">Explore free calculators across Vedic Astrology, Numerology, Palmistry, Vastu Shastra, and Guitar. Try them instantly — no signup, no friction. For deeper analysis, book a personal session.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">18+</div><div class="stat-label">Free Tools</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Disciplines</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Free Uses</div></div>
+  </div>
+</header>
+
+<!-- Featured AI Palm Reading -->
+<div class="featured-banner">
+  <a href="https://palmistry.appstream.me/" target="_blank" rel="noopener" class="featured-card reveal-up">
+    <span class="featured-icon">🤖✋</span>
+    <div class="featured-content">
+      <h3>Free AI Palm Reading</h3>
+      <p>Upload a clear photo of your palm and get instant AI-powered insights on your heart line, head line, life line, mounts and patterns. No signup required.</p>
+      <span class="featured-cta">Try at palmistry.appstream.me</span>
+    </div>
+  </a>
+</div>
+
+<!-- Tool Categories -->
+<section class="tools-section">
+  <div class="section-header">
+    <h2>Choose Your Discipline</h2>
+    <p>Each category contains interactive tools you can use right now. Click to explore.</p>
+  </div>
+
+  <div class="tools-grid">
+
+    <!-- Numerology -->
+    <a href="/numerology#tools" class="tool-category reveal-up" data-accent="purple">
+      <img src="/img-numerology-tools.png" alt="Numerology sacred geometry with golden numbers" class="card-img" loading="lazy">
+      <div class="card-body">
+        <span class="card-badge">Numerology</span>
+        <h3>Life Path & Numbers</h3>
+        <p class="card-desc">Calculate your Life Path, Expression number, Personal Year, Compatibility, and Lucky Dates from your date of birth and name.</p>
+        <ul class="tool-list">
+          <li>Life Path Calculator</li>
+          <li>Expression (Name) Number</li>
+          <li>Personal Year Number</li>
+          <li>Compatibility Check</li>
+          <li>Lucky Dates Finder</li>
+        </ul>
+        <span class="card-cta">Open 5 tools</span>
+      </div>
+    </a>
+
+    <!-- Vedic Astrology -->
+    <a href="/vedic-astrology#tools" class="tool-category reveal-up" data-accent="amber">
+      <img src="/img-vedic-tools.png" alt="Vedic zodiac wheel with golden constellations" class="card-img" loading="lazy">
+      <div class="card-body">
+        <span class="card-badge">Vedic Astrology</span>
+        <h3>Panchang & Muhurat</h3>
+        <p class="card-desc">Daily Panchang details, auspicious Muhurat timings, Nakshatra finder, Yoni matching, and Varna calculations for Vedic insights.</p>
+        <ul class="tool-list">
+          <li>Daily Panchang</li>
+          <li>Choghadiya Muhurat</li>
+          <li>Nakshatra Finder</li>
+          <li>Yoni Compatibility</li>
+          <li>Varna Calculator</li>
+        </ul>
+        <span class="card-cta">Open 5 tools</span>
+      </div>
+    </a>
+
+    <!-- Vastu Shastra -->
+    <a href="/vastu-shastra#tools" class="tool-category reveal-up" data-accent="green">
+      <img src="/img-vastu-tools.png" alt="Vastu compass with emerald and gold sacred geometry" class="card-img" loading="lazy">
+      <div class="card-body">
+        <span class="card-badge">Vastu Shastra</span>
+        <h3>Direction Guide</h3>
+        <p class="card-desc">Check your main door direction and get quick do's and don'ts based on Vastu principles. Plus a quick Vastu audit checklist.</p>
+        <ul class="tool-list">
+          <li>Main Door Direction Check</li>
+          <li>Quick Vastu Audit</li>
+        </ul>
+        <span class="card-cta">Open 2 tools</span>
+      </div>
+    </a>
+
+    <!-- Palmistry -->
+    <a href="/palmistry#tools" class="tool-category reveal-up" data-accent="gold">
+      <img src="/img-palmistry-tools.png" alt="Open palm with glowing golden lines" class="card-img" loading="lazy">
+      <div class="card-body">
+        <span class="card-badge">Palmistry</span>
+        <h3>Palm Line Identifier</h3>
+        <p class="card-desc">Identify your palm lines (Heart, Head, Life), discover your hand type (Earth, Air, Fire, Water), and take a quick palm quiz.</p>
+        <ul class="tool-list">
+          <li>Line Identifier</li>
+          <li>Hand Type Finder</li>
+          <li>Quick Palm Quiz</li>
+        </ul>
+        <span class="card-cta">Open 3 tools</span>
+      </div>
+    </a>
+
+    <!-- Guitar & Music -->
+    <a href="/guitar-music-vocals#tools" class="tool-category reveal-up" data-accent="coral">
+      <img src="/img-guitar-tools.png" alt="Acoustic guitar with glowing strings and floating notes" class="card-img" loading="lazy">
+      <div class="card-body">
+        <span class="card-badge">Guitar & Music</span>
+        <h3>Scale Finder & More</h3>
+        <p class="card-desc">Find notes in any scale (Major, Minor, Ragas), look up chord diagrams, and track your daily practice streak.</p>
+        <ul class="tool-list">
+          <li>Scale Finder (incl. Ragas)</li>
+          <li>Chord Reference</li>
+          <li>Practice Log & Streak</li>
+        </ul>
+        <span class="card-cta">Open 3 tools</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Need a Deeper Analysis?</h2>
+  <p>These tools give you a starting point. For a full personalised reading — birth chart, palm analysis, Vastu site audit, or musical collaboration — book a session with Dr. Dhaval Trivedi.</p>
+  <a href="https://www.drdhaval.in" target="_blank" rel="noopener" class="cta-btn">Book a Consultation</a>
+</section>
+
+<footer>
+  <a href="/">← Back to Home</a>
+  <a href="/#expertise">All Expertise</a>
+  <a href="/palmistry">Palmistry</a>
+  <a href="/numerology">Numerology</a>
+  <a href="/vedic-astrology">Vedic Astrology</a>
+  <a href="https://www.drdhaval.in" target="_blank" rel="noopener">drdhaval.in</a>
+</footer>
+
+<script>
+// Intersection Observer for smooth reveals
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  
+  document.querySelectorAll('.reveal-up').forEach(el => {
+    observer.observe(el);
+  });
+  
+  // Nav shrink on scroll
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        nav.style.padding = '0.8rem 4rem';
+        nav.style.boxShadow = '0 8px 32px rgba(0,0,0,0.5)';
+      } else {
+        nav.style.padding = '1.25rem 4rem';
+        nav.style.boxShadow = 'none';
+      }
+    });
+  }
+  
+  // Stagger card reveal
+  document.querySelectorAll('.tool-category').forEach((card, i) => {
+    card.style.transitionDelay = (i * 0.1) + 's';
+  });
+})();
+</script>
+
+</body>
+</html>

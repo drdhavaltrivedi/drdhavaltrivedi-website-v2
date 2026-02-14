@@ -1,0 +1,38 @@
+/* Astro Tools Styles */
+#astro-tools { padding: 4rem 2rem; background: #0c0b10; border-top: 1px solid rgba(212, 168, 83, 0.1); }
+.tools-container { max-width: 1000px; margin: 0 auto; }
+
+.tool-tabs { display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
+.tool-tab { background: transparent; border: none; font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: #888; cursor: pointer; padding: 0.5rem 1rem; transition: all 0.3s; }
+.tool-tab.active { color: #d4a853; border-bottom: 2px solid #d4a853; }
+.tool-tab:hover { color: #d4a853; }
+
+.tool-panel { display: none; margin-top: 2rem; }
+.tool-panel.active { display: block; animation: fadeIn 0.5s ease; }
+
+/* Form Elements */
+.tool-form { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.form-label { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #888; text-transform: uppercase; }
+.form-input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #f0f0f0; padding: 0.8rem; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; border-radius: 4px; }
+.form-input:focus { border-color: #d4a853; outline: none; }
+.tool-btn { grid-column: span 2; background: #d4a853; color: #000; border: none; padding: 1rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: background 0.3s; }
+.tool-btn:hover { background: #b08d4b; }
+
+/* Results */
+.tool-result { background: rgba(20, 20, 25, 0.6); padding: 2rem; border: 1px solid rgba(212, 168, 83, 0.2); border-radius: 4px; margin-top: 2rem; display: none; }
+.tool-result.visible { display: block; }
+.result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+.result-item h4 { color: #d4a853; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.result-item p { color: #f0f0f0; font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+
+/* Panchang Grid */
+.panchang-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+.panchang-table th, .panchang-table td { text-align: left; padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #ccc; }
+.panchang-table th { color: #d4a853; font-family: 'Space Mono', monospace; font-size: 0.7rem; text-transform: uppercase; }
+
+@media (max-width: 600px) {
+    .tool-form { grid-template-columns: 1fr; }
+    .tool-btn { grid-column: span 1; }
+    .tool-tabs { overflow-x: auto; }
+}

@@ -1,0 +1,24 @@
+# Optimized Robots.txt for Dr. Dhaval Trivedi Official Website
+# Domain: https://www.drdhaval.in
+
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /vercel.json
+
+# Specialized AI Agents Optimization (AI SEO / LLM Discovery)
+User-agent: GPTBot
+Allow: /blog/
+Allow: /ai-machine-learning
+Allow: /vastu-shastra
+Allow: /numerology
+Allow: /palmistry
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap Link
+Sitemap: https://www.drdhaval.in/sitemap.xml

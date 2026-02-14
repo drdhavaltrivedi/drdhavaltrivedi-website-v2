@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palmistry Tools: Line Identifier, Hand Type, Free Palm Reading | Dr. Dhaval Trivedi</title>
+<meta name="description" content="Palmistry tools: identify heart, head and life lines, discover your hand type (Earth, Air, Fire, Water), and a quick quiz. Try our free AI palm reading tool first; for a detailed reading, book at www.drdhaval.in.">
+<meta name="keywords" content="palm line identifier, heart line head line life line, hand type palmistry, Earth Air Fire Water hand, free palm reading, palmistry quiz, Dr. Dhaval Trivedi, palmistry.appstream.me, www.drdhaval.in">
+<link rel="canonical" href="https://www.drdhaval.in/palmistry">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.drdhaval.in/palmistry">
+<meta property="og:title" content="Palmistry | Dr. Dhaval Trivedi | Practitioner">
+<meta property="og:description" content="Palmistry Practitioner: palm reading for character and destiny. Dr. Dhaval Trivedi. drdhaval.in">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Palmistry | Dr. Dhaval Trivedi | drdhaval.in">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Space+Mono:wght@0,400;0,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #1c1814;
+  --bg-card: #2a2520;
+  --ink: #f2ebe5;
+  --accent: #c4956a;
+  --warm: #a08060;
+  --muted: #a89888;
+  --border: rgba(196, 149, 106, 0.3);
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
+
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 4rem; border-bottom: 1px solid var(--border); background: rgba(28,24,20, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.nav-brand:hover { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+.nav-links a { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+
+.breadcrumb { padding: 1.5rem 4rem; font-family: 'Space Mono', monospace; font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb span { color: var(--accent); margin: 0 0.5rem; }
+
+.page-hero { min-height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem; position: relative; }
+.lines-deco { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.lines-deco svg { position: absolute; width: 100%; height: 100%; opacity: 0.08; }
+.page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; position: relative; }
+.page-hero .badge { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; position: relative; }
+.page-hero .tagline { font-size: clamp(1rem, 1.8vw, 1.25rem); color: var(--muted); max-width: 42ch; line-height: 1.7; position: relative; }
+
+.section { padding: 5rem 4rem; max-width: 1100px; margin: 0 auto; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: var(--ink); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+.section-title .num { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--accent); margin-right: 1rem; }
+.body-text { font-size: 1.15rem; line-height: 1.9; color: var(--muted); }
+.body-text strong { color: var(--ink); }
+
+.major-lines { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0; }
+.line-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; border-left: 3px solid var(--accent); }
+.line-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--accent); margin-bottom: 0.5rem; }
+.line-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+.infographic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 4rem 0; }
+.info-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem; }
+.info-card .icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+.info-card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--accent); margin-bottom: 0.5rem; }
+.info-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+.cta-block { background: var(--bg-card); border: 1px solid var(--border); padding: 4rem; text-align: center; margin: 4rem 0; }
+.cta-block h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--ink); margin-bottom: 1rem; }
+.cta-block p { color: var(--muted); margin-bottom: 1.5rem; max-width: 45ch; margin-left: auto; margin-right: auto; }
+.cta-link { display: inline-block; font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 0.8rem 2rem; text-decoration: none; transition: all 0.3s; }
+.cta-link:hover { background: var(--accent); color: var(--bg); }
+
+.explore-other { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.explore-label { font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+.explore-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; }
+.explore-links a { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.explore-links a:hover { color: var(--accent); }
+.explore-links a.current { color: var(--accent); pointer-events: none; }
+
+.tools-intro { margin-bottom: 2.5rem; font-size: 1.05rem; line-height: 1.8; color: var(--muted); }
+.tools-intro a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.tools-intro a:hover { color: var(--ink); }
+.tool-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem; border-radius: 4px; }
+.tool-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 0.5rem; }
+.tool-card .tool-desc { font-size: 0.95rem; color: var(--muted); margin-bottom: 1.25rem; line-height: 1.6; }
+.tool-form label { display: block; font-family: 'Space Mono', monospace; font-size: 0.52rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+.tool-form input[type="radio"], .tool-form input[type="checkbox"] { margin-right: 0.5rem; }
+.tool-form select { width: 100%; max-width: 320px; padding: 0.6rem 0.75rem; background: var(--bg); border: 1px solid var(--border); color: var(--ink); font-family: 'Cormorant Garamond', serif; font-size: 1rem; margin-bottom: 1rem; }
+.tool-form .radio-group, .tool-form .quiz-options { margin-bottom: 1rem; }
+.tool-form .radio-group label, .tool-form .quiz-options label { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem; font-family: 'Cormorant Garamond', serif; font-size: 1rem; text-transform: none; letter-spacing: 0; cursor: pointer; }
+.tool-form button { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; background: var(--accent); color: var(--bg); border: none; padding: 0.65rem 1.5rem; cursor: pointer; transition: opacity 0.3s; }
+.tool-form button:hover { opacity: 0.9; }
+.tool-result { margin-top: 1.25rem; padding: 1.25rem; background: var(--bg); border-left: 3px solid var(--accent); display: none; }
+.tool-result.visible { display: block; }
+.tool-result .result-title { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+.tool-result .result-value { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--ink); margin-bottom: 0.5rem; }
+.tool-result .result-text { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+.tool-anchor { scroll-margin-top: 6rem; }
+.tool-usage { font-family: 'Space Mono', monospace; font-size: 0.48rem; letter-spacing: 0.1em; color: var(--muted); margin-top: 0.75rem; }
+.tools-cluster { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.tools-cluster p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.75rem; }
+.tools-cluster a { color: var(--accent); text-decoration: none; }
+.tools-cluster a:hover { text-decoration: underline; }
+.tools-cluster .cluster-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin-top: 0.5rem; }
+
+footer { padding: 2rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+footer a { color: var(--muted); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.52rem; letter-spacing: 0.15em; }
+footer a:hover { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .nav, .breadcrumb, .section { padding-left: 2rem; padding-right: 2rem; }
+  .infographic, .major-lines { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) { .nav-links { display: none; } }
+
+/* Reveal Animation */
+.reveal-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4,0,0.2,1); }
+.reveal-up.visible { opacity: 1; transform: translateY(0); }
+
+/* Info Card Hover Enhancement */
+.info-card { transition: all 0.4s cubic-bezier(0.4,0,0.2,1); border-radius: 6px; }
+.info-card:hover { transform: translateY(-6px); box-shadow: 0 15px 35px rgba(0,0,0,0.3); border-color: var(--accent); }
+.info-card .icon { transition: transform 0.4s; }
+.info-card:hover .icon { transform: scale(1.2); }
+
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","name":"Dr. Dhaval Trivedi - Palmistry","description":"Palmistry consultations: full palm reading, lines and mounts. Practitioner. www.drdhaval.in","url":"https://www.drdhaval.in/palmistry","provider":{"@type":"Person","name":"Dr. Dhaval Trivedi","jobTitle":"Palmistry Practitioner","url":"https://www.drdhaval.in/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.drdhaval.in/"},{"@type":"ListItem","position":2,"name":"Expertise","item":"https://www.drdhaval.in/#expertise"},{"@type":"ListItem","position":3,"name":"Palmistry","item":"https://www.drdhaval.in/palmistry"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does a palmistry reading include?","acceptedAnswer":{"@type":"Answer","text":"A full reading looks at both hands, the major lines (heart, head, life), mounts under each finger, and shape of the hand. I also look at minor lines and markings when relevant. You can ask specific questions about career, relationships, or timing."}},{"@type":"Question","name":"Can I get a palm reading online?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can try our free AI palm reading tool at palmistry.appstream.me with a photo of your palm, or book a remote session with me for a detailed reading."}},{"@type":"Question","name":"How do I book a palmistry session with Dr. Dhaval Trivedi?","acceptedAnswer":{"@type":"Answer","text":"Visit www.drdhaval.in and use the contact or booking options there. Sessions can be in-person or remote using clear palm photos."}}]}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Palmistry Tools by Dr. Dhaval Trivedi","description":"Line identifier, hand type (Earth, Air, Fire, Water), and quick palm quiz. Try the free AI palm reading tool at palmistry.appstream.me; book a session at www.drdhaval.in.","url":"https://www.drdhaval.in/palmistry#tools","numberOfItems":3,"itemListElement":[{"@type":"SoftwareApplication","position":1,"name":"Palm Line Identifier","applicationCategory":"UtilitiesApplication","description":"Identify heart, head, or life line from a short description.","url":"https://www.drdhaval.in/palmistry#line-identifier"},{"@type":"SoftwareApplication","position":2,"name":"Hand Type (Earth, Air, Fire, Water)","applicationCategory":"UtilitiesApplication","description":"Choose hand shape for brief traits; CTA to AI palm reading tool.","url":"https://www.drdhaval.in/palmistry#hand-type"},{"@type":"SoftwareApplication","position":3,"name":"Quick Palm Quiz","applicationCategory":"UtilitiesApplication","description":"5 questions for a short emphasis result and link to full tool or booking.","url":"https://www.drdhaval.in/palmistry#quick-quiz"}]}
+</script>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/logo.png">
+<link rel="manifest" href="/manifest.json">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand"><img src="/logo.png" alt="Dr. Dhaval Trivedi Logo" style="height: 32px; vertical-align: middle; margin-right: 0.8rem; filter: brightness(0.9);">Dr. Dhaval Trivedi</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#expertise">Expertise</a></li>
+    <li><a href="/ai-machine-learning">AI & Tech</a></li>
+    <li><a href="/vedic-astrology">Vedic Astrology</a></li>
+    <li><a href="/vastu-shastra">Vastu Shastra</a></li>
+    <li><a href="/numerology">Numerology</a></li>
+    <li><a href="/palmistry">Palmistry</a></li>
+    <li><a href="/guitar-music-vocals">Music &amp; Vocals</a></li>
+    <li><a href="/poetry-kavita">Poetry</a></li>
+    <li><a href="/#tools">Tools</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Home</a> <span>›</span> <a href="/#expertise">Expertise</a> <span>›</span> <span aria-current="page">Palmistry</span>
+</nav>
+
+<header class="page-hero">
+  <div class="lines-deco">
+    <svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+      <!-- Hand Outline -->
+      <path d="M150 550 L150 400 Q140 350 100 300 Q80 250 80 200 Q80 150 110 150 Q130 150 130 180 L140 300 L160 300 L160 120 Q160 80 190 80 Q210 80 210 120 L210 280 L230 280 L230 60 Q230 20 270 20 Q300 20 300 60 L300 280 L320 280 L320 100 Q320 70 350 70 Q370 70 370 110 L370 350 Q370 450 350 500 L350 550 Z" 
+            fill="none" stroke="var(--border)" stroke-width="1" opacity="0.3"/>
+            
+      <!-- Life Line -->
+      <path class="palm-line" d="M340 220 Q280 250 250 300 Q200 400 220 500" fill="none" stroke="var(--accent)" stroke-width="2"/>
+      
+      <!-- Head Line -->
+      <path class="palm-line" d="M340 240 Q250 280 100 320" fill="none" stroke="var(--accent)" stroke-width="2"/>
+      
+      <!-- Heart Line -->
+      <path class="palm-line" d="M100 180 Q200 200 300 180 Q350 170 370 140" fill="none" stroke="var(--accent)" stroke-width="2"/>
+    </svg>
+  </div>
+  <style>
+    .lines-deco { position: absolute; inset: 0; pointer-events: none; opacity: 0.15; transform: scale(1.2); }
+    .palm-line { stroke-dasharray: 400; stroke-dashoffset: 400; animation: drawLine 4s ease-out forwards; }
+    .palm-line:nth-child(2) { animation-delay: 0.5s; }
+    .palm-line:nth-child(3) { animation-delay: 1.5s; }
+    .palm-line:nth-child(4) { animation-delay: 2.5s; }
+    @keyframes drawLine { to { stroke-dashoffset: 0; } }
+  </style>
+  <p class="badge">Practitioner</p>
+  <h1>Palmistry</h1>
+  <p class="tagline">Reading the map of the palm: the lines, mounts, and formations that reveal character, destiny, and the rhythms of a person's unfolding life.</p>
+</header>
+
+<section class="section">
+  <h2 class="section-title"><span class="num">01</span> What I Offer</h2>
+  <p class="body-text">As a <strong>Palmistry Practitioner</strong>, I read the major and minor lines, mounts, and shape of the hand to offer insight into temperament, strengths, challenges, and life phases. The palm is not fixed fate: it is a map of tendencies and potential that can be understood and worked with.</p>
+
+  <div class="major-lines">
+    <div class="line-card">
+      <h3>Heart Line</h3>
+      <p>Emotions, relationships, and how you give and receive love.</p>
+    </div>
+    <div class="line-card">
+      <h3>Head Line</h3>
+      <p>Thinking style, learning, and approach to problems and decisions.</p>
+    </div>
+    <div class="line-card">
+      <h3>Life Line</h3>
+      <p>Vitality, major life phases, and general direction of energy.</p>
+    </div>
+  </div>
+
+  <div class="infographic">
+    <div class="info-card">
+      <span class="icon">✋</span>
+      <h3>Full Palm Reading</h3>
+      <p>Both hands, lines, mounts, and fingers for a complete picture.</p>
+    </div>
+    <div class="info-card">
+      <span class="icon">🔍</span>
+      <h3>Specific Questions</h3>
+      <p>Focus on career, relationships, health, or timing.</p>
+    </div>
+    <div class="info-card">
+      <span class="icon">📸</span>
+      <h3>Photo Readings</h3>
+      <p>Clear palm photos can be used for remote readings when needed.</p>
+    </div>
+  </div>
+
+  <section id="tools" class="section tool-anchor">
+    <h2 class="section-title"><span class="num">02</span> Palmistry Tools</h2>
+    <p class="tools-intro">Try our free AI palm reading tool first. If you are not sure which line is which, use the line identifier below. For a detailed reading, use <a href="https://palmistry.appstream.me" target="_blank" rel="noopener">palmistry.appstream.me</a> or <a href="https://www.drdhaval.in" target="_blank" rel="noopener">book a session</a> at www.drdhaval.in.</p>
+
+    <div class="tool-card" id="line-identifier">
+      <h3>Line Identifier</h3>
+      <p class="tool-desc">Pick the description that best matches the line you see on your palm. You will get the likely name (heart, head, or life line), a short meaning, and a link to our full reading tool.</p>
+      <form class="tool-form" id="form-line" aria-label="Palm line identifier">
+        <label>Which line are you looking at?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="line" value="under-fingers"> Long line under the fingers, curves across the top of the palm</label>
+          <label><input type="radio" name="line" value="across-middle"> Line across the middle of the palm, roughly horizontal</label>
+          <label><input type="radio" name="line" value="thumb-wrist"> Line that starts near the thumb and curves down toward the wrist</label>
+          <label><input type="radio" name="line" value="vertical-pinky"> Line running toward the pinky or ring finger from below the fingers</label>
+        </div>
+        <button type="submit">Identify line</button>
+      </form>
+      <div class="tool-result" id="result-line" aria-live="polite">
+        <span class="result-title">Likely line</span>
+        <div class="result-value" id="line-name"></div>
+        <div class="result-text" id="line-meaning"></div>
+      </div>
+      <p class="tool-usage" id="usage-line" aria-hidden="true"></p>
+    </div>
+
+    <div class="tool-card" id="hand-type">
+      <h3>Hand Type</h3>
+      <p class="tool-desc">Choose the hand shape that best fits you (Earth, Air, Fire, or Water from the short descriptions). You will get brief traits. For a detailed reading, use our AI palm reading tool.</p>
+      <form class="tool-form" id="form-hand" aria-label="Hand type">
+        <label for="hand-shape">Hand shape</label>
+        <select id="hand-shape" name="shape" required>
+          <option value="">Choose type</option>
+          <option value="earth">Earth: broad palm, short fingers, square shape</option>
+          <option value="air">Air: square or rectangular palm, long fingers</option>
+          <option value="fire">Fire: long palm, short fingers, rectangular</option>
+          <option value="water">Water: long palm, long fingers, oval or rectangular</option>
+        </select>
+        <button type="submit">Get traits</button>
+      </form>
+      <div class="tool-result" id="result-hand" aria-live="polite">
+        <span class="result-title">Your hand type</span>
+        <div class="result-value" id="hand-name"></div>
+        <div class="result-text" id="hand-traits"></div>
+      </div>
+      <p class="tool-usage" id="usage-hand" aria-hidden="true"></p>
+    </div>
+
+    <div class="tool-card" id="quick-quiz">
+      <h3>Quick Palm Quiz</h3>
+      <p class="tool-desc">Answer 5 short questions about your palm. You will get a brief "emphasis" result and a link to try our free AI palm reading tool or book a session.</p>
+      <form class="tool-form" id="form-quiz" aria-label="Quick palm quiz">
+        <label>Life line: deep or faint?</label>
+        <div class="quiz-options"><label><input type="radio" name="q1" value="deep"> Deep, clear</label><label><input type="radio" name="q1" value="faint"> Faint or light</label></div>
+        <label>Heart line: curves up toward fingers or down?</label>
+        <div class="quiz-options"><label><input type="radio" name="q2" value="up"> Curves up</label><label><input type="radio" name="q2" value="down"> Curves down or straight</label></div>
+        <label>Head line: long or short?</label>
+        <div class="quiz-options"><label><input type="radio" name="q3" value="long"> Long, across palm</label><label><input type="radio" name="q3" value="short"> Short</label></div>
+        <label>Fingers: longer or shorter than palm?</label>
+        <div class="quiz-options"><label><input type="radio" name="q4" value="long"> Longer than palm</label><label><input type="radio" name="q4" value="short"> Shorter or equal</label></div>
+        <label>Mounts (base of fingers): prominent or flat?</label>
+        <div class="quiz-options"><label><input type="radio" name="q5" value="prominent"> Prominent, fleshy</label><label><input type="radio" name="q5" value="flat"> Flat or less prominent</label></div>
+        <button type="submit">See result</button>
+      </form>
+      <div class="tool-result" id="result-quiz" aria-live="polite">
+        <span class="result-title">Your palm suggests</span>
+        <div class="result-value" id="quiz-emphasis"></div>
+        <div class="result-text" id="quiz-cta"></div>
+      </div>
+      <p class="tool-usage" id="usage-quiz" aria-hidden="true"></p>
+    </div>
+
+    <div class="tools-cluster">
+      <p>Explore more tools and consultations:</p>
+      <div class="cluster-links">
+        <a href="numerology.html#tools">Life path and name number</a>
+        <a href="vastu-shastra.html#tools">Vastu direction guide</a>
+        <a href="vedic-astrology.html#tools">Panchang and Muhurat</a>
+        <a href="https://palmistry.appstream.me" target="_blank" rel="noopener">Free AI palm reading</a>
+        <a href="https://www.drdhaval.in" target="_blank" rel="noopener">Book a session</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-block tool-cta">
+    <h2>Try Free AI Palm Reading Online</h2>
+    <p>Use our palm reading platform to get instant insights from a clear photo of your palm. No signup. Try it when you like, then book a full reading with me for a deeper session.</p>
+    <a href="https://palmistry.appstream.me/" target="_blank" rel="noopener" class="cta-link">Open palmistry.appstream.me</a>
+  </div>
+
+  <div class="cta-block">
+    <h2>Book a Palmistry Reading with Me</h2>
+    <p>For an in-person or remote palm reading, get in touch via the main website.</p>
+    <a href="https://www.drdhaval.in" target="_blank" rel="noopener" class="cta-link">Visit www.drdhaval.in</a>
+  </div>
+
+  <div class="explore-other">
+    <p class="explore-label">Explore other expertise</p>
+    <div class="explore-links">
+      <a href="/vedic-astrology">Vedic Astrology</a>
+      <a href="/vastu-shastra">Vastu Shastra</a>
+      <a href="/numerology">Numerology</a>
+      <a href="/palmistry" class="current">Palmistry</a>
+      <a href="/guitar-music-vocals">Music &amp; Vocals</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="/">← Back to Home</a>
+  <a href="/#expertise">All expertise</a>
+  <a href="/guitar-music-vocals">Music &amp; Vocals →</a>
+  <a href="https://www.drdhaval.in" target="_blank" rel="noopener">drdhaval.in</a>
+</footer>
+
+<script>
+// Intersection Observer for smooth reveals
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  
+  document.querySelectorAll('.info-card, .section-title, .body-text, .cta-block, .dir-cell, .line-card, .planet-dot, .num-box, .faq-item, .seo-block, .tool-card').forEach(el => {
+    el.classList.add('reveal-up');
+    observer.observe(el);
+  });
+  
+  // Nav shrink on scroll
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        nav.style.padding = '0.8rem 4rem';
+        nav.style.boxShadow = '0 8px 32px rgba(0,0,0,0.5)';
+      } else {
+        nav.style.padding = '1.5rem 4rem';
+        nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
+      }
+    });
+  }
+})();
+</script>
+
+<script>
+(function () {
+  var STORAGE_KEY = 'palmistry_tools_usage';
+  function getUsage() { try { var raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : {}; } catch (e) { return {}; } }
+  function incUsage(toolId) { var u = getUsage(); u[toolId] = (u[toolId] || 0) + 1; try { localStorage.setItem(STORAGE_KEY, JSON.stringify(u)); } catch (e) {} return u[toolId]; }
+  function showUsage(toolId, elId) { var count = getUsage()[toolId]; var el = document.getElementById(elId); if (el && count) { el.textContent = 'Used ' + count + ' time' + (count !== 1 ? 's' : ''); el.setAttribute('aria-hidden', 'false'); } }
+
+  var lineMap = {
+    'under-fingers': { name: 'Heart line', meaning: 'This line is linked to emotions, relationships, and how you give and receive love. For a full reading, try our free tool or book a session.' },
+    'across-middle': { name: 'Head line', meaning: 'This line relates to thinking style, learning, and how you approach decisions. For more detail, use our AI palm reading tool at palmistry.appstream.me or book a session.' },
+    'thumb-wrist': { name: 'Life line', meaning: 'This line is often linked to vitality and major life phases. It does not predict length of life. For a detailed reading, try palmistry.appstream.me or book at www.drdhaval.in.' },
+    'vertical-pinky': { name: 'Heart line (or fate line)', meaning: 'A line toward the pinky can be part of the heart line or a fate line. For a full reading, use our free AI tool or book a session.' }
+  };
+
+  document.getElementById('form-line').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var line = document.querySelector('input[name="line"]:checked');
+    if (!line) return;
+    var data = lineMap[line.value];
+    if (!data) return;
+    document.getElementById('line-name').textContent = 'Likely: ' + data.name;
+    document.getElementById('line-meaning').innerHTML = data.meaning;
+    document.getElementById('result-line').classList.add('visible');
+    incUsage('line'); showUsage('line', 'usage-line');
+  });
+
+  var handTypes = {
+    earth: { name: 'Earth hand', traits: 'Practical, grounded, and reliable. You tend to be down to earth and good with your hands. For a detailed reading, use our AI palm reading tool at palmistry.appstream.me or book a session.' },
+    air: { name: 'Air hand', traits: 'Intellectual, communicative, and curious. You like ideas and variety. For more insight, try palmistry.appstream.me or book at www.drdhaval.in.' },
+    fire: { name: 'Fire hand', traits: 'Energetic, active, and often a natural leader. You like to get things done. For a full reading, use our free tool or book a session.' },
+    water: { name: 'Water hand', traits: 'Intuitive, emotional, and creative. You are sensitive to atmosphere and people. For a detailed reading, try our AI palm tool or book at www.drdhaval.in.' }
+  };
+
+  document.getElementById('form-hand').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var shape = document.getElementById('hand-shape').value;
+    var data = handTypes[shape];
+    if (!data) return;
+    document.getElementById('hand-name').textContent = data.name;
+    document.getElementById('hand-traits').innerHTML = data.traits;
+    document.getElementById('result-hand').classList.add('visible');
+    incUsage('hand'); showUsage('hand', 'usage-hand');
+  });
+
+  document.getElementById('form-quiz').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var q1 = document.querySelector('input[name="q1"]:checked'); var q2 = document.querySelector('input[name="q2"]:checked');
+    var q3 = document.querySelector('input[name="q3"]:checked'); var q4 = document.querySelector('input[name="q4"]:checked');
+    var q5 = document.querySelector('input[name="q5"]:checked');
+    if (!q1 || !q2 || !q3 || !q4 || !q5) return;
+    var emphasis = [];
+    if (q1.value === 'deep') emphasis.push('strong vitality');
+    if (q2.value === 'up') emphasis.push('emotional openness');
+    if (q3.value === 'long') emphasis.push('analytical thinking');
+    if (q4.value === 'long') emphasis.push('reflection and ideas');
+    if (q5.value === 'prominent') emphasis.push('strong drives and expression');
+    if (emphasis.length === 0) emphasis.push('a balanced mix of qualities');
+    var text = 'Your palm suggests emphasis on ' + emphasis.join(', ') + '. For a full reading, try our free AI palm reading tool at <a href="https://palmistry.appstream.me" target="_blank" rel="noopener">palmistry.appstream.me</a> or <a href="https://www.drdhaval.in" target="_blank" rel="noopener">book a session</a> at www.drdhaval.in.';
+    document.getElementById('quiz-emphasis').textContent = emphasis.join(', ');
+    document.getElementById('quiz-cta').innerHTML = text;
+    document.getElementById('result-quiz').classList.add('visible');
+    incUsage('quiz'); showUsage('quiz', 'usage-quiz');
+  });
+
+  showUsage('line', 'usage-line');
+  showUsage('hand', 'usage-hand');
+  showUsage('quiz', 'usage-quiz');
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "framework": null,
+  "rewrites": [
+    { "source": "/vedic-astrology", "destination": "/vedic-astrology.html" },
+    { "source": "/vastu-shastra", "destination": "/vastu-shastra.html" },
+    { "source": "/numerology", "destination": "/numerology.html" },
+    { "source": "/palmistry", "destination": "/palmistry.html" },
+    { "source": "/guitar-music-vocals", "destination": "/guitar-music-vocals.html" },
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/vedic-astrology-consultation-what-to-expect", "destination": "/blog/vedic-astrology-consultation-what-to-expect.html" },
+    { "source": "/blog/numerology-life-path-simple-guide", "destination": "/blog/numerology-life-path-simple-guide.html" },
+    { "source": "/blog/free-online-palm-reading-tool", "destination": "/blog/free-online-palm-reading-tool.html" }
+  ]
+}

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numerology Tools: Life Path Calculator, Name Number, Compatibility | Dr. Dhaval Trivedi</title>
+<meta name="description" content="Free numerology tools: life path calculator, expression number from name, personal year, compatibility, and lucky dates. Dr. Dhaval Trivedi, Certified Numerologist. Use the tools, then book a full reading at www.drdhaval.in.">
+<meta name="keywords" content="life path calculator, life path number, numerology calculator, name number numerology, expression number, personal year numerology, numerology compatibility, lucky dates numerology, Dr. Dhaval Trivedi, Certified Numerologist, www.drdhaval.in">
+<link rel="canonical" href="https://www.drdhaval.in/numerology">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.drdhaval.in/numerology">
+<meta property="og:title" content="Numerology | Dr. Dhaval Trivedi | Certified Numerologist">
+<meta property="og:description" content="Certified Numerologist: life path, name analysis, timing. Dr. Dhaval Trivedi. drdhaval.in">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Numerology | Dr. Dhaval Trivedi | drdhaval.in">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Space+Mono:wght@0,400;0,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0f0d14;
+  --bg-card: #18151f;
+  --ink: #ede9e4;
+  --accent: #9b7ed9;
+  --accent-soft: rgba(155, 126, 217, 0.12);
+  --muted: #8a8396;
+  --border: rgba(155, 126, 217, 0.25);
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
+
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 4rem; border-bottom: 1px solid var(--border); background: rgba(15,13,20, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.nav-brand:hover { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+.nav-links a { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+
+.breadcrumb { padding: 1.5rem 4rem; font-family: 'Space Mono', monospace; font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb span { color: var(--accent); margin: 0 0.5rem; }
+
+.page-hero { min-height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem; position: relative; }
+.nums-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.nums-bg span { position: absolute; font-family: 'Space Mono', monospace; font-size: clamp(3rem, 8vw, 8rem); font-weight: 700; color: var(--accent); opacity: 0.06; }
+.nums-bg span:nth-child(1) { top: 10%; left: 5%; }
+.nums-bg span:nth-child(2) { top: 30%; right: 10%; }
+.nums-bg span:nth-child(3) { bottom: 25%; left: 15%; }
+.nums-bg span:nth-child(4) { bottom: 15%; right: 20%; }
+.nums-bg span:nth-child(5) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; position: relative; }
+.page-hero .badge { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; position: relative; }
+.page-hero .tagline { font-size: clamp(1rem, 1.8vw, 1.25rem); color: var(--muted); max-width: 42ch; line-height: 1.7; position: relative; }
+
+.section { padding: 5rem 4rem; max-width: 1100px; margin: 0 auto; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: var(--ink); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+.section-title .num { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--accent); margin-right: 1rem; }
+.body-text { font-size: 1.15rem; line-height: 1.9; color: var(--muted); }
+.body-text strong { color: var(--ink); }
+
+.number-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 3rem 0; }
+.num-box { width: 56px; height: 56px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: 'Space Mono', monospace; font-size: 1.5rem; font-weight: 700; color: var(--accent); transition: all 0.3s; }
+.num-box:hover { background: var(--accent-soft); border-color: var(--accent); transform: scale(1.05); }
+
+.infographic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 4rem 0; }
+.info-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem; }
+.info-card .icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+.info-card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--accent); margin-bottom: 0.5rem; }
+.info-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+.cta-block { background: var(--bg-card); border: 1px solid var(--border); padding: 4rem; text-align: center; margin: 4rem 0; }
+.cta-block h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--ink); margin-bottom: 1rem; }
+.cta-block p { color: var(--muted); margin-bottom: 1.5rem; max-width: 45ch; margin-left: auto; margin-right: auto; }
+.cta-link { display: inline-block; font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 0.8rem 2rem; text-decoration: none; transition: all 0.3s; }
+.cta-link:hover { background: var(--accent); color: var(--bg); }
+
+.tools-intro { margin-bottom: 2.5rem; font-size: 1.05rem; line-height: 1.8; color: var(--muted); }
+.tools-intro a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.tools-intro a:hover { color: var(--ink); }
+.tool-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; margin-bottom: 2rem; border-radius: 4px; }
+.tool-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 0.5rem; }
+.tool-card .tool-desc { font-size: 0.95rem; color: var(--muted); margin-bottom: 1.25rem; line-height: 1.6; }
+.tool-form label { display: block; font-family: 'Space Mono', monospace; font-size: 0.52rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+.tool-form input, .tool-form select { width: 100%; max-width: 280px; padding: 0.6rem 0.75rem; background: var(--bg); border: 1px solid var(--border); color: var(--ink); font-family: 'Cormorant Garamond', serif; font-size: 1rem; margin-bottom: 1rem; }
+.tool-form input:focus, .tool-form select:focus { outline: none; border-color: var(--accent); }
+.tool-form button { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; background: var(--accent); color: var(--bg); border: none; padding: 0.65rem 1.5rem; cursor: pointer; transition: opacity 0.3s; }
+.tool-form button:hover { opacity: 0.9; }
+.tool-result { margin-top: 1.25rem; padding: 1.25rem; background: var(--bg); border-left: 3px solid var(--accent); display: none; }
+.tool-result.visible { display: block; }
+.tool-result .result-title { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+.tool-result .result-value { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--ink); margin-bottom: 0.5rem; }
+.tool-result .result-text { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+.tool-anchor { scroll-margin-top: 6rem; }
+.tool-usage { font-family: 'Space Mono', monospace; font-size: 0.48rem; letter-spacing: 0.1em; color: var(--muted); margin-top: 0.75rem; }
+.tools-cluster { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.tools-cluster p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.75rem; }
+.tools-cluster a { color: var(--accent); text-decoration: none; }
+.tools-cluster a:hover { text-decoration: underline; }
+.tools-cluster .cluster-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin-top: 0.5rem; }
+
+.explore-other { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.explore-label { font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+.explore-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; }
+.explore-links a { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.explore-links a:hover { color: var(--accent); }
+.explore-links a.current { color: var(--accent); pointer-events: none; }
+
+footer { padding: 2rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+footer a { color: var(--muted); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.52rem; letter-spacing: 0.15em; }
+footer a:hover { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .nav, .breadcrumb, .section { padding-left: 2rem; padding-right: 2rem; }
+  .infographic { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) { .nav-links { display: none; } }
+
+/* Reveal Animation */
+.reveal-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4,0,0.2,1); }
+.reveal-up.visible { opacity: 1; transform: translateY(0); }
+
+/* Info Card Hover Enhancement */
+.info-card { transition: all 0.4s cubic-bezier(0.4,0,0.2,1); border-radius: 6px; }
+.info-card:hover { transform: translateY(-6px); box-shadow: 0 15px 35px rgba(0,0,0,0.3); border-color: var(--accent); }
+.info-card .icon { transition: transform 0.4s; }
+.info-card:hover .icon { transform: scale(1.2); }
+
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","name":"Dr. Dhaval Trivedi - Numerology","description":"Numerology consultations: life path, destiny and name analysis, personal year and cycles. Certified Numerologist. www.drdhaval.in","url":"https://www.drdhaval.in/numerology","provider":{"@type":"Person","name":"Dr. Dhaval Trivedi","jobTitle":"Certified Numerologist","url":"https://www.drdhaval.in/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.drdhaval.in/"},{"@type":"ListItem","position":2,"name":"Expertise","item":"https://www.drdhaval.in/#expertise"},{"@type":"ListItem","position":3,"name":"Numerology","item":"https://www.drdhaval.in/numerology"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a life path number in numerology?","acceptedAnswer":{"@type":"Answer","text":"The life path number is derived from your full date of birth by reducing the digits to a single number (or a master number like 11 or 22). It is often seen as the core theme of your life: your strengths, challenges, and the kind of path you are here to walk."}},{"@type":"Question","name":"How do I get a numerology reading?","acceptedAnswer":{"@type":"Answer","text":"Visit www.drdhaval.in and use the contact or booking option. You will need your full name (as on birth certificate or commonly used) and date of birth for a proper analysis."}}]}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Numerology Tools by Dr. Dhaval Trivedi","description":"Free numerology tools: life path calculator, expression number, personal year, compatibility, lucky dates. Use then book a full reading at www.drdhaval.in.","url":"https://www.drdhaval.in/numerology#tools","numberOfItems":5,"itemListElement":[{"@type":"SoftwareApplication","position":1,"name":"Life Path Calculator","applicationCategory":"UtilitiesApplication","description":"Enter your full date of birth to get your life path number (1 to 9 or 11, 22) and a short meaning.","url":"https://www.drdhaval.in/numerology#life-path-calculator"},{"@type":"SoftwareApplication","position":2,"name":"Name or Expression Number","applicationCategory":"UtilitiesApplication","description":"Enter your full name to get your expression number, a short meaning, and a note on fit with life path.","url":"https://www.drdhaval.in/numerology#name-expression-number"},{"@type":"SoftwareApplication","position":3,"name":"Personal Year Calculator","applicationCategory":"UtilitiesApplication","description":"Your date of birth plus a year gives your personal year number and a one-line theme for that year.","url":"https://www.drdhaval.in/numerology#personal-year"},{"@type":"SoftwareApplication","position":4,"name":"Numerology Compatibility","applicationCategory":"UtilitiesApplication","description":"Enter two dates of birth to see life path numbers and a short compatibility note.","url":"https://www.drdhaval.in/numerology#compatibility"},{"@type":"SoftwareApplication","position":5,"name":"Lucky Dates in a Month","applicationCategory":"UtilitiesApplication","description":"Pick a month and year to get 3 to 5 dates that reduce to favourable numbers.","url":"https://www.drdhaval.in/numerology#lucky-dates"}]}
+</script>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/logo.png">
+<link rel="manifest" href="/manifest.json">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand"><img src="/logo.png" alt="Dr. Dhaval Trivedi Logo" style="height: 32px; vertical-align: middle; margin-right: 0.8rem; filter: brightness(0.9);">Dr. Dhaval Trivedi</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#expertise">Expertise</a></li>
+    <li><a href="/ai-machine-learning">AI & Tech</a></li>
+    <li><a href="/vedic-astrology">Vedic Astrology</a></li>
+    <li><a href="/vastu-shastra">Vastu Shastra</a></li>
+    <li><a href="/numerology">Numerology</a></li>
+    <li><a href="/palmistry">Palmistry</a></li>
+    <li><a href="/guitar-music-vocals">Music &amp; Vocals</a></li>
+    <li><a href="/poetry-kavita">Poetry</a></li>
+    <li><a href="/#tools">Tools</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span>›</span> <a href="/#expertise">Expertise</a> <span>›</span> <span aria-current="page">Numerology</span></nav>
+
+<header class="page-hero">
+  <div class="nums-bg"><span>1</span><span>2</span><span>3</span><span>4</span><span>9</span></div>
+  <p class="badge">Certified</p>
+  <h1>Numerology</h1>
+  <p class="tagline">Decoding the numerical fabric of personality, purpose, and timing. Every number carries a frequency; I read them with precision and empathy.</p>
+</header>
+
+<section class="section">
+  <h2 class="section-title"><span class="num">01</span> What I Offer</h2>
+  <p class="body-text">As a <strong>Certified Numerologist</strong>, I work with name and date of birth to uncover life path numbers, expression numbers, and cycles. Numbers give a language for strengths, challenges, and timing: not to limit you, but to help you make choices with more awareness.</p>
+
+  <div class="number-row">
+    <div class="num-box">1</div>
+    <div class="num-box">2</div>
+    <div class="num-box">3</div>
+    <div class="num-box">4</div>
+    <div class="num-box">5</div>
+    <div class="num-box">6</div>
+    <div class="num-box">7</div>
+    <div class="num-box">8</div>
+    <div class="num-box">9</div>
+  </div>
+
+  <div class="infographic">
+    <div class="info-card">
+      <span class="icon">🔢</span>
+      <h3>Life Path & Destiny</h3>
+      <p>Core numbers from your birth date and name: who you are and where you are headed.</p>
+    </div>
+    <div class="info-card">
+      <span class="icon">📅</span>
+      <h3>Personal Year & Cycles</h3>
+      <p>Understanding the energy of the current year and upcoming cycles.</p>
+    </div>
+    <div class="info-card">
+      <span class="icon">✍️</span>
+      <h3>Name Analysis</h3>
+      <p>How the numbers in your name influence expression and compatibility.</p>
+    </div>
+  </div>
+
+  <section id="tools" class="section tool-anchor">
+    <h2 class="section-title"><span class="num">02</span> Numerology Tools</h2>
+    <p class="tools-intro">Use the life path and name number tools below to get a quick sense of your numbers. For a full chart and timing, book a session at <a href="https://www.drdhaval.in" target="_blank" rel="noopener">www.drdhaval.in</a>. You can also explore <a href="vedic-astrology.html#tools">Panchang and Nakshatra tools</a> on the Vedic Astrology page, or the <a href="vastu-shastra.html#tools">Vastu direction guide</a> for your home.</p>
+
+    <div class="tool-card" id="life-path-calculator">
+      <h3>Life Path Calculator</h3>
+      <p class="tool-desc">Enter your full date of birth to get your life path number (1 to 9, or 11 and 22 as master numbers) and a short meaning. For a deeper understanding of your numbers, read our <a href="/blog/driver-conductor-numerology-guide">detailed guide on Driver and Conductor numbers</a>.</p>
+      <form class="tool-form" id="form-life-path" aria-label="Life path calculator">
+        <label for="lp-dob">Date of birth</label>
+        <input type="date" id="lp-dob" name="dob" required>
+        <button type="submit">Calculate life path</button>
+      </form>
+      <div class="tool-result" id="result-life-path" aria-live="polite">
+        <span class="result-title">Your life path number</span>
+        <div class="result-value" id="lp-number"></div>
+        <div class="result-text" id="lp-meaning"></div>
+      </div>
+      <p class="tool-usage" id="usage-life-path" aria-hidden="true"></p>
+    </div>
+
+    <div class="tool-card" id="name-expression-number">
+      <h3>Name or Expression Number</h3>
+      <p class="tool-desc">Enter your full name as you use it. You will get your expression number, a short meaning, and a note on how it fits with your life path.</p>
+      <form class="tool-form" id="form-expression" aria-label="Expression number from name">
+        <label for="expr-name">Full name</label>
+        <input type="text" id="expr-name" name="name" placeholder="e.g. Rajesh Kumar" required minlength="2">
+        <label for="expr-dob">Your date of birth (for life path fit)</label>
+        <input type="date" id="expr-dob" name="dob">
+        <button type="submit">Get expression number</button>
+      </form>
+      <div class="tool-result" id="result-expression" aria-live="polite">
+        <span class="result-title">Expression number</span>
+        <div class="result-value" id="expr-number"></div>
+        <div class="result-text" id="expr-meaning"></div>
+      </div>
+      <p class="tool-usage" id="usage-expression" aria-hidden="true"></p>
+    </div>
+
+    <div class="tool-card" id="personal-year">
+      <h3>Personal Year</h3>
+      <p class="tool-desc">Your date of birth plus a year (default is the current year) gives your personal year number and a one-line theme for that year.</p>
+      <form class="tool-form" id="form-personal-year" aria-label="Personal year calculator">
+        <label for="py-dob">Date of birth</label>
+        <input type="date" id="py-dob" name="dob" required>
+        <label for="py-year">Year</label>
+        <input type="number" id="py-year" name="year" min="1900" max="2100" value="" placeholder="e.g. 2025" required>
+        <button type="submit">Get personal year</button>
+      </form>
+      <div class="tool-result" id="result-personal-year" aria-live="polite">
+        <span class="result-title">Personal year</span>
+        <div class="result-value" id="py-number"></div>
+        <div class="result-text" id="py-theme"></div>
+      </div>
+      <p class="tool-usage" id="usage-personal-year" aria-hidden="true"></p>
+    </div>
+
+    <div class="tool-card" id="compatibility">
+      <h3>Numerology Compatibility</h3>
+      <p class="tool-desc">Enter two dates of birth (and optionally two names) to see life path numbers and a short compatibility note.</p>
+      <form class="tool-form" id="form-compatibility" aria-label="Numerology compatibility">
+        <label for="comp-dob1">First date of birth</label>
+        <input type="date" id="comp-dob1" name="dob1" required>
+        <label for="comp-name1">First name (optional)</label>
+        <input type="text" id="comp-name1" name="name1" placeholder="Optional">
+        <label for="comp-dob2">Second date of birth</label>
+        <input type="date" id="comp-dob2" name="dob2" required>
+        <label for="comp-name2">Second name (optional)</label>
+        <input type="text" id="comp-name2" name="name2" placeholder="Optional">
+        <button type="submit">Check compatibility</button>
+      </form>
+      <div class="tool-result" id="result-compatibility" aria-live="polite">
+        <span class="result-title">Compatibility</span>
+        <div class="result-value" id="comp-numbers"></div>
+        <div class="result-text" id="comp-note"></div>
+      </div>
+      <p class="tool-usage" id="usage-compatibility" aria-hidden="true"></p>
+    </div>
+
+    <div class="tool-card" id="lucky-dates">
+      <h3>Lucky Dates in a Month</h3>
+      <p class="tool-desc">Pick a month and year (and an optional purpose) to get 3 to 5 dates in that month that reduce to favourable numbers, with a short note.</p>
+      <form class="tool-form" id="form-lucky-dates" aria-label="Lucky dates in month">
+        <label for="ld-month">Month</label>
+        <select id="ld-month" name="month" required>
+          <option value="1">January</option><option value="2">February</option><option value="3">March</option>
+          <option value="4">April</option><option value="5">May</option><option value="6">June</option>
+          <option value="7">July</option><option value="8">August</option><option value="9">September</option>
+          <option value="10">October</option><option value="11">November</option><option value="12">December</option>
+        </select>
+        <label for="ld-year">Year</label>
+        <input type="number" id="ld-year" name="year" min="2000" max="2030" value="" placeholder="e.g. 2025" required>
+        <label for="ld-purpose">Purpose (optional)</label>
+        <input type="text" id="ld-purpose" name="purpose" placeholder="e.g. travel, meeting">
+        <button type="submit">Get lucky dates</button>
+      </form>
+      <div class="tool-result" id="result-lucky-dates" aria-live="polite">
+        <span class="result-title">Suggested dates</span>
+        <div class="result-value" id="ld-dates"></div>
+        <div class="result-text" id="ld-note"></div>
+      </div>
+      <p class="tool-usage" id="usage-lucky-dates" aria-hidden="true"></p>
+    </div>
+
+    <div class="tools-cluster">
+      <p>Explore more tools and consultations:</p>
+      <div class="cluster-links">
+        <a href="vedic-astrology.html#tools">Panchang and Muhurat</a>
+        <a href="vastu-shastra.html#tools">Vastu direction guide</a>
+        <a href="https://palmistry.appstream.me" target="_blank" rel="noopener">Free palm reading</a>
+        <a href="https://www.drdhaval.in" target="_blank" rel="noopener">Book a session</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-block">
+    <h2>Numerology Reading</h2>
+    <p>For a full chart, name analysis, or timing guidance, book through the main website.</p>
+    <a href="https://www.drdhaval.in" target="_blank" rel="noopener" class="cta-link">Visit drdhaval.in</a>
+  </div>
+
+  <div class="explore-other">
+    <p class="explore-label">Explore other expertise</p>
+    <div class="explore-links">
+      <a href="/vedic-astrology">Vedic Astrology</a>
+      <a href="/vastu-shastra">Vastu Shastra</a>
+      <a href="/numerology" class="current">Numerology</a>
+      <a href="/palmistry">Palmistry</a>
+      <a href="/guitar-music-vocals">Music &amp; Vocals</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="/">← Back to Home</a>
+  <a href="/#expertise">All expertise</a>
+  <a href="/palmistry">Palmistry →</a>
+  <a href="https://www.drdhaval.in" target="_blank" rel="noopener">drdhaval.in</a>
+</footer>
+
+<script>
+(function () {
+  var currentYear = new Date().getFullYear();
+  var pyYear = document.getElementById('py-year');
+  var ldYear = document.getElementById('ld-year');
+  if (pyYear) pyYear.value = pyYear.placeholder = currentYear;
+  if (ldYear) ldYear.value = ldYear.placeholder = currentYear;
+
+  var STORAGE_KEY = 'numerology_tools_usage';
+  function getUsage() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+  function incUsage(toolId) {
+    var u = getUsage();
+    u[toolId] = (u[toolId] || 0) + 1;
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(u)); } catch (e) {}
+    return u[toolId];
+  }
+  function showUsage(toolId, elId) {
+    var count = getUsage()[toolId];
+    var el = document.getElementById(elId);
+    if (el && count) { el.textContent = 'Used ' + count + ' time' + (count !== 1 ? 's' : ''); el.setAttribute('aria-hidden', 'false'); }
+  }
+
+  function reduceToDigit(n, allowMaster) {
+    if (allowMaster && (n === 11 || n === 22)) return n;
+    while (n > 9) n = (n % 10) + Math.floor(n / 10);
+    return n;
+  }
+  function lifePathFromDob(dateStr) {
+    var parts = dateStr.split('-');
+    var d = parseInt(parts[2], 10), m = parseInt(parts[1], 10), y = parseInt(parts[0], 10);
+    var sum = 0;
+    while (d) { sum += d % 10; d = Math.floor(d / 10); }
+    while (m) { sum += m % 10; m = Math.floor(m / 10); }
+    while (y) { sum += y % 10; y = Math.floor(y / 10); }
+    while (sum > 11 && sum !== 22) { sum = (sum % 10) + Math.floor(sum / 10); }
+    return sum;
+  }
+  var lifePathMeanings = {
+    1: 'You are a natural leader with strong independence and drive. Your path is about initiative and new beginnings.',
+    2: 'Cooperation and balance define your path. You thrive in partnership and bring harmony to situations.',
+    3: 'Creative expression and communication are central. Your path is about joy, creativity, and sharing ideas.',
+    4: 'Stability, order, and building something lasting matter. Your path is about hard work and practical results.',
+    5: 'Freedom and change drive you. Your path involves variety, travel, and adapting to new experiences.',
+    6: 'Responsibility, family, and service are key. Your path is about nurturing and creating harmony at home.',
+    7: 'Analysis, spirituality, and inner wisdom define your path. You seek depth and understanding.',
+    8: 'Ambition, authority, and material success are themes. Your path is about achievement and recognition.',
+    9: 'Compassion and completion. Your path involves letting go and serving the wider good.',
+    11: 'You carry a master number of intuition and inspiration. Your path has a higher spiritual charge.',
+    22: 'You carry a master number of the builder. Your path can turn big visions into reality.'
+  };
+
+  document.getElementById('form-life-path').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var dob = document.getElementById('lp-dob').value;
+    var num = lifePathFromDob(dob);
+    var meaning = lifePathMeanings[num] || 'Your life path number is ' + num + '. For a full reading, book a session.';
+    document.getElementById('lp-number').textContent = num;
+    document.getElementById('lp-meaning').textContent = meaning;
+    document.getElementById('result-life-path').classList.add('visible');
+    incUsage('life-path');
+    showUsage('life-path', 'usage-life-path');
+  });
+
+  var letterValues = { A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,I:9,J:1,K:2,L:3,M:4,N:5,O:6,P:7,Q:8,R:9,S:1,T:2,U:3,V:4,W:5,X:6,Y:7,Z:8 };
+  function expressionFromName(name) {
+    var sum = 0;
+    var s = (name || '').toUpperCase().replace(/\s+/g, '');
+    for (var i = 0; i < s.length; i++) { if (letterValues[s[i]] !== undefined) sum += letterValues[s[i]]; }
+    return reduceToDigit(sum, false);
+  }
+  var expressionMeanings = {
+    1: 'Independent and pioneering. You express yourself through leadership and new ideas.',
+    2: 'Diplomatic and supportive. You express through partnership and sensitivity.',
+    3: 'Creative and communicative. You express through art, words, and social connection.',
+    4: 'Practical and disciplined. You express through structure and reliability.',
+    5: 'Versatile and freedom-loving. You express through change and experience.',
+    6: 'Nurturing and responsible. You express through care and harmony.',
+    7: 'Thoughtful and introspective. You express through depth and analysis.',
+    8: 'Ambitious and authoritative. You express through achievement and impact.',
+    9: 'Compassionate and broad-minded. You express through service and completion.'
+  };
+
+  document.getElementById('form-expression').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('expr-name').value.trim();
+    var dobInput = document.getElementById('expr-dob').value;
+    var num = expressionFromName(name);
+    var meaning = expressionMeanings[num] || 'Your expression number is ' + num + '.';
+    var fit = '';
+    if (dobInput) {
+      var lp = lifePathFromDob(dobInput);
+      fit = ' Your life path is ' + lp + '. When life path and expression align (same or compatible numbers), strengths are often easier to live out. For a full name and timing analysis, book a session.';
+    } else {
+      fit = ' Add your date of birth to see how this fits with your life path. For a full reading, book a session at www.drdhaval.in.';
+    }
+    document.getElementById('expr-number').textContent = num;
+    document.getElementById('expr-meaning').textContent = meaning + fit;
+    document.getElementById('result-expression').classList.add('visible');
+    incUsage('expression');
+    showUsage('expression', 'usage-expression');
+  });
+
+  function personalYearFromDobAndYear(dob, year) {
+    var parts = dob.split('-');
+    var d = parseInt(parts[2], 10), m = parseInt(parts[1], 10);
+    var sum = 0;
+    while (d) { sum += d % 10; d = Math.floor(d / 10); }
+    while (m) { sum += m % 10; m = Math.floor(m / 10); }
+    while (year) { sum += year % 10; year = Math.floor(year / 10); }
+    return reduceToDigit(sum, false);
+  }
+  var personalYearThemes = {
+    1: 'Theme of the year: new beginnings, independence, and planting seeds.',
+    2: 'Theme of the year: cooperation, patience, and partnerships.',
+    3: 'Theme of the year: creativity, expression, and social flow.',
+    4: 'Theme of the year: building, discipline, and groundwork.',
+    5: 'Theme of the year: change, freedom, and variety.',
+    6: 'Theme of the year: family, responsibility, and harmony.',
+    7: 'Theme of the year: reflection, learning, and inner growth.',
+    8: 'Theme of the year: achievement, recognition, and material progress.',
+    9: 'Theme of the year: completion, release, and compassion.'
+  };
+
+  document.getElementById('form-personal-year').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var dob = document.getElementById('py-dob').value;
+    var year = parseInt(document.getElementById('py-year').value, 10);
+    var num = personalYearFromDobAndYear(dob, year);
+    document.getElementById('py-number').textContent = 'Personal year ' + num + ' (' + year + ')';
+    document.getElementById('py-theme').textContent = personalYearThemes[num] || 'Theme of the year: focus on the energy of number ' + num + '.';
+    document.getElementById('result-personal-year').classList.add('visible');
+    incUsage('personal-year');
+    showUsage('personal-year', 'usage-personal-year');
+  });
+
+  var compatibilityNotes = {
+    '1-1': 'Two leaders. Respect independence and take turns taking the lead.',
+    '1-2': 'Leader and diplomat. One can initiate, the other can smooth and support.',
+    '1-3': 'Drive and creativity. Good for projects and social ventures.',
+    '1-4': 'Initiative and stability. One starts, the other builds.',
+    '1-5': 'Both like change. Keep communication clear to avoid restlessness.',
+    '1-6': 'Leadership and nurturing. Can balance ambition with care.',
+    '1-7': 'Action and reflection. Give each other space for different needs.',
+    '1-8': 'Strong drive on both sides. Share goals to avoid power clashes.',
+    '1-9': 'Leader and humanitarian. One focuses, the other broadens.',
+    '2-2': 'Harmony and partnership. Strong for cooperation and peace.',
+    '2-3': 'Diplomacy and creativity. Good for social and creative work.',
+    '2-4': 'Patience and structure. Steady growth when both commit.',
+    '2-5': 'Sensitivity and change. Adapt together to keep balance.',
+    '2-6': 'Both value harmony. Strong for home and family.',
+    '2-7': 'Feeling and depth. Allow time for introspection.',
+    '2-8': 'Support and ambition. One can back the other\'s goals.',
+    '2-9': 'Cooperation and compassion. Aligned for service.',
+    '3-3': 'Double creativity. Keep communication open and light.',
+    '3-4': 'Ideas and execution. One dreams, the other builds.',
+    '3-5': 'Both love variety. Fun and change, with some grounding.',
+    '3-6': 'Expression and care. Good for family and creative home.',
+    '3-7': 'Social and private. Balance time together and alone.',
+    '3-8': 'Creativity and ambition. Can combine vision with results.',
+    '3-9': 'Expression and compassion. Shared ideals and outreach.',
+    '4-4': 'Stable and reliable. Strong foundation; add some flexibility.',
+    '4-5': 'Structure and change. Negotiate routine vs adventure.',
+    '4-6': 'Both value security. Solid for home and commitment.',
+    '4-7': 'Practical and thoughtful. Build with patience.',
+    '4-8': 'Building and achieving. Strong for material goals.',
+    '4-9': 'Order and completion. Work well for long-term projects.',
+    '5-5': 'Both love freedom. Keep trust and communication strong.',
+    '5-6': 'Change and responsibility. Balance adventure with commitment.',
+    '5-7': 'Variety and depth. Respect different rhythms.',
+    '5-8': 'Freedom and ambition. Align on goals to avoid friction.',
+    '5-9': 'Adventure and compassion. Good for growth and travel.',
+    '6-6': 'Nurturing and devoted. Strong for family and care.',
+    '6-7': 'Heart and mind. Balance feeling and analysis.',
+    '6-8': 'Home and career. Share priorities clearly.',
+    '6-9': 'Service and compassion. Aligned values.',
+    '7-7': 'Depth and privacy. Give each other space.',
+    '7-8': 'Analysis and action. Thought plus execution.',
+    '7-9': 'Wisdom and compassion. Spiritual and humanitarian fit.',
+    '8-8': 'High drive. Channel ambition together, avoid control issues.',
+    '8-9': 'Achievement and giving. Combine success with meaning.',
+    '9-9': 'Compassion and completion. Shared idealism.'
+  };
+  function compKey(a, b) { return a <= b ? a + '-' + b : b + '-' + a; }
+
+  document.getElementById('form-compatibility').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var dob1 = document.getElementById('comp-dob1').value;
+    var dob2 = document.getElementById('comp-dob2').value;
+    var n1 = lifePathFromDob(dob1);
+    var n2 = lifePathFromDob(dob2);
+    var key = compKey(n1, n2);
+    var note = compatibilityNotes[key] || 'Life path ' + n1 + ' and ' + n2 + '. Each pairing has its strengths; for a detailed compatibility reading, book a session.';
+    var names = [];
+    if (document.getElementById('comp-name1').value.trim()) names.push(document.getElementById('comp-name1').value.trim());
+    if (document.getElementById('comp-name2').value.trim()) names.push(document.getElementById('comp-name2').value.trim());
+    var label = names.length === 2 ? names[0] + ' & ' + names[1] + ': ' : '';
+    document.getElementById('comp-numbers').textContent = label + 'Life path ' + n1 + ' and ' + n2;
+    document.getElementById('comp-note').textContent = note;
+    document.getElementById('result-compatibility').classList.add('visible');
+    incUsage('compatibility');
+    showUsage('compatibility', 'usage-compatibility');
+  });
+
+  function daySum(day) {
+    var n = parseInt(day, 10);
+    var s = 0;
+    while (n) { s += n % 10; n = Math.floor(n / 10); }
+    return reduceToDigit(s, false);
+  }
+  var favourableNums = { 1: true, 3: true, 5: true, 6: true, 9: true };
+
+  document.getElementById('form-lucky-dates').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var month = parseInt(document.getElementById('ld-month').value, 10);
+    var year = parseInt(document.getElementById('ld-year').value, 10);
+    var purpose = document.getElementById('ld-purpose').value.trim();
+    var daysInMonth = new Date(year, month, 0).getDate();
+    var good = [];
+    for (var day = 1; day <= daysInMonth; day++) {
+      if (favourableNums[daySum(day)]) good.push(day);
+    }
+    good = good.slice(0, 5);
+    var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var dateStr = good.length ? good.join(', ') + ' ' + monthNames[month - 1] + ' ' + year : 'No favourable dates in this range.';
+    var note = 'These dates reduce to numbers 1, 3, 5, 6, or 9, often considered favourable for starting or important activities.' + (purpose ? ' You asked for: ' + purpose + '.' : '') + ' For timing that fits your full chart, book a session.';
+    document.getElementById('ld-dates').textContent = dateStr;
+    document.getElementById('ld-note').textContent = note;
+    document.getElementById('result-lucky-dates').classList.add('visible');
+    incUsage('lucky-dates');
+    showUsage('lucky-dates', 'usage-lucky-dates');
+  });
+
+  showUsage('life-path', 'usage-life-path');
+  showUsage('expression', 'usage-expression');
+  showUsage('personal-year', 'usage-personal-year');
+  showUsage('compatibility', 'usage-compatibility');
+  showUsage('lucky-dates', 'usage-lucky-dates');
+})();
+</script>
+
+<script>
+// Intersection Observer for smooth reveals
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  
+  document.querySelectorAll('.info-card, .section-title, .body-text, .cta-block, .dir-cell, .line-card, .planet-dot, .num-box, .faq-item, .seo-block').forEach(el => {
+    el.classList.add('reveal-up');
+    observer.observe(el);
+  });
+  
+  // Nav shrink on scroll
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        nav.style.padding = '0.8rem 4rem';
+        nav.style.boxShadow = '0 8px 32px rgba(0,0,0,0.5)';
+      } else {
+        nav.style.padding = '1.5rem 4rem';
+        nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
