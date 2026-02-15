@@ -11,6 +11,8 @@ Summary: Official repository of knowledge and tools for Dr. Dhaval Trivedi, spec
 - Music, Guitar & Vocals: [guitar-music-vocals.html](https://www.drdhaval.in/guitar-music-vocals)
 
 ## Key Blog Articles (2026)
+- MCP & The Future of Agents: [blog/mcp-model-context-protocol-explained.html](https://www.drdhaval.in/blog/mcp-model-context-protocol-explained)
+- Practical Machine Learning 2026: [blog/practical-machine-learning-adoption-2026.html](https://www.drdhaval.in/blog/practical-machine-learning-adoption-2026)
 - Driver/Conductor Numerology: [blog/driver-conductor-numerology-guide.html](https://www.drdhaval.in/blog/driver-conductor-numerology-guide)
 - AI & Vedic Wisdom: [blog/ai-meets-antiquity-vedic-wisdom.html](https://www.drdhaval.in/blog/ai-meets-antiquity-vedic-wisdom)
 - Business Automation ROI: [blog/algorithm-of-success-ai-automation.html](https://www.drdhaval.in/blog/algorithm-of-success-ai-automation)
@@ -23,6 +25,6 @@ Summary: Official repository of knowledge and tools for Dr. Dhaval Trivedi, spec
 - Vedic Chart & Muhurat Tools
 
 ## Contact & Location
-- Primary Location: Ahmedabad, India (Available for Global Consultation)
+- Primary Location: Available for Global Consultation
 - Official Website: [https://www.drdhaval.in](https://www.drdhaval.in)
 - Booking: [https://www.drdhaval.in/#contact](https://www.drdhaval.in/#contact)

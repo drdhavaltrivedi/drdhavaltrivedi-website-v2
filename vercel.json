@@ -14,6 +14,9 @@
     { "source": "/research-consulting", "destination": "/research-consulting.html" },
     { "source": "/blog", "destination": "/blog/index.html" },
     
+    { "source": "/blog/mcp-model-context-protocol-explained", "destination": "/blog/mcp-model-context-protocol-explained.html" },
+    { "source": "/blog/practical-machine-learning-adoption-2026", "destination": "/blog/practical-machine-learning-adoption-2026.html" },
+    
     { "source": "/blog/driver-conductor-numerology-guide", "destination": "/blog/driver-conductor-numerology-guide.html" },
     { "source": "/blog/ai-meets-antiquity-vedic-wisdom", "destination": "/blog/ai-meets-antiquity-vedic-wisdom.html" },
     { "source": "/blog/algorithm-of-success-ai-automation", "destination": "/blog/algorithm-of-success-ai-automation.html" },
