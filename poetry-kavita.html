@@ -212,7 +212,7 @@ footer { background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); -webkit-backdr
     <p class="sub">Enter a name and choose a theme. We will weave a few lines just for that person so it feels personal.</p>
     <form class="custom-form" id="shayari-form" aria-label="Custom shayari or kavita">
       <label for="shayari-name">Name (to use in the verse)</label>
-      <input type="text" id="shayari-name" name="name" placeholder="e.g. Priya, Rahul" required minlength="2" maxlength="30" autocomplete="name">
+      <input type="text" id="shayari-name" name="name" placeholder="e.g. Ananya, Mehul" required minlength="2" maxlength="30" autocomplete="name">
       <label>Type</label>
       <select id="shayari-type" name="type" aria-label="Shayari or Kavita">
         <option value="shayari">Shayari</option>
@@ -221,15 +221,15 @@ footer { background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); -webkit-backdr
       <label>Theme</label>
       <div class="theme-grid" role="group" aria-label="Choose theme">
         <button type="button" class="theme-btn" data-theme="beauty">Beauty</button>
-        <button type="button" class="theme-btn" data-theme="behaviour">Behaviour</button>
-        <button type="button" class="theme-btn" data-theme="cute">Cute</button>
         <button type="button" class="theme-btn" data-theme="love">Love</button>
-        <button type="button" class="theme-btn" data-theme="love-continue">Love Continue</button>
+        <button type="button" class="theme-btn" data-theme="sad">Sad</button>
+        <button type="button" class="theme-btn" data-theme="funny">Funny</button>
+        <button type="button" class="theme-btn" data-theme="motivational">Motivational</button>
+        <button type="button" class="theme-btn" data-theme="friendship">Friendship</button>
         <button type="button" class="theme-btn" data-theme="night">Night</button>
         <button type="button" class="theme-btn" data-theme="morning">Morning</button>
-        <button type="button" class="theme-btn" data-theme="lunch">Lunch</button>
-        <button type="button" class="theme-btn" data-theme="dinner">Dinner</button>
         <button type="button" class="theme-btn" data-theme="coffee">Coffee</button>
+        <button type="button" class="theme-btn" data-theme="attitude">Attitude</button>
       </div>
       <input type="hidden" id="shayari-theme" name="theme" value="love" required>
       <button type="submit">Generate for me</button>
@@ -285,87 +285,128 @@ footer { background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); -webkit-backdr
 (function () {
   var themes = {
     beauty: [
-      '{{name}}, tumhari adaon pe fida hai dil,\nHar nazar tumse mili to lagta hai khwab hai still.',
-      'Tumhari soch bhi rangeen, {{name}},\nJahan bhi ho, wahan khushiyan hain angeen.',
-      '{{name}}, tumhari baaton mein jo noor hai,\nWohi to har dil ka sukoon aur pyar hai.'
-    ],
-    behaviour: [
-      '{{name}} jaisa sulook kahan milega,\nJo tum ho waisa koi na dikhega.',
-      'Tumhare andaz, {{name}}, alag hain sach mein,\nDuniya ko tumse hi seekhna hai yahin.',
-      '{{name}}, tumhari rawaya sabse niraala,\nDil jeetna tumhe aata hai khula.'
-    ],
-    cute: [
-      '{{name}}, tum itne cute ho ke dil kare,\nBas tumhe dekhte rahein, tumhe sune rahein.',
-      'Tumhari muskaan, {{name}}, chhoti si jaan,\nHar pal tumhare saath bitana hai khushiyan.',
-      '{{name}} tum to jaan ho chhoti si,\nHar baat pe hasna, yahi to tumhari adaa hai.'
+      '{{name}}, teri ankhon mein jo kashish hai,\nLagta hai khuda ki koi khaas saazish hai.',
+      'Husn ka zikr ho aur tera naam na aaye,\n{{name}}, aisa mumkin hi nahi ke shaam na chhaye.',
+      'Chand jaisa chehra, sitaron si chamak,\n{{name}}, teri har adda mein hai alag hi damak.',
+      'Phoolon ki khushbu aur tera ehsaas,\n{{name}}, kudrat ne banaya hai tujhe fursat se khaas.',
+      'Aaina bhi sharma jaye tujhe dekh kar,\n{{name}}, teri saadgi mein bhi qayamat ka asar.'
     ],
     love: [
-      '{{name}}, tum mere liye sirf ek naam nahi,\nTum woh raag ho jisse dil ka sangeet chalta hai.',
-      'Tumhare bina adhura lagta hai har din, {{name}},\nTum ho to lagta hai sab kuch hai yahin.',
-      '{{name}}, tumse mohabbat ka ehsaas hai,\nTum ho to har saans mein ek pyar sa hai.'
+      '{{name}}, tumse milkar ye jana hai,\nZindagi sirf saansein lene ka naam nahi, muskurana hai.',
+      'Dil ki dharkano mein bas ek hi raaz hai,\n{{name}}, tumse mohabbat aaj bhi behisaab hai.',
+      'Tum ho to lagta hai mukammal hai jahan,\n{{name}}, tumse shuru aur tumpe khatam hai dastan.',
+      'Raaste chahe jitne bhi mushkil hon,\n{{name}}, tera haath thame chalna hi manzil hai.',
+      'Meri har dua mein tera hi naam hai,\n{{name}}, tu hi meri subah aur tu hi meri shaam hai.'
     ],
-    'love-continue': [
-      '{{name}}, yeh rishta na ruke kabhi,\nChalte rahein saath, bas yahi duaa hai.',
-      'Tumhare saath chalna, {{name}}, hai manzil,\nYahi pyar aage bhi rahega humdum.',
-      '{{name}}, tum ho to raaste hain aasaan,\nYahi kahaani aage bhi chalegi humsafar.'
+    sad: [
+      '{{name}}, kabhi socha na tha yun juda honge,\nEk hi shehar mein rehkar bhi lapata honge.',
+      'Dard ki mehfil mein aaj bhi tera naam hai,\n{{name}}, teri yaadon se hi to ye dil badnaam hai.',
+      'Khamoshi chillati hai ab meri,\n{{name}}, bas ek awaaz sunne ko tarasti hai meri.',
+      'Toote hue khwabon ki chubhan mat pooch,\n{{name}}, hasna bhi ab lagta hai saza jaisa.',
+      'Waqt ne kiya hai kya sitam hum par,\n{{name}}, paas hokar bhi hum hain door is kadar.'
+    ],
+    funny: [
+      '{{name}}, tumhari akal to kamaal hai,\nPar waqt pe na chale, yehi to bawaal hai!',
+      'Dost kehte hain {{name}} samajhdaar hai,\nPar harkatein dekho to bas chalta-firta akhbaar hai.',
+      '{{name}}, tumhari smile pe duniya fida,\nPar brush kar liya karo, yahi hai waja!',
+      'Chand se pyaara hai chehra tera,\n{{name}}, bas naha liya kar kabhi savere savere.',
+      'Akal ke bazaar mein jab boli lagi,\n{{name}}, tum shayad us din chutti pe the.'
+    ],
+    motivational: [
+      '{{name}}, manzil unhi ko milti hai jinke sapno mein jaan hoti hai,\nPankhon se kuch nahi hota, hauslon se udaan hoti hai.',
+      'Girna bura nahi, {{name}}, gir kar uthna sikho,\nZindagi ki yehi reet hai, ladna aur jeetna sikho.',
+      'Waqt tera bhi aayega, bas sabr rakh,\n{{name}}, khud pe yaqin aur mehnat pe nazar rakh.',
+      'Har mushkil aasaan ho jayegi,\n{{name}}, tu bas apne iraadon ko mazboot rakh.',
+      'Duniya ki parwah chhod de,\n{{name}}, tu apni kahani khud likh aur rukh mod de.'
+    ],
+    friendship: [
+      '{{name}}, dosti ka rishta sabse pyaara hai,\nTu sirf dost nahi, tu to sahara hai.',
+      'Duniya badal jaye par yaar na badle,\n{{name}}, teri dosti ke siva hamein kuch na fabe.',
+      'Har mushkil mein tu saath khada hai,\n{{name}}, teri dosti ka karz sabse bada hai.',
+      'Log kehte hain dosti barabari mein hoti hai,\n{{name}}, par hamari dosti mein sab kuch kurban hota hai.',
+      'Teri dosti ki chhaon mein sukoon milta hai,\n{{name}}, tere jaisa yaar kismat walon ko milta hai.'
     ],
     night: [
-      '{{name}}, raat ke andheron mein tumhari yaad,\nTaaron jaisi tum ho, tumhi ho ab saath.',
-      'Raat bhar tumhare khayal, {{name}},\nTum ho to raat bhi din lagti hai pyaari.',
-      '{{name}}, jab raat aaye to tum yaad aao,\nTumhari baat se neend bhi meethi ho jao.'
+      'Raat ke sannate mein tera khayal aata hai,\n{{name}}, tu sitaron mein bhi nazar aata hai.',
+      'Sone se pehle ek dua hai meri,\n{{name}}, har sapna sach ho jaye teri.',
+      'Chaand bhi jhaank raha hai khidki se,\n{{name}}, shayad use bhi teri yaad aa rahi hai.',
+      'Raat ki khamoshi mein ek awaaz aayi,\n{{name}}, hawaon ne teri khushbu phailayi.',
+      'Sitaron se keh do ki wo so jayen,\n{{name}}, mujhe ab teri yaadon mein khona hai.'
     ],
     morning: [
-      '{{name}}, subah tumhare naam se shuru,\nTumhari muskurahat pe din banata hoon main.',
-      'Tum aao to subah suhani lagti hai, {{name}},\nHar din tumhare saath naya lagta hai.',
-      '{{name}}, tumhare saath ka pehla sawera,\nWohi to din ki sabse achchi kahaani hai.'
-    ],
-    lunch: [
-      '{{name}}, aaj do pal ke liye saath lunch karein?\nBaatein karein, hassein, bas tum aur main.',
-      'Tumhare saath lunch, {{name}}, ho jaye kab,\nDil karta hai roz tumse bana kar khaun.',
-      '{{name}}, ek plate share karein, baatein share karein,\nDopahar tumhare saath guzarna hai pyaara.'
-    ],
-    dinner: [
-      '{{name}}, raat ko dinner pe chaloge tum?\nTum ho to har dish meethi lagti hai.',
-      'Tumhare saath dinner, {{name}}, raat ki roshni,\nBas tum aur main, aur yeh lamhein hamesha.',
-      '{{name}}, ek shaam tumhare naam,\nDinner saath karein, yehi hai armaan.'
+      'Subah ki pehli kiran tumhare liye,\n{{name}}, har din khushiyan laye tumhare liye.',
+      'Utho {{name}}, suraj nikal aaya hai,\nNayi ummeedon ka pegam laya hai.',
+      'Chai ki chuski aur tera khayal,\n{{name}}, din ki shuruat ho gayi kamaal.',
+      'Nayi subah, nayi umang,\n{{name}}, chalo bharte hain zindagi mein naye rang.',
+      'Phoolon ne bhi aaj muskura ke kaha,\n{{name}}, uth jao, subah ho gayi hai yahan.'
     ],
     coffee: [
-      '{{name}}, ek cup coffee tumhare saath,\nBaatein choti choti, par dil se nikli.',
-      'Tum aur main aur ek cup, {{name}},\nYahi to chahiye tha, ab mil gaya sukoon.',
-      '{{name}}, coffee pe bulavo kabhi,\nTumhare saath woh pee kar dil khush ho jaye.'
+      'Ek cup coffee aur teri baatein,\n{{name}}, bas yahi chahiye mulakaatein.',
+      'Coffee ki mehak, tera ehsaas,\n{{name}}, tu hai sabse khaas.',
+      'Zindagi ulajh gayi hai coffee ki tarah,\n{{name}}, tum aa jao shakkar ki tarah.',
+      'Sham ki chai ya raat ki coffee,\n{{name}}, tumhare saath har pal hai kaafi.',
+      'Bitter coffee mein meethi baatein,\n{{name}}, yaad aati hain wo mulakaatein.'
+    ],
+    attitude: [
+      '{{name}} ka style sabse alag hai,\nHum wahan khade hote hain jahan matter bade hote hain.',
+      'Jalne wale jalte rahein,\n{{name}} to bas apni dhun mein chalte rahein.',
+      'Hum shareef kya hue, puri duniya badmash ho gayi,\n{{name}}, ab dikhayenge rang asli.',
+      'Sher ki dahad aur {{name}} ka naam,\nBas yahi hai aaj kal charche aam.',
+      'Hmari hasti ko mitana namumkin hai,\n{{name}}, hum wo chingari hain jo aag laga de.'
     ]
   };
 
   var themeLabels = {
-    beauty: 'Beauty', behaviour: 'Behaviour', cute: 'Cute', love: 'Love',
-    'love-continue': 'Love continue', night: 'Night', morning: 'Morning',
-    lunch: 'Lunch', dinner: 'Dinner', coffee: 'Coffee'
+    beauty: 'Beauty', love: 'Love', sad: 'Sad', funny: 'Funny', 
+    motivational: 'Motivational', friendship: 'Friendship', night: 'Night', 
+    morning: 'Morning', coffee: 'Coffee', attitude: 'Attitude'
   };
 
   var themeButtons = document.querySelectorAll('.theme-btn');
-  var themeInput = document.getElementById('shayari-theme');
-  themeButtons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      themeButtons.forEach(function (b) { b.classList.remove('selected'); });
-      btn.classList.add('selected');
-      themeInput.value = btn.getAttribute('data-theme');
+  var themeInput = document.getElementById('shayari-theme'); // This element needs to exist in your HTML
+  
+  if(themeInput) {
+    themeButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        themeButtons.forEach(function (b) { b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        themeInput.value = btn.getAttribute('data-theme');
+      });
     });
-  });
-  var firstTheme = document.querySelector('.theme-btn[data-theme="love"]');
-  if (firstTheme) firstTheme.classList.add('selected');
+    
+    // Set default selected
+    var firstTheme = document.querySelector('.theme-btn[data-theme="love"]');
+    if (firstTheme) firstTheme.classList.add('selected');
+  }
 
   document.getElementById('shayari-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    var name = document.getElementById('shayari-name').value.trim();
+    var nameInput = document.getElementById('shayari-name');
+    var name = nameInput.value.trim();
     if (!name) return;
-    var type = document.getElementById('shayari-type').value;
-    var theme = themeInput.value || 'love';
+    
+    var navType = document.getElementById('shayari-type');
+    var type = navType ? navType.value : 'shayari';
+    
+    var theme = themeInput ? themeInput.value : 'love';
     var list = themes[theme] || themes.love;
     var text = list[Math.floor(Math.random() * list.length)];
     text = text.replace(/\{\{name\}\}/g, name);
-    document.getElementById('shayari-lines').textContent = text;
-    document.getElementById('shayari-meta').textContent = 'Theme: ' + (themeLabels[theme] || theme) + ' · ' + (type === 'kavita' ? 'Kavita' : 'Shayari') + ' for ' + name;
-    document.getElementById('shayari-result').classList.add('visible');
+    
+    var linesDiv = document.getElementById('shayari-lines');
+    linesDiv.style.opacity = 0;
+    
+    setTimeout(function() {
+      linesDiv.textContent = text;
+      linesDiv.style.opacity = 1;
+      
+      var metaDiv = document.getElementById('shayari-meta');
+      if(metaDiv) {
+        metaDiv.textContent = 'Theme: ' + (themeLabels[theme] || theme) + ' · ' + (type === 'kavita' ? 'Kavita' : 'Shayari') + ' for ' + name;
+      }
+      
+      document.getElementById('shayari-result').classList.add('visible');
+    }, 200);
   });
 })();
 </script>

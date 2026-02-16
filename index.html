@@ -49,6 +49,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
@@ -248,192 +249,7 @@ section { padding: 8rem 5rem; position: relative; }
   margin-top: 0.65rem;
 }
 
-/* Identity Map */
-.about-infographic {
-  border: 1px solid rgba(244,247,255,0.08);
-  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(8,6,12,0.95) 100%);
-  padding: 2rem;
-  border-radius: 20px;
-  margin-bottom: 4rem;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03);
-}
-.about-infographic .map-title {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.56rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-.about-infographic .map-title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(184,154,95,0.3), transparent);
-}
-.about-map {
-  position: relative;
-  min-height: 400px;
-  border: 1px solid rgba(184,154,95,0.12);
-  border-radius: 16px;
-  background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(184,154,95,0.06) 0%, transparent 55%), radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, #050508 100%);
-  overflow: hidden;
-  box-shadow: inset 0 0 80px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.2);
-}
-.about-map-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.6;
-}
-.about-map svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-.about-map svg line {
-  stroke: rgba(184,154,95,0.28);
-  stroke-width: 1.2;
-  stroke-linecap: round;
-  stroke-dasharray: 6 10;
-  transition: stroke 0.25s ease, stroke-width 0.25s ease, filter 0.25s ease;
-  animation: mapDash 10s linear infinite;
-}
-.about-map svg line.highlight {
-  stroke: rgba(184,154,95,0.75);
-  stroke-width: 1.8;
-  filter: drop-shadow(0 0 6px rgba(184,154,95,0.4));
-  animation-duration: 6s;
-}
-.map-core {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 148px;
-  height: 148px;
-  border-radius: 50%;
-  border: 2px solid rgba(184,154,95,0.6);
-  box-shadow: 0 0 50px rgba(184,154,95,0.2), 0 0 100px rgba(184,154,95,0.08), inset 0 0 40px rgba(184,154,95,0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: var(--paper);
-  font-family: 'Playfair Display', serif;
-  font-size: 1.08rem;
-  line-height: 1.25;
-  background: radial-gradient(circle at 30% 30%, rgba(28,26,22,0.9), rgba(10,10,12,0.95));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: mapCorePulse 4s ease-in-out infinite;
-  z-index: 2;
-}
-.map-core:hover {
-  transform: translate(-50%, -50%) scale(1.03);
-  box-shadow: 0 0 60px rgba(184,154,95,0.25), 0 0 120px rgba(184,154,95,0.1), inset 0 0 50px rgba(184,154,95,0.08);
-}
-.map-core span {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.46rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-top: 0.45rem;
-  text-shadow: 0 0 20px rgba(184,154,95,0.3);
-}
-@keyframes mapCorePulse {
-  0%, 100% { box-shadow: 0 0 50px rgba(184,154,95,0.2), 0 0 100px rgba(184,154,95,0.08), inset 0 0 40px rgba(184,154,95,0.05); }
-  50% { box-shadow: 0 0 60px rgba(184,154,95,0.28), 0 0 110px rgba(184,154,95,0.12), inset 0 0 45px rgba(184,154,95,0.07); }
-}
-.map-node {
-  position: absolute;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.52rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--paper);
-  border: 1px solid rgba(244,247,255,0.14);
-  padding: 0.6rem 0.85rem;
-  border-radius: 12px;
-  background: linear-gradient(145deg, rgba(22,20,18,0.95), rgba(12,11,14,0.98));
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  white-space: nowrap;
-  transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
-  cursor: grab;
-  user-select: none;
-  touch-action: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
-  animation: mapBob 5s ease-in-out infinite;
-  z-index: 3;
-}
-.map-node:hover {
-  border-color: var(--gold);
-  color: #fff8e7;
-  transform: scale(1.06);
-  box-shadow: 0 0 24px rgba(184,154,95,0.28), 0 6px 20px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
-}
-.map-node.dragging {
-  cursor: grabbing;
-  z-index: 6;
-  transform: scale(1.1);
-  border-color: var(--gold);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.5), 0 0 28px rgba(184,154,95,0.35), inset 0 1px 0 rgba(255,255,255,0.08);
-  animation: none;
-}
-.map-node.drag-release {
-  animation: mapNodeBounce 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
-}
-@keyframes mapNodeBounce {
-  0% { transform: scale(1.12); }
-  70% { transform: scale(1.02); }
-  100% { transform: scale(1); }
-}
-.map-n1 { left: 7%; top: 14%; }
-.map-n2 { right: 7%; top: 15%; }
-.map-n3 { left: 10%; top: 66%; }
-.map-n4 { right: 8%; top: 66%; }
-.map-n5 { left: 39%; top: 6%; }
-.map-n6 { left: 39%; bottom: 6%; }
-.map-n1 { animation-delay: 0s; }
-.map-n2 { animation-delay: 0.5s; }
-.map-n3 { animation-delay: 1s; }
-.map-n4 { animation-delay: 1.5s; }
-.map-n5 { animation-delay: 2s; }
-.map-n6 { animation-delay: 2.5s; }
-.map-hint {
-  text-align: center;
-  margin-top: 1rem;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.48rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(244,247,255,0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-.map-hint::before {
-  content: '✦';
-  color: var(--gold);
-  font-size: 0.5rem;
-  animation: mapHintGlow 2s ease-in-out infinite;
-}
-@keyframes mapHintGlow {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; text-shadow: 0 0 8px rgba(184,154,95,0.5); }
-}
+
 
 /* Quote */
 .about-pull {
@@ -818,40 +634,26 @@ footer { background: var(--ink); padding: 2.5rem 5rem; border-top: 1px solid rgb
 
   <div class="about-highlights reveal">
     <div class="about-card">
-      <span class="about-card-icon">⚡</span>
+      <i class="ri-flashlight-fill about-card-icon"></i>
       <h3>Builder &amp; Technologist</h3>
       <p>Led engineering teams, architected intelligent systems, and founded a tech company that bridges human insight with machine precision.</p>
       <span class="card-tag">AI &amp; Automation</span>
     </div>
     <div class="about-card">
-      <span class="about-card-icon">🌌</span>
+      <i class="ri-moon-clear-fill about-card-icon"></i>
       <h3>Vedic Sciences Practitioner</h3>
       <p>Deep guidance through Jyotish, Numerology, Palmistry, and Vastu Shastra. Thousands of readings delivered with precision and empathy.</p>
       <span class="card-tag">Astrology · Vastu · Numerology</span>
     </div>
     <div class="about-card">
-      <span class="about-card-icon">🎸</span>
+      <i class="ri-music-fill about-card-icon"></i>
       <h3>Artist &amp; Mentor</h3>
       <p>Guitarist, poet, and shayar who mentors early-stage founders. His YouTube channel democratises AI knowledge for the next generation.</p>
       <span class="card-tag">Music · Poetry · Mentorship</span>
     </div>
   </div>
 
-  <div class="about-infographic reveal">
-    <p class="map-title">Identity Map</p>
-    <div class="about-map">
-      <canvas class="about-map-canvas" aria-hidden="true"></canvas>
-      <svg id="aboutMapLines" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true"></svg>
-      <div class="map-core">Dr. Dhaval<span>Code x Cosmos</span></div>
-      <div class="map-node map-n1" data-node="ai">AI Systems</div>
-      <div class="map-node map-n2" data-node="vedic">Vedic Astrology</div>
-      <div class="map-node map-n3" data-node="mentor">Startup Mentor</div>
-      <div class="map-node map-n4" data-node="poetry">Poetry &amp; Music</div>
-      <div class="map-node map-n5" data-node="research">Research Mindset</div>
-      <div class="map-node map-n6" data-node="human">Human Guidance</div>
-    </div>
-    <p class="map-hint">Drag the nodes to explore connections</p>
-  </div>
+
 
   <blockquote class="about-pull reveal">"Har number mein ek raaz hai, har rekha mein ek baat; main padh leta hoon kismat bhi, aur likhta hoon code bhi raat."</blockquote>
 </section>
@@ -860,18 +662,18 @@ footer { background: var(--ink); padding: 2.5rem 5rem; border-top: 1px solid rgb
   <div class="s-hdr reveal"><span class="s-num">02</span><h2 class="s-title expertise-head">Domains of <em>Mastery</em></h2></div>
   <p class="expertise-intro reveal">Each discipline has its own depth. Explore dedicated pages for Vedic Astrology, Vastu Shastra, Numerology, Palmistry, and Guitar &amp; Music, each with tailored guidance and practice.</p>
   <div class="cards-grid">
-    <a href="/ai-machine-learning" class="card reveal"><span class="c-icon">⚡</span><h3 class="c-title">AI &amp; Machine Learning</h3><p class="c-desc">Building intelligent systems, training models, and designing pipelines from LLMs to automation frameworks that solve real problems at scale.</p></a>
-    <a href="/automation-engineering" class="card reveal"><span class="c-icon">🤖</span><h3 class="c-title">Automation Engineering</h3><p class="c-desc">End-to-end automation ecosystems: reducing friction, increasing throughput, and letting human intelligence focus on what machines cannot replace.</p></a>
-    <a href="/technical-project-management" class="card reveal"><span class="c-icon">🏗️</span><h3 class="c-title">Technical Project Management</h3><p class="c-desc">Leading cross-functional teams, defining roadmaps, and delivering complex tech projects from first principle to final product.</p></a>
-    <a href="/vedic-astrology" class="card reveal"><span class="c-icon">🌌</span><h3 class="c-title">Vedic Astrology (Jyotish)</h3><p class="c-desc">Deep practitioner of Jyotish: reading birth charts, planetary transits, and karmic patterns with 5,000 years of Vedic tradition as foundation.</p><span class="c-badge">Advanced Practitioner</span></a>
-    <a href="/numerology" class="card reveal"><span class="c-icon">🔢</span><h3 class="c-title">Numerology</h3><p class="c-desc">Decoding the numerical fabric of personality, purpose, and timing. Every number carries a frequency; Dhaval reads them with precision and empathy.</p><span class="c-badge">Certified</span></a>
-    <a href="/palmistry" class="card reveal"><span class="c-icon">✋</span><h3 class="c-title">Palmistry</h3><p class="c-desc">Reading the map of the palm: the lines, mounts, and formations that reveal character, destiny, and the rhythms of a person's unfolding life.</p><span class="c-badge">Practitioner</span></a>
-    <a href="/vastu-shastra" class="card reveal"><span class="c-icon">🏠</span><h3 class="c-title">Vastu Shastra</h3><p class="c-desc">Harmonising spaces with directional energy: the ancient Indian science of architecture that aligns environments for wellbeing and prosperity.</p><span class="c-badge">Expert</span></a>
-    <a href="/guitar-music-vocals" class="card reveal"><span class="c-icon">🎸</span><h3 class="c-title">Guitar, Music &amp; Vocals</h3><p class="c-desc">Musician, guitarist, and singer who finds in music the same fractal beauty as in mathematics: structure, improvisation, and the harmony of the ineffable.</p><span class="c-badge">Performer</span></a>
-    <a href="/urdu-shayari-poetry" class="card reveal"><span class="c-icon">✍️</span><h3 class="c-title">Urdu Shayari &amp; Poetry</h3><p class="c-desc">A shayar whose ghazals navigate longing, logic, and the liminal: verses that carry the weight and wonder of a digital age in classical form.</p></a>
-    <a href="/startup-mentorship" class="card reveal"><span class="c-icon">🚀</span><h3 class="c-title">Startup Mentorship</h3><p class="c-desc">Walking early-stage founders through the complete arc: validation, product-market fit, and scale. Real guidance from a builder who has done it.</p></a>
-    <a href="/research-consulting" class="card reveal"><span class="c-icon">🔬</span><h3 class="c-title">Research &amp; Consulting</h3><p class="c-desc">Management consulting grounded in original research: bridging the gap between theoretical insight and operational execution for organisations.</p></a>
-    <a href="/tech-youtube-education" class="card reveal"><span class="c-icon">📡</span><h3 class="c-title">Tech YouTube &amp; Education</h3><p class="c-desc">Creating accessible AI and automation content: democratising knowledge that was once locked behind institutional walls, for every aspiring builder.</p></a>
+    <a href="/ai-machine-learning" class="card reveal"><i class="ri-flashlight-line c-icon"></i><h3 class="c-title">AI &amp; Machine Learning</h3><p class="c-desc">Building intelligent systems, training models, and designing pipelines from LLMs to automation frameworks that solve real problems at scale.</p></a>
+    <a href="/automation-engineering" class="card reveal"><i class="ri-robot-line c-icon"></i><h3 class="c-title">Automation Engineering</h3><p class="c-desc">End-to-end automation ecosystems: reducing friction, increasing throughput, and letting human intelligence focus on what machines cannot replace.</p></a>
+    <a href="/technical-project-management" class="card reveal"><i class="ri-building-2-line c-icon"></i><h3 class="c-title">Technical Project Management</h3><p class="c-desc">Leading cross-functional teams, defining roadmaps, and delivering complex tech projects from first principle to final product.</p></a>
+    <a href="/vedic-astrology" class="card reveal"><i class="ri-star-line c-icon"></i><h3 class="c-title">Vedic Astrology (Jyotish)</h3><p class="c-desc">Deep practitioner of Jyotish: reading birth charts, planetary transits, and karmic patterns with 5,000 years of Vedic tradition as foundation.</p><span class="c-badge">Advanced Practitioner</span></a>
+    <a href="/numerology" class="card reveal"><i class="ri-hashtag c-icon"></i><h3 class="c-title">Numerology</h3><p class="c-desc">Decoding the numerical fabric of personality, purpose, and timing. Every number carries a frequency; Dhaval reads them with precision and empathy.</p><span class="c-badge">Certified</span></a>
+    <a href="/palmistry" class="card reveal"><i class="ri-hand-coin-line c-icon"></i><h3 class="c-title">Palmistry</h3><p class="c-desc">Reading the map of the palm: the lines, mounts, and formations that reveal character, destiny, and the rhythms of a person's unfolding life.</p><span class="c-badge">Practitioner</span></a>
+    <a href="/vastu-shastra" class="card reveal"><i class="ri-home-4-line c-icon"></i><h3 class="c-title">Vastu Shastra</h3><p class="c-desc">Harmonising spaces with directional energy: the ancient Indian science of architecture that aligns environments for wellbeing and prosperity.</p><span class="c-badge">Expert</span></a>
+    <a href="/guitar-music-vocals" class="card reveal"><i class="ri-music-2-line c-icon"></i><h3 class="c-title">Guitar, Music &amp; Vocals</h3><p class="c-desc">Musician, guitarist, and singer who finds in music the same fractal beauty as in mathematics: structure, improvisation, and the harmony of the ineffable.</p><span class="c-badge">Performer</span></a>
+    <a href="/urdu-shayari-poetry" class="card reveal"><i class="ri-quill-pen-line c-icon"></i><h3 class="c-title">Urdu Shayari &amp; Poetry</h3><p class="c-desc">A shayar whose ghazals navigate longing, logic, and the liminal: verses that carry the weight and wonder of a digital age in classical form.</p></a>
+    <a href="/startup-mentorship" class="card reveal"><i class="ri-rocket-line c-icon"></i><h3 class="c-title">Startup Mentorship</h3><p class="c-desc">Walking early-stage founders through the complete arc: validation, product-market fit, and scale. Real guidance from a builder who has done it.</p></a>
+    <a href="/research-consulting" class="card reveal"><i class="ri-microscope-line c-icon"></i><h3 class="c-title">Research &amp; Consulting</h3><p class="c-desc">Management consulting grounded in original research: bridging the gap between theoretical insight and operational execution for organisations.</p></a>
+    <a href="/tech-youtube-education" class="card reveal"><i class="ri-broadcast-line c-icon"></i><h3 class="c-title">Tech YouTube &amp; Education</h3><p class="c-desc">Creating accessible AI and automation content: democratising knowledge that was once locked behind institutional walls, for every aspiring builder.</p></a>
   </div>
 </section>
 
@@ -880,31 +682,31 @@ footer { background: var(--ink); padding: 2.5rem 5rem; border-top: 1px solid rgb
   <p class="expertise-intro reveal">Use these tools to try Panchang and Muhurat, life path and name number, Vastu direction guide, or free palm reading. For personal consultations, <a href="https://www.drdhaval.in" target="_blank" rel="noopener" class="inline-link">book through the main site</a>.</p>
   <div class="cards-grid tools-grid">
     <a href="numerology.html#tools" class="card reveal">
-      <span class="c-icon">🔢</span>
+      <i class="ri-hashtag c-icon"></i>
       <h3 class="c-title">Life Path &amp; Name Number</h3>
       <p class="c-desc">Free numerology tools: life path calculator, expression number from your name, personal year, compatibility, and lucky dates. Try the tools, then book a full reading.</p>
       <span class="c-badge">Numerology</span>
     </a>
     <a href="vastu-shastra.html#tools" class="card reveal">
-      <span class="c-icon">🏠</span>
+      <i class="ri-home-4-line c-icon"></i>
       <h3 class="c-title">Vastu Direction Guide</h3>
       <p class="c-desc">Check your main door direction and get quick do's and don'ts. Use the direction guide and quick Vastu check; for a full site audit, book a consultation.</p>
       <span class="c-badge">Vastu Shastra</span>
     </a>
     <a href="vedic-astrology.html#tools" class="card reveal">
-      <span class="c-icon">🌌</span>
+      <i class="ri-moon-line c-icon"></i>
       <h3 class="c-title">Panchang &amp; Muhurat</h3>
       <p class="c-desc">Panchang, Muhurat, Nakshatra, and Yoni tools. After checking Muhurat for griha pravesh, use the Vastu direction tool on the Vastu page.</p>
       <span class="c-badge">Vedic Astrology</span>
     </a>
     <a href="https://palmistry.appstream.me/" target="_blank" rel="noopener" class="card reveal">
-      <span class="c-icon">✋</span>
+      <i class="ri-hand-coin-line c-icon"></i>
       <h3 class="c-title">Free AI Palm Reading</h3>
       <p class="c-desc">Try our online palm reading tool. Upload a clear photo of your palm and get instant insights on lines, mounts, and patterns. No signup required.</p>
       <span class="c-badge">Try at palmistry.appstream.me</span>
     </a>
     <a href="palmistry.html" class="card reveal">
-      <span class="c-icon">📖</span>
+      <i class="ri-book-read-line c-icon"></i>
       <h3 class="c-title">Palmistry with Dr. Dhaval</h3>
       <p class="c-desc">Learn what a full palmistry session covers: heart line, head line, life line, and how to book an in-person or remote reading.</p>
       <span class="c-badge">Practitioner</span>
@@ -936,13 +738,13 @@ footer { background: var(--ink); padding: 2.5rem 5rem; border-top: 1px solid rgb
 <section id="ventures">
   <div class="s-hdr reveal"><span class="s-num">04</span><h2 class="s-title">Roles &amp; <em>Ventures</em></h2></div>
   <div class="v-list">
-    <div class="v-item reveal"><span class="v-num">01</span><div><div class="v-title">Tech Company · Founder &amp; CEO</div><div class="v-sub">AI-first products, automation systems, and intelligent software solutions</div></div><span class="v-arr">→</span></div>
-    <div class="v-item reveal"><span class="v-num">02</span><div><div class="v-title">PhD Research · AI Scholar</div><div class="v-sub">Advanced research in artificial intelligence and intelligent autonomous systems</div></div><span class="v-arr">→</span></div>
-    <a href="https://www.youtube.com/@Dr.DhavalTrivedi" target="_blank" rel="noopener" class="v-item reveal"><span class="v-num">03</span><div><div class="v-title">YouTube · @Dr.DhavalTrivedi</div><div class="v-sub">AI, ML &amp; automation tutorials and tech insights for the next generation of builders</div></div><span class="v-arr">↗</span></a>
-    <div class="v-item reveal"><span class="v-num">04</span><div><div class="v-title">Vedic Consultations · Jyotish, Vastu &amp; More</div><div class="v-sub">Personal guidance through astrology, numerology, palmistry, and Vastu Shastra</div></div><span class="v-arr">→</span></div>
-    <div class="v-item reveal"><span class="v-num">05</span><div><div class="v-title">Founder Mentorship Programme</div><div class="v-sub">1:1 mentoring for early-stage founders navigating product, market, and growth</div></div><span class="v-arr">→</span></div>
-    <div class="v-item reveal"><span class="v-num">06</span><div><div class="v-title">Research &amp; Management Consulting</div><div class="v-sub">Bridging academic insight with operational strategy for companies and organisations</div></div><span class="v-arr">→</span></div>
-    <a href="https://www.instagram.com/shayartrivedi/" target="_blank" rel="noopener" class="v-item reveal"><span class="v-num">07</span><div><div class="v-title">Music, Guitar &amp; Poetry · @shayartrivedi</div><div class="v-sub">Hindi poetry, original compositions, guitar, and vocal performance</div></div><span class="v-arr">↗</span></a>
+    <div class="v-item reveal"><span class="v-num">01</span><div><div class="v-title">Tech Company · Founder &amp; CEO</div><div class="v-sub">AI-first products, automation systems, and intelligent software solutions</div></div><i class="ri-arrow-right-line v-arr"></i></div>
+    <div class="v-item reveal"><span class="v-num">02</span><div><div class="v-title">PhD Research · AI Scholar</div><div class="v-sub">Advanced research in artificial intelligence and intelligent autonomous systems</div></div><i class="ri-arrow-right-line v-arr"></i></div>
+    <a href="https://www.youtube.com/@Dr.DhavalTrivedi" target="_blank" rel="noopener" class="v-item reveal"><span class="v-num">03</span><div><div class="v-title">YouTube · @Dr.DhavalTrivedi</div><div class="v-sub">AI, ML &amp; automation tutorials and tech insights for the next generation of builders</div></div><i class="ri-arrow-right-up-line v-arr"></i></a>
+    <div class="v-item reveal"><span class="v-num">04</span><div><div class="v-title">Vedic Consultations · Jyotish, Vastu &amp; More</div><div class="v-sub">Personal guidance through astrology, numerology, palmistry, and Vastu Shastra</div></div><i class="ri-arrow-right-line v-arr"></i></div>
+    <div class="v-item reveal"><span class="v-num">05</span><div><div class="v-title">Founder Mentorship Programme</div><div class="v-sub">1:1 mentoring for early-stage founders navigating product, market, and growth</div></div><i class="ri-arrow-right-line v-arr"></i></div>
+    <div class="v-item reveal"><span class="v-num">06</span><div><div class="v-title">Research &amp; Management Consulting</div><div class="v-sub">Bridging academic insight with operational strategy for companies and organisations</div></div><i class="ri-arrow-right-line v-arr"></i></div>
+    <a href="https://www.instagram.com/shayartrivedi/" target="_blank" rel="noopener" class="v-item reveal"><span class="v-num">07</span><div><div class="v-title">Music, Guitar &amp; Poetry · @shayartrivedi</div><div class="v-sub">Hindi poetry, original compositions, guitar, and vocal performance</div></div><i class="ri-arrow-right-up-line v-arr"></i></a>
   </div>
 </section>
 
@@ -972,25 +774,25 @@ footer { background: var(--ink); padding: 2.5rem 5rem; border-top: 1px solid rgb
   <div class="s-hdr reveal"><span class="s-num">06</span><h2 class="s-title">Find Me <em>Online</em></h2></div>
   <div class="soc-grid">
     <a href="https://www.youtube.com/@Dr.DhavalTrivedi" target="_blank" rel="noopener" class="soc-card reveal">
-      <span class="soc-icon">▶</span>
+      <i class="ri-youtube-fill soc-icon"></i>
       <span class="soc-platform">YouTube</span>
       <span class="soc-handle">@Dr.DhavalTrivedi</span>
       <p class="soc-desc">AI, ML &amp; automation tutorials. Tech education for builders and innovators.</p>
     </a>
     <a href="https://x.com/DrAIExpert" target="_blank" rel="noopener" class="soc-card reveal">
-      <span class="soc-icon">𝕏</span>
+      <i class="ri-twitter-x-fill soc-icon"></i>
       <span class="soc-platform">X / Twitter</span>
       <span class="soc-handle">@DrAIExpert</span>
       <p class="soc-desc">AI insights, research threads, and thoughts on the future of intelligent systems.</p>
     </a>
     <a href="https://www.instagram.com/shayartrivedi/" target="_blank" rel="noopener" class="soc-card reveal">
-      <span class="soc-icon">◈</span>
+      <i class="ri-instagram-fill soc-icon"></i>
       <span class="soc-platform">Instagram</span>
       <span class="soc-handle">@shayartrivedi</span>
       <p class="soc-desc">Hindi poetry, music, and the soulful side of a technical mind.</p>
     </a>
     <a href="https://www.drdhaval.in" target="_blank" rel="noopener" class="soc-card reveal">
-      <span class="soc-icon">◎</span>
+      <i class="ri-global-line soc-icon"></i>
       <span class="soc-platform">Website</span>
       <span class="soc-handle">drdhaval.in</span>
       <p class="soc-desc">The official home: consultations, ventures, research, and everything Dhaval Trivedi.</p>
@@ -1008,13 +810,13 @@ footer { background: var(--ink); padding: 2.5rem 5rem; border-top: 1px solid rgb
     </div>
     <div class="reveal">
       <div class="c-links">
-        <a href="mailto:drdhavaltrivedi5@gmail.com" class="c-link"><span class="c-lbl">Email</span><span class="c-val">drdhavaltrivedi5@gmail.com</span><span class="c-arr">→</span></a>
-        <a href="https://www.youtube.com/@Dr.DhavalTrivedi" target="_blank" rel="noopener" class="c-link"><span class="c-lbl">YouTube</span><span class="c-val">@Dr.DhavalTrivedi</span><span class="c-arr">→</span></a>
-        <a href="https://x.com/DrAIExpert" target="_blank" rel="noopener" class="c-link"><span class="c-lbl">X / Twitter</span><span class="c-val">@DrAIExpert</span><span class="c-arr">→</span></a>
-        <a href="https://www.instagram.com/shayartrivedi/" target="_blank" rel="noopener" class="c-link"><span class="c-lbl">Instagram · Poetry</span><span class="c-val">@shayartrivedi</span><span class="c-arr">→</span></a>
-        <a href="https://www.drdhaval.in" target="_blank" rel="noopener" class="c-link"><span class="c-lbl">Website</span><span class="c-val">drdhaval.in</span><span class="c-arr">→</span></a>
-        <div class="c-link" style="cursor:default;"><span class="c-lbl">AI &amp; Tech</span><span class="c-val">Consultations &amp; Projects</span><span class="c-arr">→</span></div>
-        <div class="c-link" style="cursor:default;"><span class="c-lbl">Vedic Sciences</span><span class="c-val">Astrology · Numerology · Vastu</span><span class="c-arr">→</span></div>
+        <a href="mailto:drdhavaltrivedi5@gmail.com" class="c-link"><span class="c-lbl">Email</span><span class="c-val">drdhavaltrivedi5@gmail.com</span><i class="ri-arrow-right-line c-arr"></i></a>
+        <a href="https://www.youtube.com/@Dr.DhavalTrivedi" target="_blank" rel="noopener" class="c-link"><span class="c-lbl">YouTube</span><span class="c-val">@Dr.DhavalTrivedi</span><i class="ri-arrow-right-up-line c-arr"></i></a>
+        <a href="https://x.com/DrAIExpert" target="_blank" rel="noopener" class="c-link"><span class="c-lbl">X / Twitter</span><span class="c-val">@DrAIExpert</span><i class="ri-arrow-right-up-line c-arr"></i></a>
+        <a href="https://www.instagram.com/shayartrivedi/" target="_blank" rel="noopener" class="c-link"><span class="c-lbl">Instagram · Poetry</span><span class="c-val">@shayartrivedi</span><i class="ri-arrow-right-up-line c-arr"></i></a>
+        <a href="https://www.drdhaval.in" target="_blank" rel="noopener" class="c-link"><span class="c-lbl">Website</span><span class="c-val">drdhaval.in</span><i class="ri-arrow-right-up-line c-arr"></i></a>
+        <div class="c-link" style="cursor:default;"><span class="c-lbl">AI &amp; Tech</span><span class="c-val">Consultations &amp; Projects</span><i class="ri-arrow-right-line c-arr"></i></div>
+        <div class="c-link" style="cursor:default;"><span class="c-lbl">Vedic Sciences</span><span class="c-val">Astrology · Numerology · Vastu</span><i class="ri-arrow-right-line c-arr"></i></div>
       </div>
     </div>
   </div>
@@ -1124,154 +926,7 @@ hoverTargets.forEach(el=>{
   setTimeout(tick, 350);
 })();
 
-// Playful draggable Identity Map
-(function () {
-  const map = document.querySelector('.about-map');
-  if (!map) return;
-  const core = map.querySelector('.map-core');
-  const nodes = Array.from(map.querySelectorAll('.map-node'));
-  const linesSvg = map.querySelector('#aboutMapLines');
-  if (!core || !nodes.length || !linesSvg) return;
 
-  function centerInMap(el) {
-    const mr = map.getBoundingClientRect();
-    const r = el.getBoundingClientRect();
-    return {
-      x: (r.left - mr.left) + (r.width / 2),
-      y: (r.top - mr.top) + (r.height / 2)
-    };
-  }
-
-  let hoveredNode = null;
-
-  function renderLines() {
-    const c = centerInMap(core);
-    linesSvg.innerHTML = nodes.map((n, i) => {
-      const p = centerInMap(n);
-      const hl = n === hoveredNode ? ' class="highlight"' : '';
-      return `<line x1="${c.x}" y1="${c.y}" x2="${p.x}" y2="${p.y}"${hl}></line>`;
-    }).join('');
-  }
-
-  let active = null;
-  let dx = 0;
-  let dy = 0;
-
-  function onMove(clientX, clientY) {
-    if (!active) return;
-    const mr = map.getBoundingClientRect();
-    const nr = active.getBoundingClientRect();
-    const width = nr.width;
-    const height = nr.height;
-    let left = clientX - mr.left - dx;
-    let top = clientY - mr.top - dy;
-    left = Math.max(0, Math.min(mr.width - width, left));
-    top = Math.max(0, Math.min(mr.height - height, top));
-    active.style.left = `${left}px`;
-    active.style.top = `${top}px`;
-    active.style.right = 'auto';
-    active.style.bottom = 'auto';
-    renderLines();
-  }
-
-  nodes.forEach((node) => {
-    node.addEventListener('mouseenter', () => { hoveredNode = node; renderLines(); });
-    node.addEventListener('mouseleave', () => { hoveredNode = null; renderLines(); });
-
-    node.addEventListener('pointerdown', (e) => {
-      active = node;
-      const nr = node.getBoundingClientRect();
-      dx = e.clientX - nr.left;
-      dy = e.clientY - nr.top;
-      node.classList.add('dragging');
-      node.setPointerCapture(e.pointerId);
-      e.preventDefault();
-    });
-
-    node.addEventListener('pointermove', (e) => {
-      if (!active || active !== node) return;
-      onMove(e.clientX, e.clientY);
-    });
-
-    node.addEventListener('pointerup', (e) => {
-      if (!active || active !== node) return;
-      node.classList.remove('dragging');
-      node.classList.add('drag-release');
-      setTimeout(() => node.classList.remove('drag-release'), 500);
-      active = null;
-      node.releasePointerCapture(e.pointerId);
-      renderLines();
-    });
-  });
-
-  // Canvas background: grid + floating particles
-  const canvasEl = map.querySelector('.about-map-canvas');
-  if (canvasEl) {
-    const ctx = canvasEl.getContext('2d');
-    let particles = [];
-    const particleCount = 28;
-    function resizeCanvas() {
-      const dpr = window.devicePixelRatio || 1;
-      const rect = map.getBoundingClientRect();
-      canvasEl.width = rect.width * dpr;
-      canvasEl.height = rect.height * dpr;
-      canvasEl.style.width = rect.width + 'px';
-      canvasEl.style.height = rect.height + 'px';
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      particles = [];
-      for (let i = 0; i < particleCount; i++) {
-        particles.push({
-          x: Math.random() * rect.width,
-          y: Math.random() * rect.height,
-          r: 0.5 + Math.random() * 1.2,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.3,
-          opacity: 0.15 + Math.random() * 0.25
-        });
-      }
-    }
-    function drawCanvas() {
-      const w = map.offsetWidth;
-      const h = map.offsetHeight;
-      if (w <= 0 || h <= 0) return requestAnimationFrame(drawCanvas);
-      ctx.clearRect(0, 0, w, h);
-      ctx.strokeStyle = 'rgba(184,154,95,0.06)';
-      ctx.lineWidth = 0.5;
-      const step = 24;
-      for (let x = 0; x <= w; x += step) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, h);
-        ctx.stroke();
-      }
-      for (let y = 0; y <= h; y += step) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(w, y);
-        ctx.stroke();
-      }
-      ctx.fillStyle = 'rgba(184,154,95,0.35)';
-      particles.forEach((p) => {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0 || p.x > w) p.vx *= -1;
-        if (p.y < 0 || p.y > h) p.vy *= -1;
-        ctx.globalAlpha = p.opacity;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      ctx.globalAlpha = 1;
-      requestAnimationFrame(drawCanvas);
-    }
-    resizeCanvas();
-    drawCanvas();
-    window.addEventListener('resize', () => { resizeCanvas(); renderLines(); });
-  }
-
-  window.addEventListener('resize', renderLines);
-  requestAnimationFrame(renderLines);
-})();
 
 const canvas=document.getElementById('star-canvas'),ctx=canvas.getContext('2d');
 const hero=document.getElementById('hero');
