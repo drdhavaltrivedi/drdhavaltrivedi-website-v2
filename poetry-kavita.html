@@ -147,11 +147,15 @@ footer { background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); -webkit-backdr
 .custom-form .theme-btn.selected { border-color: var(--accent); background: rgba(200,169,110,0.15); color: var(--accent); }
 .custom-form button[type="submit"] { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; background: var(--accent); color: var(--bg); border: none; padding: 0.8rem 2rem; cursor: pointer; border-radius: 4px; transition: opacity 0.3s; }
 .custom-form button[type="submit"]:hover { opacity: 0.9; }
-.shayari-result { margin-top: 2rem; padding: 2rem; background: rgba(0,0,0,0.3); border-left: 4px solid var(--accent); border-radius: 4px; display: none; }
+.shayari-result { margin-top: 2rem; padding: 2rem; background: rgba(0,0,0,0.3); border-left: 4px solid var(--accent); border-radius: 4px; display: none; position: relative; }
 .shayari-result.visible { display: block; }
+.share-btn { position: absolute; top: 1rem; right: 1rem; background: transparent; border: none; color: var(--muted); cursor: pointer; transition: color 0.3s; padding: 0.5rem; }
+.share-btn:hover { color: var(--accent); }
 .shayari-result .result-label { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
 .shayari-result .result-lines { font-family: 'Playfair Display', serif; font-size: 1.25rem; line-height: 1.9; color: var(--ink); white-space: pre-line; }
 .shayari-result .result-meta { margin-top: 1rem; font-size: 0.85rem; color: var(--muted); }
+.copy-toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--accent); color: var(--bg); padding: 0.8rem 1.5rem; border-radius: 4rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; box-shadow: 0 10px 20px rgba(0,0,0,0.3); opacity: 0; pointer-events: none; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 1000; display: flex; align-items: center; gap: 0.5rem; }
+.copy-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 </style>
 <meta name="google-adsense-account" content="ca-pub-6065906232959638">
@@ -235,6 +239,9 @@ footer { background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); -webkit-backdr
       <button type="submit">Generate for me</button>
     </form>
     <div class="shayari-result" id="shayari-result" aria-live="polite">
+      <button class="share-btn" id="share-btn" title="Copy to clipboard" aria-label="Copy to clipboard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+      </button>
       <div class="result-label">For you</div>
       <div class="result-lines" id="shayari-lines"></div>
       <p class="result-meta" id="shayari-meta"></p>
@@ -408,6 +415,49 @@ footer { background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); -webkit-backdr
       document.getElementById('shayari-result').classList.add('visible');
     }, 200);
   });
+
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', function() {
+      const lines = document.getElementById('shayari-lines').textContent;
+      const meta = document.getElementById('shayari-meta').textContent;
+      const textToShare = lines + '\n\n' + meta + '\n\nGenerated at Dr. Dhaval Trivedi\'s Poetry Corner\nhttps://www.drdhaval.in/poetry-kavita';
+      
+      if (navigator.share) {
+        navigator.share({
+          title: 'Custom Shayari for You',
+          text: textToShare,
+          url: 'https://www.drdhaval.in/poetry-kavita'
+        }).catch(console.error);
+      } else {
+        navigator.clipboard.writeText(textToShare).then(function() {
+          const originalIcon = shareBtn.innerHTML;
+          shareBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+          if(window.showToast) window.showToast();
+          setTimeout(() => {
+            shareBtn.innerHTML = originalIcon;
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Could not copy text: ', err);
+        });
+      }
+    });
+  }
+})();
+</script>
+<div id="copy-toast" class="copy-toast">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+  Copied to clipboard!
+</div>
+<script>
+(function() {
+  const toast = document.getElementById('copy-toast');
+  window.showToast = function() {
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2000);
+  };
 })();
 </script>
 
