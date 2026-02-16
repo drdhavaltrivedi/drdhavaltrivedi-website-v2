@@ -157,6 +157,15 @@ footer { background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); -webkit-backdr
 .copy-toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--accent); color: var(--bg); padding: 0.8rem 1.5rem; border-radius: 4rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; box-shadow: 0 10px 20px rgba(0,0,0,0.3); opacity: 0; pointer-events: none; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 1000; display: flex; align-items: center; gap: 0.5rem; }
 .copy-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+/* Type Selection Radio Group */
+.type-group { display: flex; gap: 1.5rem; margin-bottom: 1.25rem; }
+.radio-label { display: flex; align-items: center; cursor: pointer; color: var(--muted); font-family: 'Space Mono', monospace; font-size: 0.9rem; transition: color 0.3s; position: relative; }
+.radio-label input[type="radio"] { appearance: none; -webkit-appearance: none; width: 1.2em; height: 1.2em; border: 1px solid var(--border); border-radius: 50%; margin-right: 0.5rem; display: grid; place-content: center; transition: all 0.3s; background: rgba(255,255,255,0.05); }
+.radio-label input[type="radio"]::before { content: ""; width: 0.6em; height: 0.6em; border-radius: 50%; transform: scale(0); transition: 0.12s transform ease-in-out; box-shadow: inset 1em 1em var(--accent); background-color: var(--accent); }
+.radio-label input[type="radio"]:checked { border-color: var(--accent); }
+.radio-label input[type="radio"]:checked::before { transform: scale(1); }
+.radio-label:hover { color: var(--ink); }
+.radio-label input[type="radio"]:checked ~ span { color: var(--accent); }
 </style>
 <meta name="google-adsense-account" content="ca-pub-6065906232959638">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6065906232959638"
@@ -218,10 +227,16 @@ footer { background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); -webkit-backdr
       <label for="shayari-name">Name (to use in the verse)</label>
       <input type="text" id="shayari-name" name="name" placeholder="e.g. Ananya, Mehul" required minlength="2" maxlength="30" autocomplete="name">
       <label>Type</label>
-      <select id="shayari-type" name="type" aria-label="Shayari or Kavita">
-        <option value="shayari">Shayari</option>
-        <option value="kavita">Kavita</option>
-      </select>
+      <div class="type-group" role="radiogroup" aria-label="Select type">
+        <label class="radio-label">
+          <input type="radio" name="type" value="shayari" checked>
+          <span>Shayari</span>
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="type" value="kavita">
+          <span>Kavita</span>
+        </label>
+      </div>
       <label>Theme</label>
       <div class="theme-grid" role="group" aria-label="Choose theme">
         <button type="button" class="theme-btn" data-theme="beauty">Beauty</button>
@@ -392,8 +407,8 @@ footer { background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); -webkit-backdr
     var name = nameInput.value.trim();
     if (!name) return;
     
-    var navType = document.getElementById('shayari-type');
-    var type = navType ? navType.value : 'shayari';
+    var typeRadio = document.querySelector('input[name="type"]:checked');
+    var type = typeRadio ? typeRadio.value : 'shayari';
     
     var theme = themeInput ? themeInput.value : 'love';
     var list = themes[theme] || themes.love;
