@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDBM83S1GL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BDBM83S1GL');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vedic Name Finder | Rashi & Nakshatra Syllables</title>
+<meta name="description" content="Find the perfect auspicious starting letters (syllables) for your baby's name based on their Rashi (Moon Sign) and Nakshatra (Birth Star) according to Vedic Astrology.">
+<meta name="keywords" content="Vedic Name Finder, Rashi Syllables, Nakshatra Name Letters, Baby Name Calculator, Hindu Name Initials, Dr. Dhaval Trivedi">
+<link rel="canonical" href="https://www.drdhaval.in/tools/vedic-name-finder.html">
+<meta name="author" content="Dr. Dhaval Trivedi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vedic Name Finder by Rashi & Nakshatra">
+<meta property="og:description" content="Get lucky outcomes for your baby's name based on Vedic Astrology.">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+:root {
+  --bg: #060608;
+  --bg-card: rgba(255,255,255,0.03);
+  --ink: #f4f0e8;
+  --accent: #ff9f1c; /* Saffron/Orange for Vedic */
+  --muted: #888;
+  --border: rgba(255,255,255,0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; color: inherit; }
+
+.nav { position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 4rem; border-bottom: 1px solid var(--border); background: rgba(6,6,8,0.8); backdrop-filter: blur(12px); }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
+.back-link { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
+.back-link:hover { color: var(--accent); }
+
+.tool-container { max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; text-align: center; }
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ff9f1c, #ffbf69);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p { color: var(--muted); font-size: 1.1rem; max-width: 60ch; margin: 0 auto 3rem; line-height: 1.6; }
+
+.calculator-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.input-group { margin-bottom: 2rem; text-align: left; }
+.input-group label { display: block; font-family: 'Space Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.8rem; }
+select { width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--border); color: var(--ink); padding: 1rem; font-family: 'Inter', sans-serif; font-size: 1rem; border-radius: 8px; transition: all 0.3s; appearance: none; }
+select:focus { outline: none; border-color: var(--accent); }
+
+.calc-btn {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 1rem 3rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(255, 159, 28, 0.3);
+  width: 100%;
+}
+.calc-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(255, 159, 28, 0.4); background: #ffbf69; }
+
+#result { margin-top: 3rem; display: none; text-align: center; animation: slideUp 0.5s ease; }
+.syllable-box { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 1rem; 
+  margin: 2rem 0; 
+}
+.syllable { 
+  background: rgba(255,255,255,0.05); 
+  border: 1px solid var(--accent); 
+  color: var(--accent); 
+  font-family: 'Playfair Display', serif; 
+  font-size: 2.5rem; 
+  padding: 1rem 2rem; 
+  border-radius: 12px; 
+  font-weight: 700;
+}
+.pada-list {
+  text-align: left;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+.pada-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.pada-name { color: var(--muted); font-size: 0.9rem; font-family: 'Space Mono'; }
+.pada-char { color: var(--ink); font-weight: 600; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .nav { padding: 1rem; }
+  .calculator-card { padding: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/tools" class="back-link">← Back to Tools</a>
+  <a href="/" class="nav-brand">Dr. Dhaval Trivedi</a>
+</nav>
+
+<div class="tool-container">
+  <div class="hero">
+    <h1>Vedic Name Finder</h1>
+    <p>In Vedic tradition, the first letter of a name is chosen based on the Nakshatra (Birth Star) and Rashi (Moon Sign). Select your Nakshatra to find the auspicious syllables.</p>
+  </div>
+
+  <div class="calculator-card">
+    <div class="input-group">
+      <label for="nakshatra">Select Birth Nakshatra</label>
+      <select id="nakshatra" onchange="findSyllables()">
+        <option value="">-- Choose Nakshatra --</option>
+        <option value="Ashwini">Ashwini (Aries)</option>
+        <option value="Bharani">Bharani (Aries)</option>
+        <option value="Krittika_Aries">Krittika (Aries - Pada 1)</option>
+        <option value="Krittika_Taurus">Krittika (Taurus - Pada 2,3,4)</option>
+        <option value="Rohini">Rohini (Taurus)</option>
+        <option value="Mrigashira_Taurus">Mrigashira (Taurus - Pada 1,2)</option>
+        <option value="Mrigashira_Gemini">Mrigashira (Gemini - Pada 3,4)</option>
+        <option value="Ardra">Ardra (Gemini)</option>
+        <option value="Punarvasu_Gemini">Punarvasu (Gemini - Pada 1,2,3)</option>
+        <option value="Punarvasu_Cancer">Punarvasu (Cancer - Pada 4)</option>
+        <option value="Pushya">Pushya (Cancer)</option>
+        <option value="Ashlesha">Ashlesha (Cancer)</option>
+        <option value="Magha">Magha (Leo)</option>
+        <option value="PurvaPhalguni">Purva Phalguni (Leo)</option>
+        <option value="UttaraPhalguni_Leo">Uttara Phalguni (Leo - Pada 1)</option>
+        <option value="UttaraPhalguni_Virgo">Uttara Phalguni (Virgo - Pada 2,3,4)</option>
+        <option value="Hasta">Hasta (Virgo)</option>
+        <option value="Chitra_Virgo">Chitra (Virgo - Pada 1,2)</option>
+        <option value="Chitra_Libra">Chitra (Libra - Pada 3,4)</option>
+        <option value="Swati">Swati (Libra)</option>
+        <option value="Vishakha_Libra">Vishakha (Libra - Pada 1,2,3)</option>
+        <option value="Vishakha_Scorpio">Vishakha (Scorpio - Pada 4)</option>
+        <option value="Anuradha">Anuradha (Scorpio)</option>
+        <option value="Jyeshtha">Jyeshtha (Scorpio)</option>
+        <option value="Mula">Mula (Sagittarius)</option>
+        <option value="PurvaAshadha">Purva Ashadha (Sagittarius)</option>
+        <option value="UttaraAshadha_Sag">Uttara Ashadha (Sagittarius - Pada 1)</option>
+        <option value="UttaraAshadha_Cap">Uttara Ashadha (Capricorn - Pada 2,3,4)</option>
+        <option value="Shravana">Shravana (Capricorn)</option>
+        <option value="Dhanishtha_Cap">Dhanishtha (Capricorn - Pada 1,2)</option>
+        <option value="Dhanishtha_Aqu">Dhanishtha (Aquarius - Pada 3,4)</option>
+        <option value="Shatabhisha">Shatabhisha (Aquarius)</option>
+        <option value="PurvaBhadrapada_Aqu">Purva Bhadrapada (Aquarius - Pada 1,2,3)</option>
+        <option value="PurvaBhadrapada_Pis">Purva Bhadrapada (Pisces - Pada 4)</option>
+        <option value="UttaraBhadrapada">Uttara Bhadrapada (Pisces)</option>
+        <option value="Revati">Revati (Pisces)</option>
+      </select>
+    </div>
+
+    <div id="result">
+      <h3 style="color: var(--accent);">Auspicious Starting Syllables</h3>
+      <div class="syllable-box" id="main-syllables">
+        <!-- JS Populated -->
+      </div>
+      
+      <div class="pada-list" id="pada-details">
+        <!-- JS Populated -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer style="text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem;">
+  © 2026 Dr. Dhaval Trivedi. All rights reserved.
+</footer>
+
+<script>
+const nakshatraData = {
+  "Ashwini": ["Chu", "Che", "Cho", "La"],
+  "Bharani": ["Li", "Lu", "Le", "Lo"],
+  "Krittika_Aries": ["A"],
+  "Krittika_Taurus": ["I", "U", "E"],
+  "Rohini": ["O", "Va", "Vi", "Vu"],
+  "Mrigashira_Taurus": ["Ve", "Vo"],
+  "Mrigashira_Gemini": ["Ka", "Ki"],
+  "Ardra": ["Ku", "Gha", "Ng", "Chha"],
+  "Punarvasu_Gemini": ["Ke", "Ko", "Ha"],
+  "Punarvasu_Cancer": ["Hi"],
+  "Pushya": ["Hu", "He", "Ho", "Da"],
+  "Ashlesha": ["Di", "Du", "De", "Do"],
+  "Magha": ["Ma", "Mi", "Mu", "Me"],
+  "PurvaPhalguni": ["Mo", "Ta", "Ti", "Tu"],
+  "UttaraPhalguni_Leo": ["Te"],
+  "UttaraPhalguni_Virgo": ["To", "Pa", "Pi"],
+  "Hasta": ["Pu", "Sha", "Na", "Tha"],
+  "Chitra_Virgo": ["Pe", "Po"],
+  "Chitra_Libra": ["Ra", "Ri"],
+  "Swati": ["Ru", "Re", "Ro", "Ta"],
+  "Vishakha_Libra": ["Ti", "Tu", "Te"],
+  "Vishakha_Scorpio": ["To"],
+  "Anuradha": ["Na", "Ni", "Nu", "Ne"],
+  "Jyeshtha": ["No", "Ya", "Yi", "Yu"],
+  "Mula": ["Ye", "Yo", "Bha", "Bhi"],
+  "PurvaAshadha": ["Bhu", "Dha", "Pha", "Dha"],
+  "UttaraAshadha_Sag": ["Bhe"],
+  "UttaraAshadha_Cap": ["Bho", "Ja", "Ji"],
+  "Shravana": ["Ju", "Je", "Jo", "Gha"],
+  "Dhanishtha_Cap": ["Ga", "Gi"],
+  "Dhanishtha_Aqu": ["Gu", "Ge"],
+  "Shatabhisha": ["Go", "Sa", "Si", "Su"],
+  "PurvaBhadrapada_Aqu": ["Se", "So", "Da"],
+  "PurvaBhadrapada_Pis": ["Di"],
+  "UttaraBhadrapada": ["Du", "Tha", "Jha", "Da"],
+  "Revati": ["De", "Do", "Cha", "Chi"]
+};
+
+function findSyllables() {
+  const select = document.getElementById('nakshatra');
+  const resultDiv = document.getElementById('result');
+  const mainBox = document.getElementById('main-syllables');
+  const padaDetails = document.getElementById('pada-details');
+  
+  const val = select.value;
+  if(!val) {
+    resultDiv.style.display = 'none';
+    return;
+  }
+  
+  const syllables = nakshatraData[val];
+  
+  // Clear previous
+  mainBox.innerHTML = '';
+  padaDetails.innerHTML = '';
+  
+  syllables.forEach((syl, index) => {
+    // Main bubble
+    const bubble = document.createElement('div');
+    bubble.className = 'syllable';
+    bubble.innerText = syl;
+    mainBox.appendChild(bubble);
+    
+    // List item
+    const row = document.createElement('div');
+    row.className = 'pada-item';
+    row.innerHTML = `<span class="pada-name">Pada ${index + 1}</span> <span class="pada-char">${syl}...</span>`;
+    padaDetails.appendChild(row);
+  });
+  
+  resultDiv.style.display = 'block';
+}
+</script>
+
+</body>
+</html>

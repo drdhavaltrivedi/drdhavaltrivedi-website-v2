@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDBM83S1GL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BDBM83S1GL');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Numerology Calculator | Is Your Number Lucky?</title>
+<meta name="description" content="Check if your mobile number is lucky for you. Calculate the numerological sum of your phone number and discover its hidden vibrational energy and compatibility.">
+<meta name="keywords" content="Mobile Numerology, Phone Number Luck, Lucky Mobile Number, Numerology Calculator, Dr. Dhaval Trivedi">
+<link rel="canonical" href="https://www.drdhaval.in/tools/mobile-numerology.html">
+<meta name="author" content="Dr. Dhaval Trivedi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Is Your Mobile Number Lucky?">
+<meta property="og:description" content="Calculate the numerology of your phone number instantly.">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+:root {
+  --bg: #060608;
+  --bg-card: rgba(255,255,255,0.03);
+  --ink: #f4f0e8;
+  --accent: #4cc9f0; /* Tech Blue */
+  --muted: #888;
+  --border: rgba(255,255,255,0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; color: inherit; }
+
+.nav { position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 4rem; border-bottom: 1px solid var(--border); background: rgba(6,6,8,0.8); backdrop-filter: blur(12px); }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
+.back-link { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
+.back-link:hover { color: var(--accent); }
+
+.tool-container { max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; text-align: center; }
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #4cc9f0, #7209b7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p { color: var(--muted); font-size: 1.1rem; max-width: 60ch; margin: 0 auto 3rem; line-height: 1.6; }
+
+.calculator-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.input-wrapper { margin-bottom: 2rem; position: relative; }
+input { 
+  width: 100%; 
+  background: rgba(0,0,0,0.2); 
+  border: 1px solid var(--border); 
+  color: var(--ink); 
+  padding: 1rem; 
+  padding-left: 1rem;
+  font-family: 'Space Mono', monospace; 
+  font-size: 1.5rem; 
+  border-radius: 8px; 
+  transition: all 0.3s; 
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+input:focus { outline: none; border-color: var(--accent); }
+
+.calc-btn {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 1rem 3rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(76, 201, 240, 0.3);
+}
+.calc-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(76, 201, 240, 0.4); background: #7adeff; }
+
+#result { margin-top: 3rem; display: none; animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.single-digit {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(76, 201, 240, 0.1), rgba(114, 9, 183, 0.1));
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 auto 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+.meaning-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.compat-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.2);
+}
+.compat-title { 
+  font-family: 'Space Mono'; 
+  text-transform: uppercase; 
+  font-size: 0.7rem; 
+  letter-spacing: 0.1em; 
+  color: var(--muted); 
+  margin-bottom: 0.5rem; 
+}
+
+@keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+@media (max-width: 600px) {
+  .nav { padding: 1rem; }
+  .calculator-card { padding: 1.5rem; }
+  input { font-size: 1.2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/tools" class="back-link">← Back to Tools</a>
+  <a href="/" class="nav-brand">Dr. Dhaval Trivedi</a>
+</nav>
+
+<div class="tool-container">
+  <div class="hero">
+    <h1>Mobile Numerology</h1>
+    <p>Your phone number is your digital identity. Analyzes the total sum of your mobile number to reveal its numerological influence on your communication and networking.</p>
+  </div>
+
+  <div class="calculator-card">
+    <div class="input-wrapper">
+      <input type="tel" id="mobile" placeholder="Enter Mobile Number" maxlength="15" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
+    </div>
+
+    <button class="calc-btn" onclick="calculateMobile()">Check Luck</button>
+
+    <div id="result">
+      <div class="single-digit" id="digit">0</div>
+      <h3 id="planet" style="color: var(--muted); margin-bottom: 1rem; font-family: 'Space Mono'; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">Planet: Sun</h3>
+      <p class="meaning-text" id="desc">Your number represents leadership and new beginnings.</p>
+      
+      <div class="compat-box">
+        <div class="compat-title">Best For</div>
+        <p id="best-for" style="color: var(--ink); font-size: 0.95rem;">Professions requiring authority and independence.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer style="text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem;">
+  © 2026 Dr. Dhaval Trivedi. All rights reserved.
+</footer>
+
+<script>
+function calculateMobile() {
+  const number = document.getElementById('mobile').value.replace(/\D/g, '');
+  if (number.length < 10) {
+    alert("Please enter a valid mobile number (min 10 digits).");
+    return;
+  }
+
+  let sum = 0;
+  for (let char of number) {
+    sum += parseInt(char);
+  }
+
+  // Reduce to single digit
+  let root = sum;
+  while (root > 9) {
+    let tempSum = 0;
+    while (root > 0) {
+      tempSum += root % 10;
+      root = Math.floor(root / 10);
+    }
+    root = tempSum;
+  }
+
+  const resultDiv = document.getElementById('result');
+  document.getElementById('digit').innerText = root; // + " (" + sum + ")";
+  
+  const planets = ["", "Sun", "Moon", "Jupiter", "Rahu/Uranus", "Mercury", "Venus", "Ketu/Neptune", "Saturn", "Mars"];
+  document.getElementById('planet').innerText = "Ruling Planet: " + planets[root];
+  
+  const meanings = [
+    "",
+    "Excellent for leadership, branding, and politics. Helps in gaining authority and respect.",
+    "Good for artistic, creative, and diplomatic professions. Brings emotional connectivity.",
+    "Great for education, counseling, and spiritual fields. Brings wisdom and expansion.",
+    "Unconventional success. Good for tech, research, and unique ventures. Can be unstable.",
+    "Excellent for business, trade, communication, and media. Enhances networking.",
+    "Ideal for luxury, arts, entertainment, and beauty industries. Attracts wealth and charm.",
+    "Spiritual, intuitive, and research-oriented. Good for occult sciences and healing.",
+    "Strong for real estate, construction, law, and corporate management. Requires hard work.",
+    "Action-oriented. Good for sports, defense, engineering, and competitive fields."
+  ];
+  
+  const professions = [
+    "",
+    "CEOs, Politicians, Managers, Self-Employed",
+    "Artists, Designers, Counselors, PR",
+    "Teachers, Advisors, Lawyers, Financial Experts",
+    "IT Professionals, Scientists, Researchers, Startups",
+    "Sales, Marketing, Journalists, Writers, traders",
+    "Actors, Musicians, Fashion Designers, Luxury Goods",
+    "Healers, Researchers, occultists, Philosophers",
+    "Builders, Judges, Administrators, Corporate Leads",
+    "Surgeons, Army/Police, Athletes, Engineers"
+  ];
+
+  document.getElementById('desc').innerText = meanings[root];
+  document.getElementById('best-for').innerText = professions[root];
+  
+  resultDiv.style.display = 'block';
+}
+</script>
+
+</body>
+</html>

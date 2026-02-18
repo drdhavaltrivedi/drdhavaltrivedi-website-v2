@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDBM83S1GL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BDBM83S1GL');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Calculator | True Love & Compatibility Test</title>
+<meta name="description" content="Calculate your love compatibility percentage with our free online Love Calculator. Find out if you and your partner are a perfect match based on numerology.">
+<meta name="keywords" content="Love Calculator, Compatibility Test, Relationship Calculator, True Love Tester, Dr. Dhaval Trivedi">
+<link rel="canonical" href="https://www.drdhaval.in/tools/love-calculator.html">
+<meta name="author" content="Dr. Dhaval Trivedi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Love Calculator | True Love Compatibility Test">
+<meta property="og:description" content="Check your love score instantly. Are you soulmates?">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+:root {
+  --bg: #060608;
+  --bg-card: rgba(255,255,255,0.03);
+  --ink: #f4f0e8;
+  --accent: #e07a5f; /* Coral for Love */
+  --muted: #888;
+  --border: rgba(255,255,255,0.1);
+  --success: #4a9e6d;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; color: inherit; }
+
+/* Nav */
+.nav { position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 4rem; border-bottom: 1px solid var(--border); background: rgba(6,6,8,0.8); backdrop-filter: blur(12px); }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
+.back-link { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
+.back-link:hover { color: var(--accent); }
+
+/* Main Tool Container */
+.tool-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ff9a9e, #fecfef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 60ch;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+/* Calculator Card */
+.calculator-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.calculator-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(224,122,95,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.input-group {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+.input-group label {
+  display: block;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+.input-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.input-wrapper {
+  flex: 1;
+  min-width: 250px;
+}
+input {
+  width: 100%;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  padding: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(224,122,95,0.1);
+}
+
+.calc-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(224,122,95,0.3);
+}
+.calc-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(224,122,95,0.4);
+  background: #ff8e71;
+}
+
+/* Result Area */
+#result {
+  margin-top: 3rem;
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+.score-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent);
+  box-shadow: 0 0 30px rgba(224,122,95,0.2);
+}
+.message {
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+.sub-message {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Content Section */
+.content-section {
+  max-width: 700px;
+  margin: 6rem auto;
+  padding: 0 1.5rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.content-section h2 {
+  color: var(--ink);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+}
+.content-section ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+.content-section li {
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+.content-section li::before {
+  content: '•';
+  color: var(--accent);
+  position: absolute;
+  left: -1.2rem;
+}
+
+/* Footer & Responsive */
+@media (max-width: 600px) {
+  .nav { padding: 1rem; }
+  .calculator-card { padding: 1.5rem; }
+  .hero h1 { font-size: 2.2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/tools" class="back-link">← Back to Tools</a>
+  <a href="/" class="nav-brand">Dr. Dhaval Trivedi</a>
+</nav>
+
+<div class="tool-container">
+  <div class="hero">
+    <h1>Love Calculator</h1>
+    <p>Discover the cosmic potential of your relationship. Enter two names to reveal the compatibility score based on numerological vibrations.</p>
+  </div>
+
+  <div class="calculator-card">
+    <div class="input-row">
+      <div class="input-wrapper">
+        <div class="input-group">
+          <label for="name1">Your Name</label>
+          <input type="text" id="name1" placeholder="Enter your full name">
+        </div>
+      </div>
+      <div class="input-wrapper">
+        <div class="input-group">
+          <label for="name2">Partner's Name</label>
+          <input type="text" id="name2" placeholder="Enter partner's full name">
+        </div>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculateLove()">Reveal Compatibility</button>
+
+    <div id="result">
+      <div class="score-circle" id="score">0%</div>
+      <p class="message" id="msg">Your Love Score</p>
+      <p class="sub-message" id="subMsg">The stars are aligning...</p>
+    </div>
+  </div>
+</div>
+
+<article class="content-section">
+  <h2>How Does It Work?</h2>
+  <p>Love compatibility calculations have roots in ancient numerology. By assigning numerical values to the letters in your names, we analyze the vibrational harmony between two individuals. While this tool is for entertainment, the power of names in compatibility has been studied for centuries.</p>
+  
+  <h2>Interpreting Your Score</h2>
+  <ul>
+    <li><strong>90-100%:</strong> A cosmic match! Your energies are perfectly aligned.</li>
+    <li><strong>70-89%:</strong> Strong compatibility. A relationship built on solid ground.</li>
+    <li><strong>50-69%:</strong> Good potential. Requires understanding and effort.</li>
+    <li><strong>Below 50%:</strong> Challenging alignment. Patience and communication are key.</li>
+  </ul>
+</article>
+
+<footer>
+  <div style="text-align: center; padding: 2rem; border-top: 1px solid var(--border); margin-top: 4rem;">
+    <p style="color: var(--muted); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">© 2026 Dr. Dhaval Trivedi. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+function calculateLove() {
+  const name1 = document.getElementById('name1').value.trim().toLowerCase();
+  const name2 = document.getElementById('name2').value.trim().toLowerCase();
+  const resultDiv = document.getElementById('result');
+  const scoreEl = document.getElementById('score');
+  const msgEl = document.getElementById('msg');
+  const subMsgEl = document.getElementById('subMsg');
+
+  if (!name1 || !name2) {
+    alert("Please enter both names to calculate compatibility.");
+    return;
+  }
+
+  // Simple deterministic hash for consistent results
+  let combined = name1 + name2;
+  let score = 0;
+  for (let i = 0; i < combined.length; i++) {
+    score += combined.charCodeAt(i);
+  }
+  
+  // Add some "magic" based on name length and first letters goodness
+  score = (score % 101);
+  
+  // Ensure it's not too low for simple names (user satisfaction)
+  if (score < 40) score += 30;
+  if (score > 100) score = 99;
+
+  resultDiv.style.display = 'block';
+  
+  // Animate counter
+  let current = 0;
+  const timer = setInterval(() => {
+    current += 1;
+    scoreEl.textContent = current + "%";
+    if (current >= score) {
+      clearInterval(timer);
+      finalizeMessage(score);
+    }
+  }, 15);
+
+  function finalizeMessage(s) {
+    if (s > 85) {
+      msgEl.textContent = "Soulmates!";
+      subMsgEl.textContent = "Your connection is written in the stars.";
+      scoreEl.style.color = "#FF4081";
+      scoreEl.style.borderColor = "#FF4081";
+    } else if (s > 65) {
+      msgEl.textContent = "Perfect Match";
+      subMsgEl.textContent = "A strong and loving bond.";
+      scoreEl.style.color = "#e07a5f";
+    } else if (s > 40) {
+      msgEl.textContent = "Good Potential";
+      subMsgEl.textContent = "With effort, love can bloom.";
+      scoreEl.style.color = "#f4f0e8";
+    } else {
+      msgEl.textContent = "Challenging";
+      subMsgEl.textContent = "Differences make life interesting.";
+      scoreEl.style.color = "#888";
+    }
+  }
+}
+</script>
+
+</body>
+</html>

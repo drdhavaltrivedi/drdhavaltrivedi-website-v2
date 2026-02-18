@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDBM83S1GL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BDBM83S1GL');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI Calculator | Calculate Body Mass Index</title>
+<meta name="description" content="Use our free BMI Calculator to check your Body Mass Index. Understand your health category and ideal weight range instantly.">
+<meta name="keywords" content="BMI Calculator, Body Mass Index, Health Calculator, Ideal Weight, Dr. Dhaval Trivedi">
+<link rel="canonical" href="https://www.drdhaval.in/tools/bmi-calculator.html">
+<meta name="author" content="Dr. Dhaval Trivedi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BMI Calculator | Check Your Health Score">
+<meta property="og:description" content="Calculate your BMI and find your ideal weight range.">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+:root {
+  --bg: #060608;
+  --bg-card: rgba(255,255,255,0.03);
+  --ink: #f4f0e8;
+  --accent: #4a9e6d; /* Green/Teal for Health */
+  --muted: #888;
+  --border: rgba(255,255,255,0.1);
+  --danger: #e07a5f;
+  --warning: #eab308;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; color: inherit; }
+
+/* Reuse styles */
+.nav { position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 4rem; border-bottom: 1px solid var(--border); background: rgba(6,6,8,0.8); backdrop-filter: blur(12px); }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
+.back-link { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
+.back-link:hover { color: var(--accent); }
+
+.tool-container { max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; text-align: center; }
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #43e97b, #38f9d7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p { color: var(--muted); font-size: 1.1rem; max-width: 60ch; margin: 0 auto 3rem; line-height: 1.6; }
+
+.calculator-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.input-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.input-col { flex: 1; min-width: 200px; }
+.input-group { margin-bottom: 1rem; text-align: left; }
+.input-group label { display: block; font-family: 'Space Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.8rem; }
+input, select { width: 100%; background: rgba(0,0,0,0.2); border: 1px solid var(--border); color: var(--ink); padding: 1rem; font-family: 'Inter', sans-serif; font-size: 1rem; border-radius: 8px; transition: all 0.3s; }
+input:focus, select:focus { outline: none; border-color: var(--accent); }
+
+.calc-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(74, 158, 109, 0.3);
+}
+.calc-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(74, 158, 109, 0.4); background: #55b57d; }
+
+#result { margin-top: 3rem; display: none; }
+.bmi-score { font-size: 4rem; font-weight: 900; color: var(--accent); line-height: 1; font-family: 'Playfair Display', serif; }
+.bmi-category { font-family: 'Space Mono', monospace; text-transform: uppercase; font-size: 1rem; letter-spacing: 0.2em; margin-top: 0.5rem; color: var(--muted); }
+
+.bmi-bar { width: 100%; height: 10px; background: #333; border-radius: 5px; margin: 2rem 0; position: relative; overflow: hidden; }
+.bmi-bar-fill { height: 100%; width: 0%; background: linear-gradient(to right, #38f9d7, #43e97b, #eab308, #e07a5f); transition: width 1s ease-out; }
+
+.info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 3rem; text-align: left; }
+.info-row { padding: 1rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; color: var(--muted); font-size: 0.9rem; }
+.info-row span:last-child { color: var(--ink); }
+
+@media (max-width: 600px) {
+  .nav { padding: 1rem; }
+  .calculator-card { padding: 1.5rem; }
+  .info-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/tools" class="back-link">← Back to Tools</a>
+  <a href="/" class="nav-brand">Dr. Dhaval Trivedi</a>
+</nav>
+
+<div class="tool-container">
+  <div class="hero">
+    <h1>BMI Calculator</h1>
+    <p>Body Mass Index (BMI) is a simple index of weight-for-height that is commonly used to classify underweight, overweight and obesity in adults.</p>
+  </div>
+
+  <div class="calculator-card">
+    <div class="input-row">
+      <div class="input-col">
+        <div class="input-group">
+          <label>Gender</label>
+          <select id="gender">
+            <option value="m">Male</option>
+            <option value="f">Female</option>
+          </select>
+        </div>
+      </div>
+      <div class="input-col">
+        <div class="input-group">
+          <label>Age</label>
+          <input type="number" id="age" placeholder="25" min="2" max="120">
+        </div>
+      </div>
+    </div>
+    
+    <div class="input-row">
+      <div class="input-col">
+        <div class="input-group">
+          <label>Height (cm)</label>
+          <input type="number" id="height" placeholder="175" min="50">
+        </div>
+      </div>
+      <div class="input-col">
+        <div class="input-group">
+          <label>Weight (kg)</label>
+          <input type="number" id="weight" placeholder="70" min="10">
+        </div>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculateBMI()">Calculate BMI</button>
+
+    <div id="result">
+      <div class="bmi-score" id="score">0.0</div>
+      <div class="bmi-category" id="category">Normal Weight</div>
+      
+      <div class="bmi-bar">
+        <div class="bmi-bar-fill" id="bar-fill"></div>
+      </div>
+      
+      <p style="color: var(--muted); margin-top: 1rem; font-size: 0.9rem;">Ideal Weight Range: <span id="ideal-weight" style="color: var(--ink);">58 - 72 kg</span></p>
+
+      <div class="info-grid">
+        <div class="info-row"><span>Underweight</span><span>&lt; 18.5</span></div>
+        <div class="info-row"><span>Normal</span><span>18.5 - 24.9</span></div>
+        <div class="info-row"><span>Overweight</span><span>25 - 29.9</span></div>
+        <div class="info-row"><span>Obese</span><span>&ge; 30</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer style="text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem;">
+  © 2026 Dr. Dhaval Trivedi. All rights reserved.
+</footer>
+
+<script>
+function calculateBMI() {
+  const height = parseFloat(document.getElementById('height').value);
+  const weight = parseFloat(document.getElementById('weight').value);
+  
+  if (!height || !weight || height <= 0 || weight <= 0) {
+    alert("Please enter valid height and weight.");
+    return;
+  }
+
+  const bmi = weight / ((height / 100) ** 2);
+  const score = bmi.toFixed(1);
+  
+  const scoreEl = document.getElementById('score');
+  const catEl = document.getElementById('category');
+  const barFill = document.getElementById('bar-fill');
+  const resultDiv = document.getElementById('result');
+  
+  let category = "";
+  let color = "";
+  let width = 0;
+
+  if (bmi < 18.5) {
+    category = "Underweight";
+    color = "#38f9d7"; // Cyan
+    width = 20;
+  } else if (bmi >= 18.5 && bmi < 25) {
+    category = "Normal Weight";
+    color = "#4a9e6d"; // Green
+    width = 50;
+  } else if (bmi >= 25 && bmi < 30) {
+    category = "Overweight";
+    color = "#eab308"; // Yellow
+    width = 75;
+  } else {
+    category = "Obese";
+    color = "#e07a5f"; // Red
+    width = 100;
+  }
+
+  // Ideal Weight Calculation (Reverse BMI 18.5 - 24.9)
+  const minWeight = (18.5 * (height / 100) ** 2).toFixed(1);
+  const maxWeight = (24.9 * (height / 100) ** 2).toFixed(1);
+  
+  resultDiv.style.display = 'block';
+  scoreEl.innerText = score;
+  scoreEl.style.color = color;
+  catEl.innerText = category;
+  catEl.style.color = color;
+  
+  // Animate bar
+  setTimeout(() => {
+    barFill.style.width = width + "%";
+    barFill.style.background = color;
+  }, 100);
+  
+  document.getElementById('ideal-weight').innerText = `${minWeight} - ${maxWeight} kg`;
+}
+</script>
+
+</body>
+</html>

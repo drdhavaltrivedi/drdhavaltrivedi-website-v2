@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDBM83S1GL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BDBM83S1GL');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Name Numerology Calculator | Pythagorean & Chaldean</title>
+<meta name="description" content="Calculate your Name Number (Expression Number) and Soul Urge Number using both Pythagorean and Chaldean numerology systems. Discover the hidden meaning of your name.">
+<meta name="keywords" content="Name Numerology Calculator, Chaldean Numerology, Pythagorean Numerology, Name Meaning, Destiny Number, Soul Urge Number, Dr. Dhaval Trivedi">
+<link rel="canonical" href="https://www.drdhaval.in/tools/name-numerology.html">
+<meta name="author" content="Dr. Dhaval Trivedi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Name Numerology Calculator">
+<meta property="og:description" content="Analyze your name with Pythagorean and Chaldean systems.">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+:root {
+  --bg: #060608;
+  --bg-card: rgba(255,255,255,0.03);
+  --ink: #f4f0e8;
+  --accent: #a87bd4; /* Purple/Mystic */
+  --muted: #888;
+  --border: rgba(255,255,255,0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; color: inherit; }
+
+.nav { position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 4rem; border-bottom: 1px solid var(--border); background: rgba(6,6,8,0.8); backdrop-filter: blur(12px); }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
+.back-link { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
+.back-link:hover { color: var(--accent); }
+
+.tool-container { max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; text-align: center; }
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #cc2b5e, #753a88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p { color: var(--muted); font-size: 1.1rem; max-width: 60ch; margin: 0 auto 3rem; line-height: 1.6; }
+
+.calculator-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.input-wrapper { margin-bottom: 2rem; }
+input { 
+  width: 100%; 
+  background: rgba(0,0,0,0.2); 
+  border: 1px solid var(--border); 
+  color: var(--ink); 
+  padding: 1rem; 
+  font-family: 'Inter', sans-serif; 
+  font-size: 1.2rem; 
+  border-radius: 8px; 
+  transition: all 0.3s; 
+  text-align: center;
+}
+input:focus { outline: none; border-color: var(--accent); }
+
+.calc-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 1rem 3rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(168, 123, 212, 0.3);
+}
+.calc-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(168, 123, 212, 0.4); background: #966ec0; }
+
+#result { margin-top: 3rem; display: none; animation: fadeIn 0.8s ease; }
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  text-align: left;
+}
+.result-box {
+  background: rgba(255,255,255,0.02);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+.system-label {
+  font-family: 'Space Mono';
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.number-display {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1;
+}
+.number-meaning {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 600px) {
+  .nav { padding: 1rem; }
+  .calculator-card { padding: 1.5rem; }
+  .result-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/tools" class="back-link">← Back to Tools</a>
+  <a href="/" class="nav-brand">Dr. Dhaval Trivedi</a>
+</nav>
+
+<div class="tool-container">
+  <div class="hero">
+    <h1>Name Numerology</h1>
+    <p>Every name carries a vibration. Calculate your Pythagorean and Chaldean numbers to understand your destiny and personality.</p>
+  </div>
+
+  <div class="calculator-card">
+    <div class="input-wrapper">
+      <input type="text" id="fullname" placeholder="Enter Full Name" onkeypress="if(event.key === 'Enter') calculateName()">
+    </div>
+
+    <button class="calc-btn" onclick="calculateName()">Analyze Name</button>
+
+    <div id="result">
+      <div class="result-grid">
+        <div class="result-box">
+          <span class="system-label">Pythagorean System</span>
+          <div class="number-display" id="pyth-num">0</div>
+          <p class="number-meaning" id="pyth-desc">The modern western system. Represents your personality and outer self.</p>
+        </div>
+        <div class="result-box">
+          <span class="system-label">Chaldean System</span>
+          <div class="number-display" id="chal-num">0</div>
+          <p class="number-meaning" id="chal-desc">The ancient mystical system. Represents your hidden destiny and karma.</p>
+        </div>
+      </div>
+      
+      <div style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+        <h3 style="margin-bottom: 0.5rem;">Did you know?</h3>
+        <p style="color: var(--muted); font-size: 0.9rem;">Changing the spelling of your name can alter your numerological vibration, potentially attracting different energies into your life.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer style="text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem;">
+  © 2026 Dr. Dhaval Trivedi. All rights reserved.
+</footer>
+
+<script>
+const pythagoreanMap = {
+  a:1, b:2, c:3, d:4, e:5, f:6, g:7, h:8, i:9,
+  j:1, k:2, l:3, m:4, n:5, o:6, p:7, q:8, r:9,
+  s:1, t:2, u:3, v:4, w:5, x:6, y:7, z:8
+};
+
+const chaldeanMap = {
+  a:1, b:2, c:3, d:4, e:5, f:8, g:3, h:5, i:1,
+  j:1, k:2, l:3, m:4, n:5, o:7, p:8, q:1, r:2,
+  s:3, t:4, u:6, v:6, w:6, x:5, y:1, z:7
+};
+
+function getRoot(num) {
+  if (num === 11 || num === 22 || num === 33) return num; // Master numbers
+  while (num > 9) {
+    let sum = 0;
+    while (num > 0) {
+      sum += num % 10;
+      num = Math.floor(num / 10);
+    }
+    if (sum === 11 || sum === 22 || sum === 33) return sum;
+    num = sum;
+  }
+  return num;
+}
+
+function calculateName() {
+  const name = document.getElementById('fullname').value.toLowerCase().replace(/[^a-z]/g, '');
+  if (!name) {
+    alert("Please enter a name.");
+    return;
+  }
+
+  let pythSum = 0;
+  let chalSum = 0;
+
+  for (let char of name) {
+    if (pythagoreanMap[char]) pythSum += pythagoreanMap[char];
+    if (chaldeanMap[char]) chalSum += chaldeanMap[char];
+  }
+
+  const pythRoot = getRoot(pythSum);
+  const chalRoot = getRoot(chalSum);
+
+  document.getElementById('pyth-num').innerText = pythRoot; // + " (" + pythSum + ")";
+  document.getElementById('chal-num').innerText = chalRoot; // + " (" + chalSum + ")";
+  
+  // Dynamic Descriptions
+  document.getElementById('pyth-desc').innerText = getMeaning(pythRoot);
+  document.getElementById('chal-desc').innerText = getMeaning(chalRoot) + " (Based on Chaldean Vibration " + chalSum + ")";
+
+  document.getElementById('result').style.display = 'block';
+}
+
+function getMeaning(num) {
+  const meanings = {
+    1: "Leader, independent, pioneer. A self-starter who prefers to lead.",
+    2: "Diplomat, peacemaker, sensitive. Cooperative and intuitive nature.",
+    3: "Communicator, creative, social. Expressive and optimistic energy.",
+    4: "Builder, practical, disciplined. Hard-working and reliable foundation.",
+    5: "Freedom seeker, adventurous, versatile. Loves change and variety.",
+    6: "Nurturer, responsible, harmonious. Caregiver and family-oriented.",
+    7: "Seeker, analytical, spiritual. Introspective and wisdom-seeking.",
+    8: "Executive, ambitious, powerful. Focus on material success and authority.",
+    9: "Humanitarian, compassionate, selfless. Completing cycles and helping others.",
+    11: "Master Intuitive. Highly spiritual, inspiring, and visionary.",
+    22: "Master Builder. Can turn big dreams into reality on a large scale.",
+    33: "Master Teacher. Selfless service and spiritual guidance."
+  };
+  return meanings[num] || "A unique vibration.";
+}
+</script>
+
+</body>
+</html>

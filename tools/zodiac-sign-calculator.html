@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDBM83S1GL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BDBM83S1GL');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zodiac Sign Calculator | Find Your Sun Sign</title>
+<meta name="description" content="Discover your true Zodiac Sun Sign based on your birth date. Get insights into your personality traits, strengths, and weaknesses.">
+<meta name="keywords" content="Zodiac Calculator, Sun Sign Finder, Horoscope Tool, Astrology Calculator, Dr. Dhaval Trivedi">
+<link rel="canonical" href="https://www.drdhaval.in/tools/zodiac-sign-calculator.html">
+<meta name="author" content="Dr. Dhaval Trivedi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="What is My Zodiac Sign?">
+<meta property="og:description" content="Find your Sun Sign and personality traits instantly.">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+:root {
+  --bg: #060608;
+  --bg-card: rgba(255,255,255,0.03);
+  --ink: #f4f0e8;
+  --accent: #a87bd4; /* Purple for Mysticism */
+  --muted: #888;
+  --border: rgba(255,255,255,0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; color: inherit; }
+
+/* Reuse basic styles */
+.nav { position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 4rem; border-bottom: 1px solid var(--border); background: rgba(6,6,8,0.8); backdrop-filter: blur(12px); }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
+.back-link { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
+.back-link:hover { color: var(--accent); }
+
+.tool-container { max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; text-align: center; }
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p { color: var(--muted); font-size: 1.1rem; max-width: 60ch; margin: 0 auto 3rem; line-height: 1.6; }
+
+.calculator-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.input-group { margin-bottom: 2rem; text-align: left; }
+.input-group label { display: block; font-family: 'Space Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.8rem; }
+input, select { width: 100%; background: rgba(0,0,0,0.2); border: 1px solid var(--border); color: var(--ink); padding: 1rem; font-family: 'Inter', sans-serif; font-size: 1rem; border-radius: 8px; transition: all 0.3s; }
+input:focus, select:focus { outline: none; border-color: var(--accent); }
+
+.calc-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(168, 123, 212, 0.3);
+}
+.calc-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(168, 123, 212, 0.4); background: #be9ae2; }
+
+#result { margin-top: 3rem; display: none; animation: floatUp 0.6s ease; }
+.zodiac-symbol { font-size: 5rem; line-height: 1; margin-bottom: 1rem; display: block; }
+.zodiac-name { font-size: 3rem; font-weight: 700; color: var(--accent); font-family: 'Playfair Display', serif; }
+.zodiac-dates { font-family: 'Space Mono', monospace; font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.zodiac-desc { font-size: 1.05rem; line-height: 1.7; max-width: 500px; margin: 0 auto; color: var(--ink); }
+
+@keyframes floatUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .nav { padding: 1rem; }
+  .calculator-card { padding: 1.5rem; }
+  .zodiac-name { font-size: 2.2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/tools" class="back-link">← Back to Tools</a>
+  <a href="/" class="nav-brand">Dr. Dhaval Trivedi</a>
+</nav>
+
+<div class="tool-container">
+  <div class="hero">
+    <h1>Zodiac Sign Finder</h1>
+    <p>Your Sun Sign represents your core essence. Enter your birth details to reveal your zodiac sign and what it says about you.</p>
+  </div>
+
+  <div class="calculator-card">
+    <div class="input-row" style="display:flex; gap:1rem;">
+      <div class="input-group" style="flex:1;">
+        <label for="day">Day</label>
+        <select id="day">
+          <option value="">Day</option>
+          <!-- JS will populate -->
+        </select>
+      </div>
+      <div class="input-group" style="flex:2;">
+        <label for="month">Month</label>
+        <select id="month">
+          <option value="">Month</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="findZodiac()">Reveal My Sign</button>
+
+    <div id="result">
+      <span class="zodiac-symbol" id="symbol"></span>
+      <h2 class="zodiac-name" id="sign-name"></h2>
+      <p class="zodiac-dates" id="dates"></p>
+      <p class="zodiac-desc" id="desc"></p>
+    </div>
+  </div>
+</div>
+
+<footer style="text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem;">
+  © 2026 Dr. Dhaval Trivedi. All rights reserved.
+</footer>
+
+<script>
+// Populate days
+const daySelect = document.getElementById('day');
+for(let i=1; i<=31; i++) {
+  const opt = document.createElement('option');
+  opt.value = i;
+  opt.innerText = i;
+  daySelect.appendChild(opt);
+}
+
+const zodiacData = {
+  aries: { name: "Aries", symbol: "♈", dates: "Mar 21 - Apr 19", desc: "Bold, ambitious, and dynamic. Aries loves to be number one and dives headfirst into challenges." },
+  taurus: { name: "Taurus", symbol: "♉", dates: "Apr 20 - May 20", desc: "Reliable, patient, and practical. Taurus values stability and enjoys the finer things in life." },
+  gemini: { name: "Gemini", symbol: "♊", dates: "May 21 - Jun 20", desc: "Adaptable, outgoing, and intelligent. Gemini is curious and loves to learn and share ideas." },
+  cancer: { name: "Cancer", symbol: "♋", dates: "Jun 21 - Jul 22", desc: "Intuitive, sentimental, and protective. Cancer cares deeply about family and their home." },
+  leo: { name: "Leo", symbol: "♌", dates: "Jul 23 - Aug 22", desc: "Creative, passionate, and generous. Leo loves the spotlight and leads with a warm heart." },
+  virgo: { name: "Virgo", symbol: "♍", dates: "Aug 23 - Sep 22", desc: "Loyal, analytical, and kind. Virgo pays attention to the smallest details and strives for perfection." },
+  libra: { name: "Libra", symbol: "♎", dates: "Sep 23 - Oct 22", desc: "Cooperative, diplomatic, and gracious. Libra seeks balance, harmony, and justice." },
+  scorpio: { name: "Scorpio", symbol: "♏", dates: "Oct 23 - Nov 21", desc: "Resourceful, brave, and passionate. Scorpio is a true friend but a fierce enemy." },
+  sagittarius: { name: "Sagittarius", symbol: "♐", dates: "Nov 22 - Dec 21", desc: "Generous, idealistic, and great sense of humor. Sagittarius loves travel and freedom." },
+  capricorn: { name: "Capricorn", symbol: "♑", dates: "Dec 22 - Jan 19", desc: "Responsible, disciplined, and good managers. Capricorn values tradition and serious work." },
+  aquarius: { name: "Aquarius", symbol: "♒", dates: "Jan 20 - Feb 18", desc: "Original, independent, and humanitarian. Aquarius is forward-thinking and unique." },
+  pisces: { name: "Pisces", symbol: "♓", dates: "Feb 19 - Mar 20", desc: "Compassionate, artistic, and intuitive. Pisces is friendly and often selfless." }
+};
+
+function findZodiac() {
+  const day = parseInt(document.getElementById('day').value);
+  const month = parseInt(document.getElementById('month').value);
+  
+  if (!day || !month) {
+    alert("Please select both day and month.");
+    return;
+  }
+
+  let sign = "";
+  
+  if ((month == 1 && day <= 19) || (month == 12 && day >= 22)) sign = "capricorn";
+  else if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) sign = "aquarius";
+  else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) sign = "pisces";
+  else if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) sign = "aries";
+  else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) sign = "taurus";
+  else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) sign = "gemini";
+  else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) sign = "cancer";
+  else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) sign = "leo";
+  else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) sign = "virgo";
+  else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) sign = "libra";
+  else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) sign = "scorpio";
+  else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) sign = "sagittarius";
+
+  const data = zodiacData[sign];
+  const resultDiv = document.getElementById('result');
+  
+  document.getElementById('symbol').innerText = data.symbol;
+  document.getElementById('sign-name').innerText = data.name;
+  document.getElementById('dates').innerText = data.dates;
+  document.getElementById('desc').innerText = data.desc;
+  
+  resultDiv.style.display = 'block';
+}
+</script>
+
+</body>
+</html>

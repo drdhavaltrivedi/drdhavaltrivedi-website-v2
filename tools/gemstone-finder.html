@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDBM83S1GL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BDBM83S1GL');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucky Gemstone Finder | Vedic Astrology</title>
+<meta name="description" content="Find the perfect auspicious gemstone (Ratna) according to your Vedic Astrology Sign (Rashi) or Western Zodiac. Enhance your luck, health, and prosperity.">
+<meta name="keywords" content="Gemstone Finder, Lucky Stone Calculator, Rashi Ratna, Birthstone Calculator, Vedic Astrology Gems, Dr. Dhaval Trivedi">
+<link rel="canonical" href="https://www.drdhaval.in/tools/gemstone-finder.html">
+<meta name="author" content="Dr. Dhaval Trivedi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lucky Gemstone Recommendation Tool">
+<meta property="og:description" content="Discover your power stone based on Vedic wisdom.">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+:root {
+  --bg: #060608;
+  --bg-card: rgba(255,255,255,0.03);
+  --ink: #f4f0e8;
+  --accent: #4a9e6d; /* Emerald Green */
+  --shimmer: rgba(74, 158, 109, 0.2);
+  --muted: #888;
+  --border: rgba(255,255,255,0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; color: inherit; }
+
+.nav { position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 4rem; border-bottom: 1px solid var(--border); background: rgba(6,6,8,0.8); backdrop-filter: blur(12px); }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
+.back-link { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
+.back-link:hover { color: var(--accent); }
+
+.tool-container { max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; text-align: center; }
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p { color: var(--muted); font-size: 1.1rem; max-width: 60ch; margin: 0 auto 3rem; line-height: 1.6; }
+
+.calculator-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.input-group { margin-bottom: 2rem; text-align: left; }
+.input-group label { display: block; font-family: 'Space Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.8rem; }
+select { width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--border); color: var(--ink); padding: 1rem; font-family: 'Inter', sans-serif; font-size: 1rem; border-radius: 8px; transition: all 0.3s; appearance: none; }
+select:focus { outline: none; border-color: var(--accent); }
+
+.calc-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 1rem 3rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(74, 158, 109, 0.3);
+}
+.calc-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(74, 158, 109, 0.4); background: #5db680; }
+
+#result { margin-top: 3rem; display: none; animation: shimmerIn 0.8s ease; }
+.gem-display {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(255,255,255,0) 20%), 
+              radial-gradient(circle at center, var(--accent), #000);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 50px var(--shimmer);
+  position: relative;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+.gem-name { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+.gem-planet { font-family: 'Space Mono'; text-transform: uppercase; font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 1.5rem; }
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  text-align: left;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+.detail-item strong { display: block; color: var(--ink); margin-bottom: 0.3rem; font-size: 0.9rem; }
+.detail-item span { color: var(--muted); font-size: 0.85rem; }
+
+@keyframes shimmerIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
+@media (max-width: 600px) {
+  .nav { padding: 1rem; }
+  .calculator-card { padding: 1.5rem; }
+  .details-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/tools" class="back-link">← Back to Tools</a>
+  <a href="/" class="nav-brand">Dr. Dhaval Trivedi</a>
+</nav>
+
+<div class="tool-container">
+  <div class="hero">
+    <h1>Gemstone Recommender</h1>
+    <p>Gemstones harness planetary energies to balance your life. Select your Rashi (Moon Sign) or Ascendant to find your primary lucky stone.</p>
+  </div>
+
+  <div class="calculator-card">
+    <div class="input-group">
+      <label for="rashi">Select Your Sign (Rashi/Lagna)</label>
+      <select id="rashi">
+        <option value="">-- Choose Sign --</option>
+        <option value="aries">Aries (Mesha)</option>
+        <option value="taurus">Taurus (Vrishabha)</option>
+        <option value="gemini">Gemini (Mithuna)</option>
+        <option value="cancer">Cancer (Karka)</option>
+        <option value="leo">Leo (Simha)</option>
+        <option value="virgo">Virgo (Kanya)</option>
+        <option value="libra">Libra (Tula)</option>
+        <option value="scorpio">Scorpio (Vrishchika)</option>
+        <option value="sagittarius">Sagittarius (Dhanu)</option>
+        <option value="capricorn">Capricorn (Makara)</option>
+        <option value="aquarius">Aquarius (Kumbha)</option>
+        <option value="pisces">Pisces (Meena)</option>
+      </select>
+    </div>
+
+    <button class="calc-btn" onclick="findGem()">Reveal My Gemstone</button>
+
+    <div id="result">
+      <div class="gem-display" id="gem-graphic"></div>
+      <h2 class="gem-name" id="gem-name">Ruby</h2>
+      <p class="gem-planet" id="planet-name">Ruled by Sun</p>
+      
+      <div class="details-grid">
+        <div class="detail-item">
+          <strong>Metal</strong>
+          <span id="metal">Gold or Copper</span>
+        </div>
+        <div class="detail-item">
+          <strong>Finger</strong>
+          <span id="finger">Ring Finger</span>
+        </div>
+        <div class="detail-item">
+          <strong>Day</strong>
+          <span id="day">Sunday Morning</span>
+        </div>
+        <div class="detail-item">
+          <strong>Benefits</strong>
+          <span id="benefits">Authority, Confidence, Health</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer style="text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem;">
+  © 2026 Dr. Dhaval Trivedi. All rights reserved.
+</footer>
+
+<script>
+const gemData = {
+  aries: { name: "Red Coral (Moonga)", planet: "Mars", metal: "Copper/Gold", finger: "Ring Finger", day: "Tuesday", benefit: "Courage, Strength, Vitality", color: "#e63946" },
+  taurus: { name: "Diamond / Opal", planet: "Venus", metal: "Gold/Silver", finger: "Middle Finger", day: "Friday", benefit: "Luxury, Love, Creativity", color: "#e2e2e2" },
+  gemini: { name: "Emerald (Panna)", planet: "Mercury", metal: "Gold", finger: "Little Finger", day: "Wednesday", benefit: "Intelligence, Communication, Business", color: "#2d6a4f" },
+  cancer: { name: "Pearl (Moti)", planet: "Moon", metal: "Silver", finger: "Little Finger", day: "Monday", benefit: "Peace, Emotions, Wealth", color: "#f1faee" },
+  leo: { name: "Ruby (Manik)", planet: "Sun", metal: "Gold/Copper", finger: "Ring Finger", day: "Sunday", benefit: "Power, Fame, Leadership", color: "#d00000" },
+  virgo: { name: "Emerald (Panna)", planet: "Mercury", metal: "Gold", finger: "Little Finger", day: "Wednesday", benefit: "Analyical Skills, Health, Trade", color: "#40916c" },
+  libra: { name: "Diamond / Opal", planet: "Venus", metal: "Silver/Gold", finger: "Middle Finger", day: "Friday", benefit: "Harmony, Arts, Marriage", color: "#f8f9fa" },
+  scorpio: { name: "Red Coral (Moonga)", planet: "Mars", metal: "Copper/Gold", finger: "Ring Finger", day: "Tuesday", benefit: "Energy, Protection, Willpower", color: "#c1121f" },
+  sagittarius: { name: "Yellow Sapphire (Pukhraj)", planet: "Jupiter", metal: "Gold", finger: "Index Finger", day: "Thursday", benefit: "Wisdom, Prosperity, Spirituality", color: "#ffb703" },
+  capricorn: { name: "Blue Sapphire (Neelam)", planet: "Saturn", metal: "Gold/Silver", finger: "Middle Finger", day: "Saturday", benefit: "Discipline, Career, Justice", color: "#023e8a" },
+  aquarius: { name: "Blue Sapphire / Amethyst", planet: "Saturn", metal: "Gold/Silver", finger: "Middle Finger", day: "Saturday", benefit: "Innovation, Focus, Gains", color: "#4361ee" },
+  pisces: { name: "Yellow Sapphire (Pukhraj)", planet: "Jupiter", metal: "Gold", finger: "Index Finger", day: "Thursday", benefit: "Intuition, Luck, Learning", color: "#fb8500" }
+};
+
+function findGem() {
+  const sign = document.getElementById('rashi').value;
+  if(!sign) {
+    alert("Please select a sign.");
+    return;
+  }
+  
+  const data = gemData[sign];
+  const graphic = document.getElementById('gem-graphic');
+  
+  document.getElementById('gem-name').innerText = data.name;
+  document.getElementById('planet-name').innerText = "Ruled by " + data.planet;
+  document.getElementById('metal').innerText = data.metal;
+  document.getElementById('finger').innerText = data.finger;
+  document.getElementById('day').innerText = data.day;
+  document.getElementById('benefits').innerText = data.benefit;
+  
+  // Set color dynamically
+  graphic.style.background = `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0) 25%), radial-gradient(circle at center, ${data.color}, #111)`;
+  graphic.style.boxShadow = `0 0 40px ${data.color}40`;
+  document.documentElement.style.setProperty('--accent', data.color);
+  
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDBM83S1GL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BDBM83S1GL');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rudraksha Recommendation Tool | Vedic Solutions</title>
+<meta name="description" content="Find the right Rudraksha bead for you based on your Zodiac Sign (Rashi) and life goals. Harness the power of Shiva for health, wealth, and peace.">
+<meta name="keywords" content="Rudraksha Finder, Rudraksha Recommendation, Which Rudraksha to wear, Mukhi Rudraksha, Vedic Remedies, Dr. Dhaval Trivedi">
+<link rel="canonical" href="https://www.drdhaval.in/tools/rudraksha-finder.html">
+<meta name="author" content="Dr. Dhaval Trivedi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rudraksha Finder Tool">
+<meta property="og:description" content="Discover the sacred bead for your soul.">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+:root {
+  --bg: #060608;
+  --bg-card: rgba(255,255,255,0.03);
+  --ink: #f4f0e8;
+  --accent: #8b4513; /* Rudraksha Brown */
+  --muted: #888;
+  --border: rgba(255,255,255,0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; color: inherit; }
+
+.nav { position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 4rem; border-bottom: 1px solid var(--border); background: rgba(6,6,8,0.8); backdrop-filter: blur(12px); }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
+.back-link { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
+.back-link:hover { color: var(--accent); }
+
+.tool-container { max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; text-align: center; }
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #d2691e, #8b4513);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p { color: var(--muted); font-size: 1.1rem; max-width: 60ch; margin: 0 auto 3rem; line-height: 1.6; }
+
+.calculator-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.input-group { margin-bottom: 2rem; text-align: left; }
+.input-group label { display: block; font-family: 'Space Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.8rem; }
+select { width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--border); color: var(--ink); padding: 1rem; font-family: 'Inter', sans-serif; font-size: 1rem; border-radius: 8px; transition: all 0.3s; appearance: none; }
+select:focus { outline: none; border-color: var(--accent); }
+
+.calc-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 1rem 3rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(139, 69, 19, 0.3);
+}
+.calc-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(139, 69, 19, 0.4); background: #a0522d; }
+
+#result { margin-top: 3rem; display: none; animation: fadeIn 0.8s ease; }
+.bead-visual {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at 40% 40%, #cd853f, #8b4513, #5e2f0d);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 30px rgba(139,69,19,0.4), inset 0 0 20px rgba(0,0,0,0.5);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Playfair Display';
+}
+/* Simulate texture lines */
+.bead-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.2) 10px, rgba(0,0,0,0.2) 12px);
+  mix-blend-mode: overlay;
+}
+
+.details-box {
+  background: rgba(255,255,255,0.02);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+.detail-title { color: var(--accent); font-family: 'Space Mono'; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem; }
+.detail-text { margin-bottom: 1.5rem; color: var (--ink); line-height: 1.6; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 600px) {
+  .nav { padding: 1rem; }
+  .calculator-card { padding: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/tools" class="back-link">← Back to Tools</a>
+  <a href="/" class="nav-brand">Dr. Dhaval Trivedi</a>
+</nav>
+
+<div class="tool-container">
+  <div class="hero">
+    <h1>Rudraksha Finder</h1>
+    <p>Rudraksha beads are powerful seeds used for spiritual & healing. Find the correct Mukhi (Face) for your energy based on your primary goal or zodiac.</p>
+  </div>
+
+  <div class="calculator-card">
+    <div class="input-group">
+      <label for="goal">Your Primary Goal / Issue</label>
+      <select id="goal" onchange="toggleSignInput()">
+        <option value="">-- Choose Purpose --</option>
+        <option value="sign">Based on My Rashi (Zodiac)</option>
+        <option value="health">General Health & Immunity</option>
+        <option value="wealth">Wealth & Business Success</option>
+        <option value="education">Education & Concentration</option>
+        <option value="relationship">Marriage & Relationships</option>
+        <option value="peace">Mental Peace & Anxiety</option>
+        <option value="protection">Protection from Negativity</option>
+      </select>
+    </div>
+
+    <div class="input-group" id="sign-group" style="display:none;">
+      <label for="rashi-rudra">Select Your Sign</label>
+      <select id="rashi-rudra">
+        <option value="aries">Aries (Mesha)</option>
+        <option value="taurus">Taurus (Vrishabha)</option>
+        <option value="gemini">Gemini (Mithuna)</option>
+        <option value="cancer">Cancer (Karka)</option>
+        <option value="leo">Leo (Simha)</option>
+        <option value="virgo">Virgo (Kanya)</option>
+        <option value="libra">Libra (Tula)</option>
+        <option value="scorpio">Scorpio (Vrishchika)</option>
+        <option value="sagittarius">Sagittarius (Dhanu)</option>
+        <option value="capricorn">Capricorn (Makara)</option>
+        <option value="aquarius">Aquarius (Kumbha)</option>
+        <option value="pisces">Pisces (Meena)</option>
+      </select>
+    </div>
+
+    <button class="calc-btn" onclick="findRudraksha()">Find Rudraksha</button>
+
+    <div id="result">
+      <div class="bead-visual" id="mukhi-disp">5</div>
+      <h2 style="margin-bottom: 2rem; color: var(--accent);" id="bead-name">5 Mukhi Rudraksha</h2>
+      
+      <div class="details-box">
+        <div class="detail-title">Deity & Planet</div>
+        <p class="detail-text" id="deity">Lord Shiva / Jupiter</p>
+        
+        <div class="detail-title">Benefits</div>
+        <p class="detail-text" id="benefits">General wellbeing, peace of mind, and removal of sins.</p>
+        
+        <div class="detail-title">Mantra</div>
+        <p class="detail-text" id="mantra" style="font-style: italic; font-family: 'Playfair Display'; font-size: 1.2rem;">Om Hreem Namah</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer style="text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem;">
+  © 2026 Dr. Dhaval Trivedi. All rights reserved.
+</footer>
+
+<script>
+function toggleSignInput() {
+  const goal = document.getElementById('goal').value;
+  const signGroup = document.getElementById('sign-group');
+  signGroup.style.display = (goal === 'sign') ? 'block' : 'none';
+}
+
+const rudrakshaData = {
+  health: { mukhi: 3, name: "3 Mukhi", deity: "Agni / Mars", benefit: "Good for digestion, energy levels, and curing fever.", mantra: "Om Kleem Namah" },
+  wealth: { mukhi: 7, name: "7 Mukhi", deity: "Mahalakshmi / Saturn", benefit: "Attracts wealth, opportunities, and financial stability.", mantra: "Om Hum Namah" },
+  education: { mukhi: 4, name: "4 Mukhi", deity: "Brahma / Mercury", benefit: "Increases memory, intelligence, and communication.", mantra: "Om Hreem Namah" },
+  relationship: { mukhi: 2, name: "2 Mukhi", deity: "Ardhanarishwara / Moon", benefit: "Unity, harmony in marriage, and emotional balance.", mantra: "Om Namah" },
+  peace: { mukhi: 5, name: "5 Mukhi", deity: "Kalagni Rudra / Jupiter", benefit: "General health, peace, and spiritual growth.", mantra: "Om Hreem Namah" },
+  protection: { mukhi: 10, name: "10 Mukhi", deity: "Vishnu (Dashavatar) / No Planet", benefit: "Protection from black magic, evil eye, and spirits.", mantra: "Om Hreem Namah Namah" },
+  
+  // Signs
+  aries: { mukhi: 3, name: "3 Mukhi", deity: "Agni / Mars", benefit: "Vitality and confidence.", mantra: "Om Kleem Namah" },
+  taurus: { mukhi: 6, name: "6 Mukhi", deity: "Kartikeya / Venus", benefit: "Luxury, wisdom, and willpower.", mantra: "Om Hreem Hum Namah" },
+  gemini: { mukhi: 4, name: "4 Mukhi", deity: "Brahma / Mercury", benefit: "Intellect and speech.", mantra: "Om Hreem Namah" },
+  cancer: { mukhi: 2, name: "2 Mukhi", deity: "Ardhanarishwara / Moon", benefit: "Emotional stability.", mantra: "Om Namah" },
+  leo: { mukhi: 12, name: "12 Mukhi", deity: "Sun", benefit: "Radiance, power, and health.", mantra: "Om Kraum Kshaum Raum Namah" },
+  virgo: { mukhi: 4, name: "4 Mukhi", deity: "Brahma / Mercury", benefit: "Focus and learning.", mantra: "Om Hreem Namah" },
+  libra: { mukhi: 6, name: "6 Mukhi", deity: "Kartikeya / Venus", benefit: "Love and artistic skills.", mantra: "Om Hreem Hum Namah" },
+  scorpio: { mukhi: 3, name: "3 Mukhi", deity: "Agni / Mars", benefit: "Energy and fearlessness.", mantra: "Om Kleem Namah" },
+  sagittarius: { mukhi: 5, name: "5 Mukhi", deity: "Kalagni Rudra / Jupiter", benefit: "Wisdom and peace.", mantra: "Om Hreem Namah" },
+  capricorn: { mukhi: 7, name: "7 Mukhi", deity: "Mahalakshmi / Saturn", benefit: "Wealth and career growth.", mantra: "Om Hum Namah" },
+  aquarius: { mukhi: 7, name: "7 Mukhi", deity: "Mahalakshmi / Saturn", benefit: "Success and prosperity.", mantra: "Om Hum Namah" },
+  pisces: { mukhi: 5, name: "5 Mukhi", deity: "Kalagni Rudra / Jupiter", benefit: "Spirituality and calm.", mantra: "Om Hreem Namah" }
+};
+
+function findRudraksha() {
+  const goal = document.getElementById('goal').value;
+  let data;
+  
+  if (goal === 'sign') {
+    const sign = document.getElementById('rashi-rudra').value;
+    data = rudrakshaData[sign];
+  } else {
+    data = rudrakshaData[goal];
+  }
+  
+  if(!data) {
+    alert("Please select an option.");
+    return;
+  }
+  
+  document.getElementById('mukhi-disp').innerText = data.mukhi;
+  document.getElementById('bead-name').innerText = data.name + " Rudraksha";
+  document.getElementById('deity').innerText = data.deity;
+  document.getElementById('benefits').innerText = data.benefit;
+  document.getElementById('mantra').innerText = data.mantra;
+  
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

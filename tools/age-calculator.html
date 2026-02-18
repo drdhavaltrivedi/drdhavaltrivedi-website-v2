@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDBM83S1GL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BDBM83S1GL');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age Calculator | Calculate Exact Age & Days Lived</title>
+<meta name="description" content="Calculate your exact age in years, months, days, minutes, and seconds. Find out how many days you have lived and your upcoming birthday.">
+<meta name="keywords" content="Age Calculator, Days Calculator, Birthday Calculator, Chronological Age, Time Lived">
+<link rel="canonical" href="https://www.drdhaval.in/tools/age-calculator.html">
+<meta name="author" content="Dr. Dhaval Trivedi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Age Calculator | How Old Are You Exactly?">
+<meta property="og:description" content="Find your exact age down to the second.">
+<meta property="og:image" content="https://www.drdhaval.in/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+:root {
+  --bg: #060608;
+  --bg-card: rgba(255,255,255,0.03);
+  --ink: #f4f0e8;
+  --accent: #4cc9f0; /* Cyan for Time/Tech */
+  --muted: #888;
+  --border: rgba(255,255,255,0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; color: inherit; }
+
+/* Reuse styles */
+.nav { position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 4rem; border-bottom: 1px solid var(--border); background: rgba(6,6,8,0.8); backdrop-filter: blur(12px); }
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
+.back-link { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
+.back-link:hover { color: var(--accent); }
+
+.tool-container { max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; text-align: center; }
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p { color: var(--muted); font-size: 1.1rem; max-width: 60ch; margin: 0 auto 3rem; line-height: 1.6; }
+
+.calculator-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.input-group { margin-bottom: 2rem; text-align: left; }
+.input-group label { display: block; font-family: 'Space Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.8rem; }
+input { width: 100%; background: rgba(0,0,0,0.2); border: 1px solid var(--border); color: var(--ink); padding: 1rem; font-family: 'Inter', sans-serif; font-size: 1rem; border-radius: 8px; transition: all 0.3s; }
+input:focus { outline: none; border-color: var(--accent); }
+input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
+
+.calc-btn {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 1rem 3rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(76, 201, 240, 0.3);
+}
+.calc-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(76, 201, 240, 0.4); background: #72dbfc; }
+
+#result { margin-top: 3rem; display: none; text-align: left; }
+.age-headline { font-size: 2.5rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.2; }
+.age-headline span { color: var(--accent); }
+.detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+.detail-item { background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); text-align: center; }
+.detail-val { font-family: 'Space Mono', monospace; font-size: 1.5rem; color: var(--ink); display: block; margin-bottom: 0.5rem; }
+.detail-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+
+@media (max-width: 600px) {
+  .nav { padding: 1rem; }
+  .calculator-card { padding: 1.5rem; }
+  .age-headline { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/tools" class="back-link">← Back to Tools</a>
+  <a href="/" class="nav-brand">Dr. Dhaval Trivedi</a>
+</nav>
+
+<div class="tool-container">
+  <div class="hero">
+    <h1>Age Calculator</h1>
+    <p>Calculate your precise chronological age in years, months, and days. Discover exactly how long you've been on this journey.</p>
+  </div>
+
+  <div class="calculator-card">
+    <div class="input-group">
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob">
+    </div>
+
+    <button class="calc-btn" onclick="calculateAge()">Calculate Age</button>
+
+    <div id="result">
+      <div class="age-headline" id="headline"></div>
+      <p style="color: var(--muted);">is your chronological age.</p>
+      
+      <div class="detail-grid">
+        <div class="detail-item">
+          <span class="detail-val" id="total-months">0</span>
+          <span class="detail-label">Total Months</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-val" id="total-weeks">0</span>
+          <span class="detail-label">Total Weeks</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-val" id="total-days">0</span>
+          <span class="detail-label">Total Days</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-val" id="total-hours">0</span>
+          <span class="detail-label">Total Hours</span>
+        </div>
+      </div>
+      
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center;">
+         <p style="font-family: 'Space Mono'; font-size: 0.8rem; color: var(--accent);">Next Birthday: <span id="next-bday" style="color: var(--ink);"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer style="text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem;">
+  © 2026 Dr. Dhaval Trivedi. All rights reserved.
+</footer>
+
+<script>
+function calculateAge() {
+  const dobInput = document.getElementById('dob').value;
+  if (!dobInput) {
+    alert("Please select your date of birth.");
+    return;
+  }
+
+  const dob = new Date(dobInput);
+  const now = new Date();
+  
+  if (dob > now) {
+    alert("Date of birth cannot be in the future!");
+    return;
+  }
+
+  let years = now.getFullYear() - dob.getFullYear();
+  let months = now.getMonth() - dob.getMonth();
+  let days = now.getDate() - dob.getDate();
+
+  if (days < 0) {
+    months--;
+    // Get days in previous month
+    const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+    days += prevMonth.getDate();
+  }
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  // Totals
+  const diffTime = Math.abs(now - dob);
+  const totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  const totalWeeks = Math.floor(totalDays / 7);
+  const totalMonths = (years * 12) + months;
+  const totalHours = totalDays * 24;
+
+  // Next Birthday
+  const currentYear = now.getFullYear();
+  let nextBday = new Date(dobInput);
+  nextBday.setFullYear(currentYear);
+  if (nextBday < now) {
+    nextBday.setFullYear(currentYear + 1);
+  }
+  const daysToBday = Math.ceil((nextBday - now) / (1000 * 60 * 60 * 24));
+  const dayName = nextBday.toLocaleDateString('en-US', { weekday: 'long' });
+
+  // Update UI
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('headline').innerHTML = `<span>${years}</span> Years <span>${months}</span> Months <span>${days}</span> Days`;
+  
+  document.getElementById('total-months').innerText = totalMonths.toLocaleString();
+  document.getElementById('total-weeks').innerText = totalWeeks.toLocaleString();
+  document.getElementById('total-days').innerText = totalDays.toLocaleString();
+  document.getElementById('total-hours').innerText = totalHours.toLocaleString();
+  
+  document.getElementById('next-bday').innerText = `${daysToBday} Days (${dayName})`;
+}
+</script>
+
+</body>
+</html>
