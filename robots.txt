@@ -1,23 +1,74 @@
-# Optimized Robots.txt for Dr. Dhaval Trivedi Official Website
+# Specialized AI Agents Optimization (AI SEO / LLM Discovery) for Dr. Dhaval Trivedi Official Website
 # Domain: https://www.drdhaval.in
 
+# Allow all major search engines and AI bots
 User-agent: *
 Allow: /
+# Block sensitive/system directories
 Disallow: /node_modules/
 Disallow: /vercel.json
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
 
-# Specialized AI Agents Optimization (AI SEO / LLM Discovery)
+# Explicitly Allow Major AI Crawlers to ensure indexing
+# OpenAi
 User-agent: GPTBot
-Allow: /blog/
-Allow: /ai-machine-learning
-Allow: /vastu-shastra
-Allow: /numerology
-Allow: /palmistry
+Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+# Common Crawl
 User-agent: CCBot
 Allow: /
 
+# Google AI
 User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+# Meta / Facebook
+User-agent: FacebookBot
+Allow: /
+
+User-agent: FacebookExternalHit
+Allow: /
+
+# Anthropic (Claude)
+User-agent: Anthony
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Other AI/LLM Bots
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: ImagesiftBot
 Allow: /
 
 # Sitemap Link
